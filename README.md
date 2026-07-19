@@ -39,3 +39,12 @@ python3 -m http.server 8080
 ```text
 ~/Documents/Projects/get working with AI
 ```
+
+
+## Pages
+
+This site only has three HTML pages:
+
+- `index.html` — marketing homepage
+- `privacy.html` — privacy policy
+- `terms.html` — terms of service
