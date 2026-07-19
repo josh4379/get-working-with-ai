@@ -1,11 +1,16 @@
 /**
-* Get Working With AI — main styles
+* Template Name: Axis
+* Template URL: https://bootstrapmade.com/axis-bootstrap-corporate-template/
+* Updated: Sep 13 2025 with Bootstrap v5.3.8
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
 */
 
 @charset "UTF-8";
 
 /*--------------------------------------------------------------
 # Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -15,44 +20,39 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
-  /* Get Working With AI — deep space + violet / electric cyan */
-  --background-color: #070a12;
-  --default-color: #a8b3c7;
-  --heading-color: #f4f6ff;
-  --accent-color: #8b5cf6;
-  --surface-color: #121626;
-  --contrast-color: #ffffff;
-  --accent-soft: rgba(139, 92, 246, 0.16);
-  --accent-deep: #a78bfa;
-  --navy: #0b1020;
-  --navy-deep: #05070e;
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #666666; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #313131; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #94a3b8;
-  --nav-hover-color: #e2e8ff;
-  --nav-mobile-background-color: #0b1020;
-  --nav-dropdown-background-color: #12162a;
-  --nav-dropdown-color: #cbd5e1;
-  --nav-dropdown-hover-color: #22d3ee;
+  --nav-color: #999999;  /* The default color of the main navmenu links */
+  --nav-hover-color: #000000; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #666666; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #313131; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #0b1020;
-  --surface-color: #121626;
+  --background-color: #f9f9f9;
+  --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #04060c;
-  --default-color: #9aa8c0;
+  --background-color: #060606;
+  --default-color: #e3e3e3;
   --heading-color: #ffffff;
-  --accent-color: #a78bfa;
-  --surface-color: #10162a;
-  --contrast-color: #070a12;
+  --accent-color: #bdb5b5;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
 }
 
 /* Smooth scroll */
@@ -163,14 +163,11 @@ h6 {
   margin-right: 8px;
 }
 
-.header .logo h1,
-.header .logo .sitename {
-  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+.header .logo h1 {
+  font-size: 30px;
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 400;
   color: var(--heading-color);
-  line-height: 1.1;
 }
 
 .scrolled .header {
@@ -541,6 +538,10 @@ h6 {
   margin-bottom: 0;
 }
 
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -4175,232 +4176,4 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
-}
-
-/*--------------------------------------------------------------
-# GWWAI brand colour polish
---------------------------------------------------------------*/
-/* GWWAI brand colour polish */
-
-/* Soft gradient behind the hero */
-.hero.section.light-background {
-  background:
-    radial-gradient(ellipse 80% 60% at 100% 0%, color-mix(in srgb, var(--accent-color), transparent 88%) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 0% 100%, color-mix(in srgb, var(--navy), transparent 94%) 0%, transparent 50%),
-    var(--background-color);
-}
-
-/* Eyebrow line above hero H1 */
-.hero .hero-content > p.mb-2 {
-  color: var(--accent-deep) !important;
-}
-
-/* Stat numbers a bit more presence */
-.hero .hero-stats .stat-item .stat-number {
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-
-/* Floating cards: soft teal tint */
-.hero .hero-image .floating-card,
-.about .image-wrapper .floating-card {
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
-  box-shadow: 0 12px 40px color-mix(in srgb, var(--navy), transparent 90%);
-}
-
-.hero .hero-image .floating-card .card-icon,
-.about .image-wrapper .floating-card .card-content .icon {
-  background: color-mix(in srgb, var(--accent-color), transparent 88%);
-}
-
-/* Service / package cards */
-.service-item {
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 88%);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.service-item:hover {
-  border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
-  box-shadow: 0 16px 40px color-mix(in srgb, var(--navy), transparent 92%);
-  transform: translateY(-3px);
-}
-
-.service-item .service-icon {
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-deep);
-}
-
-.service-item .service-icon i {
-  color: var(--accent-deep);
-}
-
-.service-item .service-link {
-  color: var(--accent-deep);
-  font-weight: 600;
-}
-
-.service-item .service-link:hover {
-  color: var(--accent-color);
-}
-
-/* Feature icons (package / process) */
-.feature-item .icon-wrapper {
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-deep);
-}
-
-.feature-item .icon-wrapper i {
-  color: var(--accent-deep);
-}
-
-/* Primary outline buttons */
-.btn-outline {
-  border-color: var(--accent-color) !important;
-  color: var(--accent-deep) !important;
-}
-
-.btn-outline:hover {
-  background: var(--accent-color) !important;
-  color: var(--contrast-color) !important;
-}
-
-/* Contact form focus / submit */
-.contact .submit-btn {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .submit-btn:hover {
-  background: var(--accent-deep);
-}
-
-.contact .form-group input:focus,
-.contact .form-group textarea:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 85%);
-}
-
-/* Header brand mark — big name + angled squiggly underline */
-.header .logo {
-  align-items: center;
-  text-decoration: none;
-}
-
-.header .logo .logo-mark {
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-  padding-bottom: 0.35rem;
-}
-
-.header .logo .sitename {
-  font-family: var(--heading-font);
-  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  color: var(--navy);
-  line-height: 1.05;
-  white-space: nowrap;
-  transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.header .logo .logo-scribble {
-  display: block;
-  width: 100%;
-  max-width: 15.5rem;
-  height: 0.85rem;
-  margin-top: 0.12rem;
-  color: var(--accent-color);
-  transform: rotate(-3.5deg) translateX(0.15rem);
-  transform-origin: left center;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.header .logo .logo-scribble path {
-  stroke: currentColor;
-  stroke-width: 3.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  /* hand-drawn feel */
-  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--accent-deep), transparent 70%));
-}
-
-.header .logo:hover .sitename {
-  color: var(--accent-deep);
-}
-
-.header .logo:hover .logo-scribble {
-  color: var(--accent-deep);
-  transform: rotate(-2deg) translateX(0.2rem) scaleX(1.02);
-  transition: transform 0.3s ease, color 0.25s ease;
-}
-
-.header .logo .logo-scribble {
-  transition: transform 0.3s ease, color 0.25s ease;
-}
-
-/* Slightly tighter header padding so larger logo still fits */
-.header {
-  padding: 18px 0;
-}
-
-@media (max-width: 575.98px) {
-  .header .logo .sitename {
-    font-size: 1.35rem;
-    white-space: normal;
-    max-width: 11.5rem;
-  }
-  .header .logo .logo-scribble {
-    max-width: 11rem;
-    height: 0.7rem;
-  }
-}
-
-/* Footer name stays quieter — no scribble */
-.footer .logo .sitename {
-  font-weight: 700;
-  color: var(--heading-color);
-}
-
-
-/* CTA conclusion band */
-.portfolio-conclusion {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--navy), transparent 4%) 0%,
-    color-mix(in srgb, var(--accent-color), transparent 88%) 100%
-  );
-  border-radius: 16px;
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
-}
-
-.portfolio-conclusion .primary-action {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.portfolio-conclusion .primary-action:hover {
-  background: var(--accent-deep);
-  color: var(--contrast-color);
-}
-
-/* FAQ soft wash */
-#faq.services {
-  background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, color-mix(in srgb, var(--accent-color), transparent 92%) 0%, transparent 60%),
-    var(--background-color);
-}
-
-/* Checkmarks in package lists */
-.service-item .bi-check2-circle {
-  color: var(--accent-color);
-}
-
-/* Scroll top radius */
-.scroll-top {
-  border-radius: 10px;
 }
