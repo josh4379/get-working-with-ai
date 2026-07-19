@@ -2107,6 +2107,130 @@ section,
   margin-top: 0.35rem;
 }
 
+/* Article furniture: lede, takeaways, callouts, tables, FAQ, inline CTA. */
+
+.blog-post-body .lede {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--gw-ink);
+  font-weight: 500;
+}
+
+.blog-post-body a {
+  color: var(--gw-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.blog-post-body a:hover {
+  color: var(--gw-copper);
+}
+
+.blog-post-body strong {
+  color: var(--gw-ink);
+  font-weight: 650;
+}
+
+.post-takeaways {
+  background: var(--gw-cream);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius);
+  padding: 1.4rem 1.5rem 1.2rem;
+  margin: 0 0 2rem;
+}
+
+.post-takeaways h2 {
+  font-size: 0.82rem !important;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gw-copper-deep);
+  margin: 0 0 0.75rem !important;
+}
+
+.post-takeaways ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.post-callout {
+  border-left: 3px solid var(--gw-copper);
+  background: var(--gw-grad-soft);
+  border-radius: 0 var(--gw-radius) var(--gw-radius) 0;
+  padding: 1.1rem 1.3rem;
+  margin: 1.75rem 0;
+}
+
+.post-callout p:last-child,
+.post-cta p:last-child {
+  margin-bottom: 0;
+}
+
+.post-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1.6rem;
+}
+
+.post-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+
+.post-table th,
+.post-table td {
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--gw-line);
+  color: var(--gw-ink-soft);
+  vertical-align: top;
+}
+
+.post-table thead th {
+  background: var(--gw-tint);
+  color: var(--gw-ink);
+  font-weight: 650;
+  border-bottom-color: var(--gw-tint-deep);
+}
+
+.post-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.post-faq {
+  margin: 2rem 0 0;
+}
+
+.post-faq h3 {
+  margin-bottom: 0.35rem;
+}
+
+.post-cta {
+  background: var(--gw-grad);
+  color: var(--gw-white);
+  border-radius: var(--gw-radius-lg);
+  padding: 1.6rem 1.75rem;
+  margin: 2.25rem 0 0;
+}
+
+.post-cta h2 {
+  color: var(--gw-white) !important;
+  margin-top: 0 !important;
+}
+
+.post-cta p {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.post-cta a {
+  color: var(--gw-white);
+  font-weight: 600;
+}
+
+.post-cta a:hover {
+  color: var(--gw-copper-light);
+}
+
 .blog-post-nav {
   display: flex;
   flex-wrap: wrap;
