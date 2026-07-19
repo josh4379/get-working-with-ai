@@ -6,3 +6,5 @@
 *.swp
 *~
 index.html.template-backup
+
+.env

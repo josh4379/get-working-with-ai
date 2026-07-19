@@ -1643,11 +1643,38 @@ section,
   margin-bottom: 3px;
 }
 
-#package .pkg-meta {
+/* Price. Amount and terms share a baseline so the block costs barely more
+   vertical space than the single meta line it replaced — the cards still
+   have to fit the fold. */
+#package .pkg-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 0.55rem;
   margin: 0 0 clamp(0.45rem, 1.1vh, 0.8rem);
-  font-size: clamp(0.82rem, 0.78rem + 0.15vw, 0.92rem);
+}
+
+#package .pkg-amount {
+  font-family: var(--heading-font);
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: var(--gw-ink);
+}
+
+#package .pkg-terms {
+  font-size: clamp(0.78rem, 0.74rem + 0.14vw, 0.88rem);
   font-weight: 600;
   color: var(--gw-ink-faint);
+}
+
+/* The flagship price carries the copper accent */
+#package .col-lg-6:nth-child(2) .pkg-amount {
+  background: var(--gw-grad-copper);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 #package .pkg-lead {
@@ -1731,6 +1758,10 @@ section,
     padding: 1.25rem 1.25rem;
   }
 
+  #package .pkg-amount {
+    font-size: 1.5rem;
+  }
+
   #package .pkg-lead {
     margin-bottom: 0.7rem;
   }
@@ -1794,6 +1825,10 @@ section,
 
   #package .service-item h3 {
     font-size: 1.15rem;
+  }
+
+  #package .pkg-amount {
+    font-size: 1.4rem;
   }
 
   #package .pkg-lead {
