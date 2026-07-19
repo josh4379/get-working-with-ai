@@ -23,13 +23,71 @@
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/theme.css" rel="stylesheet">
 
-  <title>Blog post 9 | Get Working With AI Blog</title>
-  <meta name="description" content="">
+  <title>Admin Controls and SSO for AI Tools: The Unglamorous Half</title>
+  <meta name="description" content="The AI admin settings that actually matter: retention, training exclusion, sharing, workspaces, connectors and single sign-on. A configuration checklist you can work through.">
+  <meta name="keywords" content="AI admin portal, SSO for AI tools, AI admin controls, enterprise AI configuration, AI offboarding">
   <link rel="canonical" href="https://getworkingwithai.com/blog/post-09.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://getworkingwithai.com/blog/post-09.html">
-  <meta property="og:title" content="Blog post 9 | Get Working With AI Blog">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Admin Controls and SSO for AI Tools: The Unglamorous Half">
+  <meta property="og:description" content="Retention, training exclusion, sharing, workspaces, connectors and SSO. The settings that decide whether your rollout is governed.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Admin Controls and SSO for AI Tools: The Unglamorous Half">
+  <meta name="twitter:description" content="Nobody demos the admin console. It is where the risk actually lives.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://getworkingwithai.com/blog/post-09.html#article",
+        "headline": "Admin Controls and SSO for AI Tools: The Unglamorous Half",
+        "description": "A configuration checklist for business AI tools: retention, training exclusion, sharing controls, workspaces, connectors, single sign-on and offboarding.",
+        "datePublished": "2026-05-03",
+        "dateModified": "2026-05-03",
+        "inLanguage": "en-AU",
+        "mainEntityOfPage": "https://getworkingwithai.com/blog/post-09.html",
+        "author": { "@type": "Organization", "name": "Get Working With AI", "url": "https://getworkingwithai.com/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Get Working With AI",
+          "url": "https://getworkingwithai.com/",
+          "logo": { "@type": "ImageObject", "url": "https://getworkingwithai.com/assets/img/logo.webp" }
+        },
+        "about": ["Identity management", "SaaS administration", "AI governance"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getworkingwithai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://getworkingwithai.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "Admin controls and SSO", "item": "https://getworkingwithai.com/blog/post-09.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do we need single sign-on for AI tools?",
+            "acceptedAnswer": { "@type": "Answer", "text": "If you already run an identity provider, yes. SSO turns offboarding from a checklist item somebody has to remember into an automatic consequence of disabling the account, and it removes another password from every employee's life." }
+          },
+          {
+            "@type": "Question",
+            "name": "What AI admin settings matter most?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Training exclusion, retention period, external sharing of conversations, who can invite users, which connectors to your file storage are enabled and for whom, and how accounts are removed when someone leaves." }
+          },
+          {
+            "@type": "Question",
+            "name": "Who should own the AI admin console?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The same team that owns your other business systems, with at least two named administrators so the organisation is never dependent on one person. It should not be owned by whoever happened to sign up first." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="blog-post-page">
@@ -44,7 +102,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI — home">
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
         <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
         <span class="sitename">Get Working With AI</span>
       </a>
@@ -73,14 +131,14 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
             <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
-            <li class="breadcrumb-item active current">Blog post 9</li>
+            <li class="breadcrumb-item active current">Admin controls and SSO</li>
           </ol>
         </nav>
       </div>
 
       <div class="title-wrapper">
-        <h1>Blog post 9</h1>
-        <p class="blog-post-meta"><time datetime="2026-07-19">19 July 2026</time></p>
+        <h1>Admin Controls and SSO for AI Tools: The Unglamorous Half</h1>
+        <p class="blog-post-meta"><time datetime="2026-05-03">3 May 2026</time> &middot; 9 min read</p>
       </div>
     </div>
 
@@ -89,26 +147,151 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <article class="blog-post-content">
-              <!--
-                CONTENT SHELL — leave empty for Claude to fill.
-                Suggested structure:
-                  - Intro paragraph(s)
-                  - H2 sections with body copy
-                  - Lists, callouts, CTAs as needed
-                  - Closing paragraph + link to packages if relevant
-              -->
 
               <div class="blog-post-body">
-                <!-- Body content goes here -->
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Nobody demos the admin console, and it is where nearly all the manageable risk lives.</li>
+                    <li>Six settings do most of the work: training exclusion, retention, sharing, invitations, connectors, and deprovisioning.</li>
+                    <li>SSO is worth the tier upgrade in most organisations, because offboarding stops depending on memory.</li>
+                    <li>Two named administrators, minimum. One is a single point of failure with a password.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Every AI product demo shows you the chat window. None of them show you the settings page, which is a shame, because the settings page is what determines whether you have deployed a business tool or handed out a consumer app with a company logo on it.</p>
+
+                <p>This is a working checklist. It is deliberately provider-agnostic, because the labels differ between vendors while the underlying decisions do not. Work through it with whoever administers your systems and you will have covered most of what an auditor, a client questionnaire or an incident would ask about.</p>
+
+                <h2>The six settings that carry the weight</h2>
+
+                <h3>1. Training exclusion</h3>
+                <p>Confirm, at the tier you are actually buying, that your content is excluded from model training by default. Business and enterprise tiers generally are; consumer tiers frequently are not. Get this from the contract or the documentation rather than a salesperson's reassurance, and keep a copy, because this is the single most common question on client due diligence forms.</p>
+
+                <h3>2. Retention</h3>
+                <p>Decide how long conversation history is kept, and set it deliberately rather than accepting whatever the default is. Two competing pressures: shorter retention reduces the volume of material sitting in a third-party system, while longer retention preserves useful work and may be required by your own record-keeping obligations. There is no universally right answer, but there is a wrong one, which is not having decided.</p>
+
+                <h3>3. External sharing</h3>
+                <p>Most assistants can generate a link to a conversation. Decide whether that link can be opened by anyone with the address or only by people inside your organisation. This setting is easy to overlook and has an obvious failure mode: a shared conversation containing client material, indexed and reachable by anyone who has the URL.</p>
+
+                <h3>4. Who can invite</h3>
+                <p>If any user can invite colleagues, your seat count and your spend become emergent properties rather than decisions. Restrict invitations to administrators and require a normal request. This is also what keeps your user list matching your licence count.</p>
+
+                <h3>5. Connectors and integrations</h3>
+                <p>Connecting the assistant to your file storage, email or ticketing system is where it becomes genuinely powerful, and where the permission model needs real thought. The right question is not whether to connect but whether the connector respects your existing permissions. If a user can reach documents through the assistant that they could not open directly, you have created a permissions bypass and it will surprise someone eventually.</p>
+
+                <h3>6. Deprovisioning</h3>
+                <p>Removing access when someone leaves should be a single action, and ideally an automatic consequence of disabling their main account. Test this rather than assuming it. The test is simple: disable a test account in your identity provider and confirm it can no longer reach the AI tool.</p>
+
+                <div class="post-callout">
+                  <p><strong>The question that exposes most setups:</strong> if someone resigned this afternoon, how many separate systems would you have to touch to be confident they no longer have access to company information through an AI tool? If the answer is more than one, that is your next piece of work.</p>
+                </div>
+
+                <h2>Single sign-on: worth it or not</h2>
+
+                <p>SSO usually sits at a higher price tier, which prompts a reasonable question about whether it is worth the jump. For most organisations with an existing identity provider, it is, for four reasons that have nothing to do with convenience.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Benefit</th><th>Without SSO</th><th>With SSO</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Offboarding</td>
+                        <td>A manual step on a checklist that someone must remember during a busy week.</td>
+                        <td>Automatic. Disabling the identity account removes access.</td>
+                      </tr>
+                      <tr>
+                        <td>Password hygiene</td>
+                        <td>Another password, often reused, often stored badly.</td>
+                        <td>No new password exists to be reused or leaked.</td>
+                      </tr>
+                      <tr>
+                        <td>Multi-factor authentication</td>
+                        <td>Depends on the AI vendor's implementation and each user enabling it.</td>
+                        <td>Inherited from the policy you already enforce.</td>
+                      </tr>
+                      <tr>
+                        <td>Access review</td>
+                        <td>A separate user list to reconcile by hand.</td>
+                        <td>Part of the review you already run.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The counter-argument is real for very small organisations. If you have twelve people, no identity provider, and offboarding means the director revoking access personally over a coffee, the tier jump may not earn its keep. Below roughly twenty staff, a documented manual process is defensible. Above that, memory stops being a control.</p>
+
+                <h2>Workspace structure</h2>
+
+                <p>Most business tiers let you organise users into workspaces, projects or teams. It is tempting to skip this and put everyone in one pool. Two reasons not to.</p>
+
+                <p><strong>Cost attribution.</strong> Structure gives you spend by team without extra work, which makes the value conversation at renewal dramatically easier. Without it you have one large number and no way to explain it.</p>
+
+                <p><strong>Separation where it is genuinely needed.</strong> If one team handles material others should not see, workspace boundaries are the mechanism. Retrofitting this after six months of shared use is far more work than setting it up on day one.</p>
+
+                <p>Keep it simple. Mirror your existing team structure rather than inventing a new taxonomy, because the new taxonomy will not be maintained.</p>
+
+                <h2>Audit and visibility</h2>
+
+                <p>Understand what your tier actually records, and check it before you need it. Typically available: who has an account, when they last used it, and administrative changes. Typically not available in detail: the content of conversations, which is usually a deliberate privacy design rather than an oversight.</p>
+
+                <p>This matters for expectation setting. If a manager assumes they can review what their team has been asking, they are probably wrong, and it is much better to establish that in month one than during an investigation.</p>
+
+                <div class="post-callout">
+                  <p><strong>Set a calendar reminder now:</strong> a quarterly access review, comparing the user list against current staff, and checking last-login dates. It takes twenty minutes, reclaims dormant seats, and catches the leaver who slipped through offboarding.</p>
+                </div>
+
+                <h2>A configuration checklist</h2>
+
+                <ul>
+                  <li>Business or enterprise tier confirmed, not consumer.</li>
+                  <li>Training exclusion confirmed in writing and filed.</li>
+                  <li>Retention period chosen deliberately and documented.</li>
+                  <li>External sharing of conversations set to your chosen level.</li>
+                  <li>Invitations restricted to administrators.</li>
+                  <li>Connectors reviewed, and permission inheritance tested with a real low-privilege account.</li>
+                  <li>SSO connected, or a documented manual offboarding process if not.</li>
+                  <li>Deprovisioning tested end to end with a test account.</li>
+                  <li>At least two named administrators recorded somewhere findable.</li>
+                  <li>Workspaces mirroring team structure, for attribution and separation.</li>
+                  <li>Hard spending limit set at the provider.</li>
+                  <li>Quarterly access review in a shared calendar with an owner.</li>
+                </ul>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Do we need SSO for AI tools?</h3>
+                  <p>If you run an identity provider, yes. It makes offboarding automatic rather than dependent on someone remembering, and it inherits the multi-factor policy you already enforce. Below about twenty staff, a documented manual process can be enough.</p>
+
+                  <h3>Which admin settings matter most?</h3>
+                  <p>Training exclusion, retention, external sharing, who can invite users, which connectors are enabled and for whom, and how access is removed when someone leaves.</p>
+
+                  <h3>Who should own the admin console?</h3>
+                  <p>Whoever owns your other business systems, with at least two named administrators. It should not be owned by whichever enthusiastic person signed up first, because that arrangement fails the moment they change roles.</p>
+
+                  <h3>Can we see what staff are asking the AI?</h3>
+                  <p>Usually not in detail, and that is generally a deliberate privacy design. You can normally see who has accounts and when they last used them. Set that expectation early rather than during an incident.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Have the console configured and handed over</h2>
+                  <p>Admin portal configuration, optional SSO, retention and sharing settings, connectors and hard spending limits are all part of the Implementation Package, set up and then handed to your own team so you are not dependent on us to change a setting.</p>
+                  <p><a href="../index.html#package">See the Implementation Package</a></p>
+                </div>
+
               </div>
             </article>
 
             <nav class="blog-post-nav" aria-label="Adjacent posts">
-              <a href="post-08.html" class="blog-post-nav-link prev">← Blog post 8</a>
-              <a href="post-10.html" class="blog-post-nav-link next">Blog post 10 →</a>
+              <a href="post-08.html" class="blog-post-nav-link prev">&larr; Matching AI models to jobs</a>
+              <a href="post-10.html" class="blog-post-nav-link next">AI training for employees &rarr;</a>
             </nav>
 
-            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">← Back to blog</a></p>
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
           </div>
         </div>
       </div>
@@ -121,7 +304,7 @@
   <a href="../index.html#package" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
     <span class="floating-cta-text">
       <strong>Choose your package</strong>
-      <small>Fixed price · live in 30 days</small>
+      <small>Fixed price &middot; live in 30 days</small>
     </span>
     <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
   </a>
@@ -130,7 +313,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-6 footer-about">
-          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI — home">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
             <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
             <span class="sitename">Get Working With AI</span>
           </a>

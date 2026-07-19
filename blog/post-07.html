@@ -23,13 +23,71 @@
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/theme.css" rel="stylesheet">
 
-  <title>Blog post 7 | Get Working With AI Blog</title>
-  <meta name="description" content="">
+  <title>Why AI Pilots Stall in Evaluation (and How to Get Yours Out)</title>
+  <meta name="description" content="Six structural reasons AI pilots never reach production, how to diagnose which one is holding yours, and the exit criteria that turn a pilot into a decision.">
+  <meta name="keywords" content="AI pilot stalled, AI proof of concept, why AI projects fail, AI pilot to production">
   <link rel="canonical" href="https://getworkingwithai.com/blog/post-07.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://getworkingwithai.com/blog/post-07.html">
-  <meta property="og:title" content="Blog post 7 | Get Working With AI Blog">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Why AI Pilots Stall in Evaluation (and How to Get Yours Out)">
+  <meta property="og:description" content="Six structural reasons AI pilots never reach production, and the exit criteria that turn a pilot into a decision.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why AI Pilots Stall in Evaluation (and How to Get Yours Out)">
+  <meta name="twitter:description" content="A pilot with no exit criteria is not an experiment. It is a way of postponing a decision politely.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://getworkingwithai.com/blog/post-07.html#article",
+        "headline": "Why AI Pilots Stall in Evaluation (and How to Get Yours Out)",
+        "description": "Six structural reasons AI pilots never reach production, how to diagnose which one applies, and the exit criteria that turn a pilot into a decision.",
+        "datePublished": "2026-04-19",
+        "dateModified": "2026-04-19",
+        "inLanguage": "en-AU",
+        "mainEntityOfPage": "https://getworkingwithai.com/blog/post-07.html",
+        "author": { "@type": "Organization", "name": "Get Working With AI", "url": "https://getworkingwithai.com/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Get Working With AI",
+          "url": "https://getworkingwithai.com/",
+          "logo": { "@type": "ImageObject", "url": "https://getworkingwithai.com/assets/img/logo.webp" }
+        },
+        "about": ["AI adoption", "Project delivery", "Change management"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getworkingwithai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://getworkingwithai.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "Why AI pilots stall", "item": "https://getworkingwithai.com/blog/post-07.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why do AI pilots never reach production?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Usually because the pilot had no exit criteria, no budget owner, or no defined next step. A pilot that cannot fail also cannot succeed, so it simply continues until attention moves elsewhere." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long should an AI pilot run?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Two to four weeks is usually enough to learn whether a tool helps with a specific task. Longer pilots rarely produce better information; they mostly produce more meetings and a decision that is harder to make because more opinions have accumulated." }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good exit criteria for an AI pilot?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Written before the pilot starts, they should name the task, the number of people, the duration, the measure of success, the decision that follows each outcome, and the person who makes that decision." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="blog-post-page">
@@ -44,7 +102,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI — home">
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
         <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
         <span class="sitename">Get Working With AI</span>
       </a>
@@ -73,14 +131,14 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
             <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
-            <li class="breadcrumb-item active current">Blog post 7</li>
+            <li class="breadcrumb-item active current">Why AI pilots stall</li>
           </ol>
         </nav>
       </div>
 
       <div class="title-wrapper">
-        <h1>Blog post 7</h1>
-        <p class="blog-post-meta"><time datetime="2026-07-19">19 July 2026</time></p>
+        <h1>Why AI Pilots Stall in Evaluation (and How to Get Yours Out)</h1>
+        <p class="blog-post-meta"><time datetime="2026-04-19">19 April 2026</time> &middot; 9 min read</p>
       </div>
     </div>
 
@@ -89,26 +147,135 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <article class="blog-post-content">
-              <!--
-                CONTENT SHELL — leave empty for Claude to fill.
-                Suggested structure:
-                  - Intro paragraph(s)
-                  - H2 sections with body copy
-                  - Lists, callouts, CTAs as needed
-                  - Closing paragraph + link to packages if relevant
-              -->
 
               <div class="blog-post-body">
-                <!-- Body content goes here -->
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>A pilot that cannot fail cannot succeed either. Both outcomes need to be defined before it starts.</li>
+                    <li>Most stalled pilots have no budget owner, which means no outcome triggers a purchase.</li>
+                    <li>Testing "AI" in general is untestable. Test one task, done by real people, on real work.</li>
+                    <li>Two to four weeks is the useful window. Beyond that you are collecting opinions, not evidence.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">The pilot went fine. Everyone agreed it was interesting. There were some promising results and some rough edges. A follow-up session was scheduled, then moved, then quietly dropped. Nine months on, the licences are still active, three people still use them, and nobody can say whether the organisation adopted AI or not.</p>
+
+                <p>This is not a technology failure. It is a decision architecture failure, and it has recognisable causes. Here are the six that account for nearly all of it, and how to tell which one has hold of your pilot.</p>
+
+                <h2>Cause 1: no exit criteria</h2>
+
+                <p>The most common by a distance. The pilot was set up to "see how it goes", which sounds sensible and is fatal, because it defines neither success nor failure. Without either, the pilot has no natural end. It just continues at declining intensity until attention moves elsewhere.</p>
+
+                <p>The fix is to write, before starting, exactly what result leads to what decision. Not a vague aspiration but a sentence of this shape: if the six people in the pilot report that the weekly client summary takes meaningfully less time and the quality is acceptable to their manager, we buy 40 licences in May. If they do not, we stop and write down why.</p>
+
+                <p>The second half matters as much as the first. Teams avoid defining failure because it feels pessimistic. Undefined failure is precisely what turns a four-week pilot into an eighteen-month one.</p>
+
+                <div class="post-callout">
+                  <p><strong>Diagnostic question:</strong> if you asked everyone involved in your pilot to write down, separately, what result would cause you to stop, would the answers match? If they would not, the pilot has no exit criteria regardless of what the project document says.</p>
+                </div>
+
+                <h2>Cause 2: no budget owner in the room</h2>
+
+                <p>A pilot run entirely by people who cannot approve a purchase produces, at best, a recommendation that then has to start the funding conversation from the beginning, with a different audience, several months later. By then the enthusiasm has cooled and the evidence feels stale.</p>
+
+                <p>The fix is structural: whoever can approve the spend must be a participant, not a recipient of a report. Not necessarily in every session, but they should see the pilot task, meet the people doing it, and agree the exit criteria personally. That way the decision at the end is a confirmation rather than a new pitch.</p>
+
+                <h2>Cause 3: the pilot tests the wrong thing</h2>
+
+                <p>"Let's pilot AI" is not a testable proposition. AI is a general capability, and evaluating a general capability against no particular need produces exactly the output you would expect: a set of impressions.</p>
+
+                <p>A testable pilot names one workflow, one team, one measure. For example: the proposal team spends roughly a day per proposal assembling a first draft from previous documents; can that become two hours without a drop in quality that the reviewing partner notices?</p>
+
+                <p>That question has an answer. "Is AI useful for us?" does not.</p>
+
+                <h2>Cause 4: the wrong people are in it</h2>
+
+                <p>Pilots tend to be staffed with volunteers, and volunteers are systematically unrepresentative. They are more interested, more tolerant of rough edges, and often less busy than the median employee. A pilot they enjoy tells you almost nothing about whether a sceptical, fully booked colleague will adopt the same tool.</p>
+
+                <p>Choose participants who genuinely do the task in question, including at least one person who is unenthusiastic. If the tool wins over someone with a full workload and no particular interest in technology, you have learned something real. If it only wins over the enthusiast, you have measured enthusiasm.</p>
+
+                <h2>Cause 5: nobody configured anything</h2>
+
+                <p>Many pilots run on consumer accounts with default settings, no shared prompts, no access to the documents that would make the tool useful, and no guidance on which model to use. The results are correspondingly mediocre, and the organisation concludes the technology is not ready.</p>
+
+                <p>What it has actually tested is an unconfigured tool used by untrained people on unfamiliar tasks. That is a fair test of nothing. Even a short pilot deserves the right tier, a handful of worked examples, and thirty minutes of orientation.</p>
+
+                <h2>Cause 6: waiting for the next model</h2>
+
+                <p>The most intellectually respectable way to stall. There is always a more capable model arriving soon, and it is always plausible that waiting would produce a better outcome.</p>
+
+                <p>The flaw is that this reasoning never expires. Applied consistently it counsels permanent delay. The organisations that get value are not the ones that picked the best model; they are the ones that picked an adequate model early and spent the intervening time learning how to use it. That learning transfers when models improve. The waiting does not.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Symptom</th><th>Likely cause</th><th>First move</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Pilot has quietly continued past its end date</td><td>No exit criteria</td><td>Write the two outcome sentences today, with a date.</td></tr>
+                      <tr><td>Positive results but no purchase</td><td>No budget owner involved</td><td>Get the approver into one session with the actual users.</td></tr>
+                      <tr><td>Feedback is impressions rather than findings</td><td>Testing "AI" rather than a task</td><td>Pick one workflow with a measurable before state.</td></tr>
+                      <tr><td>Great in the pilot, ignored after rollout</td><td>Unrepresentative participants</td><td>Rerun with two sceptical, fully booked colleagues.</td></tr>
+                      <tr><td>Results judged underwhelming</td><td>Nothing was configured</td><td>Correct tier, worked examples, brief orientation, retest.</td></tr>
+                      <tr><td>Decision deferred pending new release</td><td>Waiting for the next model</td><td>Set the decision date first, then evaluate against it.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2>A pilot design that ends in a decision</h2>
+
+                <p>Write this on one page before anything starts. If you cannot fill in a line, that gap is the thing most likely to stall you.</p>
+
+                <ul>
+                  <li><strong>Task.</strong> One workflow, described the way the people who do it would describe it.</li>
+                  <li><strong>Current state.</strong> Roughly how long it takes now and what "good" looks like. A rough estimate agreed by the doers beats a precise number nobody believes.</li>
+                  <li><strong>Participants.</strong> Named people who do the task, including at least one sceptic.</li>
+                  <li><strong>Duration.</strong> Two to four weeks, with the end date in calendars from day one.</li>
+                  <li><strong>Setup.</strong> Which tool, which tier, which model, what worked examples they get, who gives the orientation.</li>
+                  <li><strong>Success looks like.</strong> One sentence, agreed by the budget owner.</li>
+                  <li><strong>Failure looks like.</strong> One sentence, also agreed by the budget owner.</li>
+                  <li><strong>Decision date and decision maker.</strong> A date and a name.</li>
+                </ul>
+
+                <p>Eight lines. Nearly every stalled pilot is missing at least three of them, and it is usually the last two.</p>
+
+                <div class="post-callout">
+                  <p><strong>An uncomfortable but useful reframe:</strong> a pilot is not a way to reduce risk. It is a way to gather specific evidence for a specific decision. If no decision is scheduled, the pilot is not reducing risk at all, it is deferring it while spending money.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Why do AI pilots never reach production?</h3>
+                  <p>Usually no exit criteria, no budget owner participating, or no defined next step. A pilot that cannot fail cannot succeed either, so it drifts until attention moves elsewhere.</p>
+
+                  <h3>How long should a pilot run?</h3>
+                  <p>Two to four weeks for a specific task. Longer pilots rarely produce better evidence, and they do produce more opinions, which makes the decision harder rather than easier.</p>
+
+                  <h3>What are good exit criteria?</h3>
+                  <p>Written before the start, naming the task, the participants, the duration, what success and failure each look like, the date of the decision, and the person who makes it.</p>
+
+                  <h3>Our pilot has already stalled. Can we restart it?</h3>
+                  <p>Yes, and it is usually quick, because you have already learned things. Rescope to one task, involve the budget holder, set a decision date within four weeks, and treat the previous phase as background rather than something to relitigate.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Skip the pilot purgatory</h2>
+                  <p>Both our packages exist to force a decision. Clarity ends with a written recommendation you can act on. Implementation ends with a configured, capped, adopted setup, live in 30 days or less, with a fixed price agreed before work starts.</p>
+                  <p><a href="../index.html#package">Compare the packages</a></p>
+                </div>
+
               </div>
             </article>
 
             <nav class="blog-post-nav" aria-label="Adjacent posts">
-              <a href="post-06.html" class="blog-post-nav-link prev">← Blog post 6</a>
-              <a href="post-08.html" class="blog-post-nav-link next">Blog post 8 →</a>
+              <a href="post-06.html" class="blog-post-nav-link prev">&larr; Writing an AI usage policy</a>
+              <a href="post-08.html" class="blog-post-nav-link next">Matching AI models to jobs &rarr;</a>
             </nav>
 
-            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">← Back to blog</a></p>
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
           </div>
         </div>
       </div>
@@ -121,7 +288,7 @@
   <a href="../index.html#package" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
     <span class="floating-cta-text">
       <strong>Choose your package</strong>
-      <small>Fixed price · live in 30 days</small>
+      <small>Fixed price &middot; live in 30 days</small>
     </span>
     <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
   </a>
@@ -130,7 +297,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-6 footer-about">
-          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI — home">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
             <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
             <span class="sitename">Get Working With AI</span>
           </a>
