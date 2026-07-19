@@ -1,0 +1,22 @@
+{
+  "name": "Getting Started With AI",
+  "short_name": "GSWAI",
+  "description": "Stress-free AI implementation for business. $2k consultation or $10k full setup.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d1b2a",
+  "lang": "en-AU",
+  "icons": [
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
