@@ -19,33 +19,40 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
-   * Floating CTA — appears once the hero button has scrolled above the
-   * viewport, hides again over the packages section where it would only
-   * duplicate the buttons already on screen.
+   * Floating CTA — on the home page, appears once the hero button has
+   * scrolled above the viewport and hides over the packages section.
+   * On other pages (e.g. blog posts) with no hero CTA, stay visible.
    */
   const floatingCta = document.querySelector('#floatingCta');
   const heroCta = document.querySelector('#heroCta');
   const packages = document.querySelector('#package');
 
-  if (floatingCta && heroCta) {
-    const update = () => {
-      const heroPassed = heroCta.getBoundingClientRect().bottom < 0;
-      let overPackages = false;
-
-      if (packages) {
-        const p = packages.getBoundingClientRect();
-        overPackages = p.top < window.innerHeight && p.bottom > 0;
-      }
-
-      const show = heroPassed && !overPackages;
+  if (floatingCta) {
+    const setVisible = (show) => {
       floatingCta.classList.toggle('is-visible', show);
       floatingCta.setAttribute('aria-hidden', show ? 'false' : 'true');
       floatingCta.setAttribute('tabindex', show ? '0' : '-1');
     };
 
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
+    if (heroCta) {
+      const update = () => {
+        const heroPassed = heroCta.getBoundingClientRect().bottom < 0;
+        let overPackages = false;
+
+        if (packages) {
+          const p = packages.getBoundingClientRect();
+          overPackages = p.top < window.innerHeight && p.bottom > 0;
+        }
+
+        setVisible(heroPassed && !overPackages);
+      };
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    } else {
+      setVisible(true);
+    }
   }
 
   /**
