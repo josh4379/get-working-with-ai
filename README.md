@@ -2,9 +2,13 @@
 
 Marketing site for **[gettingstartedwithai.com](https://gettingstartedwithai.com)** — stress-free AI implementation for business.
 
-## Offer
+## Offers
 
-**$10,000 fixed package** — live in 30 days or less:
+### $2,000 — Initial consultation
+Expert clarity before a full rollout: 1:1 deep-dive, readiness assessment, provider/model direction, cost-control guidance, recommended next steps, and a written summary for stakeholders.
+
+### $10,000 — Full implementation
+Live in 30 days or less:
 
 - 1:1 discovery (Teams / Zoom)
 - AI provider setup and org implementation plan
