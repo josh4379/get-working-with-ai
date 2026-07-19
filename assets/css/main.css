@@ -163,11 +163,14 @@ h6 {
   margin-right: 8px;
 }
 
-.header .logo h1 {
-  font-size: 30px;
+.header .logo h1,
+.header .logo .sitename {
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
   margin: 0;
-  font-weight: 400;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: var(--heading-color);
+  line-height: 1.1;
 }
 
 .scrolled .header {
@@ -4277,14 +4280,92 @@ section,
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-/* Header logo pop */
+/* Header brand mark — big name + angled squiggly underline */
+.header .logo {
+  align-items: center;
+  text-decoration: none;
+}
+
+.header .logo .logo-mark {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  padding-bottom: 0.35rem;
+}
+
 .header .logo .sitename {
+  font-family: var(--heading-font);
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
   color: var(--navy);
+  line-height: 1.05;
+  white-space: nowrap;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.header .logo .logo-scribble {
+  display: block;
+  width: 100%;
+  max-width: 15.5rem;
+  height: 0.85rem;
+  margin-top: 0.12rem;
+  color: var(--accent-color);
+  transform: rotate(-3.5deg) translateX(0.15rem);
+  transform-origin: left center;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.header .logo .logo-scribble path {
+  stroke: currentColor;
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  /* hand-drawn feel */
+  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--accent-deep), transparent 70%));
 }
 
 .header .logo:hover .sitename {
-  color: var(--accent-color);
+  color: var(--accent-deep);
 }
+
+.header .logo:hover .logo-scribble {
+  color: var(--accent-deep);
+  transform: rotate(-2deg) translateX(0.2rem) scaleX(1.02);
+  transition: transform 0.3s ease, color 0.25s ease;
+}
+
+.header .logo .logo-scribble {
+  transition: transform 0.3s ease, color 0.25s ease;
+}
+
+/* Slightly tighter header padding so larger logo still fits */
+.header {
+  padding: 18px 0;
+}
+
+@media (max-width: 575.98px) {
+  .header .logo .sitename {
+    font-size: 1.35rem;
+    white-space: normal;
+    max-width: 11.5rem;
+  }
+  .header .logo .logo-scribble {
+    max-width: 11rem;
+    height: 0.7rem;
+  }
+}
+
+/* Footer name stays quieter — no scribble */
+.footer .logo .sitename {
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
 
 /* CTA conclusion band */
 .portfolio-conclusion {
