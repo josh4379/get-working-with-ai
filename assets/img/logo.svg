@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 64" role="img" aria-labelledby="title desc">
+  <title id="title">Get Working With AI</title>
+  <desc id="desc">The Get Working With AI wordmark with an open gateway and rising path.</desc>
+  <g transform="translate(2 2) scale(.92)">
+    <path d="M9 53V29C9 16.85 18.85 7 31 7h7c12.15 0 22 9.85 22 22v24"
+          fill="none" stroke="#173F35" stroke-width="7" stroke-linecap="round"/>
+    <path d="M12 58c18.5-8.2 15.25-21.9 34-29.25"
+          fill="none" stroke="#173F35" stroke-width="7" stroke-linecap="round"/>
+    <path d="M45 16.25c.9 3.35 2.65 5.1 6 6-3.35.9-5.1 2.65-6 6-.9-3.35-2.65-5.1-6-6 3.35-.9 5.1-2.65 6-6Z"
+          fill="#B8683C"/>
+  </g>
+  <text x="70" y="44" fill="#122820"
+        font-family="Space Grotesk, Inter, system-ui, sans-serif"
+        font-size="34" font-weight="700" letter-spacing="-1.4">Get Working With AI</text>
+</svg>

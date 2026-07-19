@@ -19,6 +19,36 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
+   * Floating CTA — appears once the hero button has scrolled above the
+   * viewport, hides again over the packages section where it would only
+   * duplicate the buttons already on screen.
+   */
+  const floatingCta = document.querySelector('#floatingCta');
+  const heroCta = document.querySelector('#heroCta');
+  const packages = document.querySelector('#package');
+
+  if (floatingCta && heroCta) {
+    const update = () => {
+      const heroPassed = heroCta.getBoundingClientRect().bottom < 0;
+      let overPackages = false;
+
+      if (packages) {
+        const p = packages.getBoundingClientRect();
+        overPackages = p.top < window.innerHeight && p.bottom > 0;
+      }
+
+      const show = heroPassed && !overPackages;
+      floatingCta.classList.toggle('is-visible', show);
+      floatingCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+      floatingCta.setAttribute('tabindex', show ? '0' : '-1');
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  /**
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -65,27 +95,6 @@
       preloader.remove();
     });
   }
-
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
 
   /**
    * Animation on scroll function and init

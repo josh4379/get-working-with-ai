@@ -1,0 +1,1908 @@
+/**
+* Get Working With AI — brand theme layer
+* Loaded after main.css. Everything brand-specific lives here so the
+* underlying Axis template stays untouched and this file can be dropped
+* or swapped without unpicking the base stylesheet.
+*/
+
+/*--------------------------------------------------------------
+# Tokens — Distinctive but professional
+# Deep green #173F35 · Sage #DDE9E3 · Cream #F8F6F0 · Copper #B8683C
+--------------------------------------------------------------*/
+:root {
+  /* Green ramp */
+  --gw-green: #173F35;          /* deep green — primary */
+  --gw-green-deep: #0F2B24;     /* deeper green for hover/emphasis */
+  --gw-green-mid: #2A6151;      /* lifted green — the light end of the ramp */
+  --gw-green-bright: #2F6B58;   /* success / live dots / checks */
+
+  /* Copper accent */
+  --gw-copper: #B8683C;
+  --gw-copper-light: #CE8659;   /* the light end of the copper ramp */
+  --gw-copper-deep: #9A5228;
+  --gw-copper-alt: #B8683C;
+
+  /* Ink — green-tinted neutrals */
+  --gw-ink: #122820;
+  --gw-ink-soft: #4A5F57;
+  --gw-ink-faint: #7A9088;
+
+  /* Surfaces */
+  --gw-white: #ffffff;
+  --gw-cream: #F8F6F0;
+  --gw-tint: #DDE9E3;          /* sage */
+  --gw-tint-deep: #C8D9D0;
+  --gw-line: #C5D6CE;
+
+  /* ------------------------------------------------------------------
+     Gradients.
+
+     Green and copper sit on opposite sides of the hue wheel, so blending
+     them directly runs the midpoint through olive — the muddy band you
+     get from a straight sRGB interpolation. Two rules avoid it:
+
+     1. Linear ramps stay within one hue family (green→green, copper→copper)
+        and carry the transition in lightness rather than hue.
+     2. Where the two colours must meet, copper arrives as a radial bloom
+        layered over green rather than as a linear stop. The blend then
+        happens through the light end of both ramps, which reads as a warm
+        glow instead of a dead midpoint.
+
+     Interpolation is upgraded to oklab further down, under @supports.
+     ------------------------------------------------------------------ */
+  --gw-grad: linear-gradient(118deg, #0F2B24 0%, #1B4438 45%, #2A6151 100%);
+  --gw-grad-copper: linear-gradient(118deg, var(--gw-copper-light) 0%, var(--gw-copper) 55%, var(--gw-copper-deep) 100%);
+
+  /* Green base with a copper bloom in one corner — the "green to copper" blend */
+  --gw-grad-warm:
+    radial-gradient(115% 135% at 90% 8%, rgba(206, 134, 89, 0.62) 0%, rgba(184, 104, 60, 0.28) 32%, rgba(184, 104, 60, 0) 62%),
+    linear-gradient(118deg, #0F2B24 0%, #1B4438 48%, #2A6151 100%);
+
+  /* Tinted pill/eyebrow fill. Safe to blend directly: at this opacity both
+     sit on cream, so neither reaches the saturation where mud appears. */
+  --gw-grad-soft: linear-gradient(112deg, rgba(23, 63, 53, 0.10) 0%, rgba(184, 104, 60, 0.09) 100%);
+
+  /* Elevation — tinted toward deep green, not cool blue */
+  --gw-shadow-sm: 0 1px 2px rgba(18, 40, 32, 0.04), 0 2px 8px -4px rgba(23, 63, 53, 0.14);
+  --gw-shadow: 0 1px 2px rgba(18, 40, 32, 0.04), 0 12px 28px -14px rgba(23, 63, 53, 0.22);
+  --gw-shadow-lg: 0 2px 4px rgba(18, 40, 32, 0.05), 0 28px 56px -24px rgba(23, 63, 53, 0.28);
+  --gw-radius: 16px;
+  --gw-radius-lg: 22px;
+
+  /* Remap the template's own variables so inherited rules recolour for free */
+  --default-color: var(--gw-ink-soft);
+  --heading-color: var(--gw-ink);
+  --accent-color: var(--gw-green);
+  --background-color: var(--gw-cream);
+  --surface-color: var(--gw-white);
+  --nav-color: #556B62;
+  --nav-hover-color: var(--gw-green);
+  --nav-dropdown-hover-color: var(--gw-green);
+
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-font: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --nav-font: "Inter", system-ui, sans-serif;
+}
+
+/* Perceptual interpolation where supported — keeps the ramps even in
+   lightness instead of bunching up in the middle. Declared separately so
+   browsers without oklab keep the sRGB tokens above rather than dropping
+   the custom property entirely. */
+@supports (background: linear-gradient(in oklab, red, blue)) {
+  :root {
+    --gw-grad: linear-gradient(118deg in oklab, #0F2B24 0%, #1B4438 45%, #2A6151 100%);
+    --gw-grad-copper: linear-gradient(118deg in oklab, var(--gw-copper-light) 0%, var(--gw-copper) 55%, var(--gw-copper-deep) 100%);
+    --gw-grad-warm:
+      radial-gradient(115% 135% at 90% 8%, rgba(206, 134, 89, 0.62) 0%, rgba(184, 104, 60, 0.28) 32%, rgba(184, 104, 60, 0) 62%),
+      linear-gradient(118deg in oklab, #0F2B24 0%, #1B4438 48%, #2A6151 100%);
+    --gw-grad-soft: linear-gradient(112deg in oklab, rgba(23, 63, 53, 0.10) 0%, rgba(184, 104, 60, 0.09) 100%);
+  }
+}
+
+.light-background {
+  --background-color: var(--gw-tint);
+  --surface-color: var(--gw-white);
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+body {
+  background-color: var(--gw-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.028em;
+  font-weight: 600;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gw-green), transparent 78%);
+  color: var(--gw-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gw-green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+strong {
+  color: var(--gw-ink);
+  font-weight: 650;
+}
+
+/* Gradient keyword treatment for headline emphasis */
+.gw-grad-text {
+  background: var(--gw-grad-copper);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*--------------------------------------------------------------
+# Icons
+# Sprite symbols are hand-authored on a 24px grid. Stroke geometry lives
+# here rather than on each symbol so one rule controls weight everywhere,
+# and `vector-effect: non-scaling-stroke` keeps that weight identical
+# whether the icon renders at 16px or 32px.
+--------------------------------------------------------------*/
+:root {
+  --ic-question: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M9.4 9.3a2.7 2.7 0 0 1 5.2.9c0 1.8-2.6 2.3-2.6 3.8'/%3E%3Cpath d='M12 17.2h.02'/%3E%3C/svg%3E");
+  --ic-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12h14.5'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E");
+}
+
+.ic {
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: -0.22em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ic use,
+.ic path,
+.ic circle,
+.ic rect {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Large icon tiles carry a slightly lighter stroke so they don't read heavy */
+.service-item .service-icon .ic,
+.why-us .icon-wrapper .ic,
+.contact .info-item .info-icon .ic,
+.hero .hero-image .floating-card .card-icon .ic,
+.about .image-wrapper .floating-card .card-content .icon .ic {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.5;
+}
+
+.contact .contact-details .detail-icon .ic {
+  width: 21px;
+  height: 21px;
+}
+
+/* Icon tiles: green by default, white once the tile fills on hover */
+.service-item .service-icon .ic {
+  stroke: var(--gw-green);
+}
+
+.service-item:hover .service-icon .ic {
+  stroke: #fff;
+}
+
+.why-us .icon-wrapper .ic {
+  stroke: var(--gw-green);
+}
+
+.why-us .feature-item:hover .icon-wrapper .ic {
+  stroke: #fff;
+}
+
+.service-item ul.list-unstyled li .ic {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 19px;
+  height: 19px;
+  stroke: var(--gw-copper);
+  stroke-width: 1.7;
+}
+
+/*--------------------------------------------------------------
+# Mobile nav toggle — drawn in CSS so the icon webfont is not needed
+# for a single glyph. Driven by body.mobile-nav-active, which main.js
+# already toggles.
+--------------------------------------------------------------*/
+.mobile-nav-toggle.bi {
+  display: block;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  font-size: 0 !important;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.mobile-nav-toggle.bi::before,
+.mobile-nav-toggle.bi::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gw-ink);
+  transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.mobile-nav-toggle.bi::before { top: 9px; }
+.mobile-nav-toggle.bi::after { top: 16px; }
+
+.mobile-nav-active .mobile-nav-toggle.bi::before {
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+.mobile-nav-active .mobile-nav-toggle.bi::after {
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+/*--------------------------------------------------------------
+# Header / nav
+--------------------------------------------------------------*/
+.header {
+  padding: 18px 0;
+}
+
+.header .logo .site-logo {
+  display: block;
+  width: clamp(205px, 18vw, 235px);
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+
+.scrolled .header::before {
+  background: color-mix(in srgb, var(--gw-cream), transparent 12%);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+}
+
+.scrolled .header {
+  border-bottom: 1px solid var(--gw-line);
+  box-shadow: 0 4px 24px -18px rgba(18, 40, 32, 0.45);
+}
+
+@media (min-width: 1200px) {
+  .navmenu > ul > li > a {
+    font-size: 0.94rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: var(--nav-color);
+    position: relative;
+  }
+
+  .navmenu > ul > li > a::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gw-grad);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s ease;
+  }
+
+  .navmenu > ul > li > a:hover::before,
+  .navmenu > ul > li > a.active::before {
+    transform: scaleX(1);
+  }
+
+  .navmenu > ul > li > a.active {
+    color: var(--gw-ink);
+    font-weight: 600;
+  }
+
+  /* Last nav item becomes the standing CTA. Scoped to the home page: on the
+     policy pages the last item is "Terms", which should not read as a CTA. */
+  .navmenu > ul > li > a.nav-cta {
+    margin-left: 10px;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: var(--gw-grad);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--gw-green), transparent 30%);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .navmenu > ul > li > a.nav-cta::before {
+    display: none;
+  }
+
+  .navmenu > ul > li > a.nav-cta:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px -8px color-mix(in srgb, var(--gw-green), transparent 20%);
+  }
+}
+
+.mobile-nav-toggle {
+  color: var(--gw-ink);
+}
+
+/*--------------------------------------------------------------
+# Sections & titles
+--------------------------------------------------------------*/
+section,
+.section {
+  padding: 96px 0;
+}
+
+@media (max-width: 768px) {
+  section,
+  .section {
+    padding: 68px 0;
+  }
+}
+
+.section-title {
+  padding-bottom: 56px;
+}
+
+.section-title h2 {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.1rem;
+  text-wrap: balance;
+}
+
+.section-title .subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 12px;
+  border-radius: 999px;
+  background: var(--gw-grad-soft);
+  border: 1px solid color-mix(in srgb, var(--gw-green), transparent 86%);
+  color: var(--gw-green-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.section-title .subtitle::after {
+  display: none;
+}
+
+.section-title .subtitle::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gw-grad);
+  flex-shrink: 0;
+}
+
+.section-title p {
+  color: var(--gw-ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 720px;
+}
+
+/*--------------------------------------------------------------
+# Hero
+--------------------------------------------------------------*/
+.hero {
+  padding: clamp(3rem, 7vh, 6rem) 0 clamp(4rem, 9vh, 7rem);
+  background: linear-gradient(180deg, var(--gw-cream) 0%, var(--gw-tint) 55%, var(--gw-cream) 100%);
+  isolation: isolate;
+}
+
+/* Ambient mesh — two soft brand blooms, kept low-opacity so the page stays light */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 120%;
+  background:
+    radial-gradient(52% 46% at 84% 12%, rgba(184, 104, 60, 0.20) 0%, rgba(184, 104, 60, 0.07) 42%, transparent 72%),
+    radial-gradient(48% 44% at 8% 34%, rgba(42, 97, 81, 0.16) 0%, rgba(42, 97, 81, 0.05) 45%, transparent 74%),
+    radial-gradient(54% 48% at 46% 96%, rgba(23, 63, 53, 0.10) 0%, transparent 70%);
+  z-index: -2;
+  pointer-events: none;
+  display: block;
+}
+
+/* Engineering grid, faded at the edges */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--gw-green), transparent 93%) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--gw-green), transparent 93%) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
+  mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Eyebrow becomes a status pill */
+.hero .hero-content > p:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 16px 7px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid color-mix(in srgb, var(--gw-green), transparent 84%);
+  box-shadow: var(--gw-shadow-sm);
+  backdrop-filter: blur(8px);
+  color: var(--gw-green-deep);
+  opacity: 1 !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.hero .hero-content > p:first-child::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gw-green-bright);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gw-green-bright), transparent 78%);
+  animation: gw-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes gw-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--gw-green-bright), transparent 78%); }
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--gw-green-bright), transparent 92%); }
+}
+
+.hero .hero-content h1 {
+  font-size: clamp(2.4rem, 1.5rem + 3.4vw, 3.9rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 1.4rem;
+  text-wrap: balance;
+}
+
+.hero .hero-content p {
+  font-size: 1.14rem;
+  line-height: 1.72;
+  color: var(--gw-ink-soft);
+  margin-bottom: 2.4rem;
+  max-width: 34rem;
+}
+
+/* Buttons */
+.hero .hero-cta .btn-primary,
+.about .cta-section .btn-outline,
+.portfolio-conclusion .primary-action,
+.submit-btn {
+  background: var(--gw-grad);
+  background-size: 160% 100%;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  box-shadow: 0 10px 26px -10px color-mix(in srgb, var(--gw-green), transparent 25%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.5s ease;
+}
+
+.hero .hero-cta .btn-primary:hover,
+.about .cta-section .btn-outline:hover,
+.portfolio-conclusion .primary-action:hover,
+.submit-btn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  background-position: 100% 0;
+  box-shadow: 0 16px 34px -12px color-mix(in srgb, var(--gw-green), transparent 12%);
+}
+
+.hero .hero-cta .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--gw-line);
+  color: var(--gw-ink);
+  font-weight: 600;
+  box-shadow: var(--gw-shadow-sm);
+  backdrop-filter: blur(8px);
+}
+
+.hero .hero-cta .btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--gw-green), transparent 70%);
+  color: var(--gw-green-deep);
+  box-shadow: var(--gw-shadow);
+}
+
+.hero .hero-cta .btn-secondary .ic {
+  font-size: 1.15rem;
+  color: var(--gw-green);
+}
+
+/* Hero stats as a hairline-divided strip */
+.hero .hero-stats {
+  gap: 0;
+  border-top: 1px solid var(--gw-line);
+  padding-top: 1.75rem;
+}
+
+.hero .hero-stats .stat-item {
+  flex: 1;
+  padding-right: 1.5rem;
+}
+
+.hero .hero-stats .stat-item + .stat-item {
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--gw-line);
+}
+
+.hero .hero-stats .stat-item .stat-number {
+  font-family: var(--heading-font);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  background: var(--gw-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero .hero-stats .stat-item .stat-label {
+  color: var(--gw-ink-faint);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 576px) {
+  .hero .hero-stats {
+    flex-direction: row;
+  }
+
+  .hero .hero-stats .stat-item {
+    padding-right: 0.75rem;
+  }
+
+  .hero .hero-stats .stat-item + .stat-item {
+    padding-left: 0.9rem;
+  }
+
+  .hero .hero-stats .stat-item .stat-number {
+    font-size: 1.25rem;
+  }
+}
+
+/* Hero image: gradient-edged frame */
+.hero .hero-image {
+  padding: 10px;
+  border-radius: var(--gw-radius-lg);
+  background: linear-gradient(150deg, rgba(23, 63, 53, 0.20) 0%, rgba(42, 97, 81, 0.14) 55%, rgba(184, 104, 60, 0.18) 100%);
+  box-shadow: var(--gw-shadow-lg);
+}
+
+.hero .hero-image img {
+  border-radius: 16px;
+  box-shadow: none;
+  display: block;
+  width: 100%;
+}
+
+.hero .hero-image .floating-card,
+.about .image-wrapper .floating-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  box-shadow: var(--gw-shadow-lg);
+}
+
+.hero .hero-image .floating-card {
+  bottom: 28px;
+  left: -12px;
+}
+
+.hero .hero-image .floating-card .card-icon {
+  background: var(--gw-grad);
+  border-radius: 11px;
+}
+
+.hero .hero-image .floating-card .card-icon .ic {
+  color: #fff;
+}
+
+.hero .hero-image .floating-card .card-content .growth-percentage {
+  color: var(--gw-green-bright);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .hero .hero-image {
+    margin-top: 3rem;
+  }
+
+  .hero .hero-image .floating-card {
+    left: 12px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.about .content .lead {
+  font-size: 1.1rem;
+  color: var(--gw-ink);
+  font-weight: 500;
+}
+
+.about .content p {
+  line-height: 1.78;
+}
+
+.about .stats-row {
+  display: flex;
+  gap: 1rem;
+  margin: 2.25rem 0;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--gw-line);
+  border-bottom: 1px solid var(--gw-line);
+}
+
+.about .stats-row .stat-item {
+  flex: 1;
+}
+
+.about .stats-row .stat-item .stat-number {
+  font-family: var(--heading-font);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: var(--gw-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about .stats-row .stat-item .stat-label {
+  color: var(--gw-ink-faint);
+  font-size: 0.84rem;
+}
+
+.about .image-wrapper {
+  padding: 10px;
+  border-radius: var(--gw-radius-lg);
+  background: linear-gradient(150deg, rgba(184, 104, 60, 0.20) 0%, rgba(42, 97, 81, 0.13) 60%, rgba(23, 63, 53, 0.16) 100%);
+  box-shadow: var(--gw-shadow-lg);
+}
+
+.about .image-wrapper img {
+  border-radius: 16px;
+  display: block;
+  width: 100%;
+}
+
+.about .image-wrapper .floating-card .card-content .icon {
+  background: var(--gw-grad);
+  border-radius: 11px;
+}
+
+.about .image-wrapper .floating-card .card-content .icon .ic {
+  color: #fff;
+}
+
+/* The template centres the whole About block below 992px. Centred body
+   copy is hard to read at length — headings stay centred, prose does not. */
+@media (max-width: 992px) {
+  .about .row,
+  .about .content {
+    text-align: left;
+  }
+}
+
+/*--------------------------------------------------------------
+# Cards — scoped to the component, not the section.
+# The base template only styles `.services .service-item`, which left the
+# package cards, the FAQ cards and the CTA panel unstyled.
+--------------------------------------------------------------*/
+.service-item {
+  padding: 40px 34px;
+  background-color: var(--gw-white);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--gw-shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gw-grad);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--gw-green), transparent 78%);
+  box-shadow: var(--gw-shadow-lg);
+}
+
+.service-item:hover::before {
+  transform: scaleX(1);
+}
+
+.service-item .service-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  background: var(--gw-grad-soft);
+  border: 1px solid color-mix(in srgb, var(--gw-green), transparent 86%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.service-item .service-icon .ic {
+  font-size: 26px;
+  background: var(--gw-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: color 0.35s ease;
+}
+
+.service-item:hover .service-icon {
+  transform: translateY(-2px) scale(1.04);
+  background: var(--gw-grad);
+  border-color: transparent;
+}
+
+.service-item:hover .service-icon .ic {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: #fff;
+}
+
+.service-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.service-item p {
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--gw-ink-soft);
+  margin-bottom: 20px;
+}
+
+.service-item .service-link {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--gw-green), transparent 94%);
+  color: var(--gw-green-deep);
+  font-weight: 600;
+  font-size: 0.94rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.service-item .service-link .ic {
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-link {
+  background: var(--gw-grad);
+  color: #fff;
+}
+
+.service-item:hover .service-link .ic {
+  transform: translateX(5px);
+}
+
+/* Buy CTA on the package cards. The card's primary action is now a
+   purchase, so it gets full-width weight and a secondary text link
+   underneath for people who are not ready to commit. */
+.service-item .service-link.is-buy {
+  width: 100%;
+  justify-content: center;
+  padding: 15px 24px;
+  background: var(--gw-grad);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 10px 24px -12px rgba(23, 63, 53, 0.7);
+}
+
+.service-item .service-link.is-buy:hover,
+.service-item:hover .service-link.is-buy {
+  background: var(--gw-grad);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -14px rgba(23, 63, 53, 0.8);
+}
+
+.service-item .service-alt {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gw-ink-faint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--gw-ink-faint), transparent 60%);
+  transition: color 0.25s ease;
+}
+
+.service-item .service-alt:hover {
+  color: var(--gw-copper-deep);
+}
+
+.portfolio-conclusion .inline-link {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Checklists inside the package cards */
+/* Absolutely positioned marker rather than flex: a flex li promotes every
+   inline child to a flex item, which pushed any mid-sentence <strong> onto
+   its own column. */
+.service-item ul.list-unstyled li {
+  display: block;
+  position: relative;
+  padding-left: 29px;
+  line-height: 1.6;
+  color: var(--gw-ink-soft);
+}
+
+.service-item ul.list-unstyled li .ic {
+  margin: 0 !important;
+  flex-shrink: 0;
+  margin-top: 3px !important;
+  color: var(--gw-green-bright);
+  font-size: 1.05rem;
+}
+
+/* Package section: the second card is the flagship */
+#package .col-lg-6:nth-child(2) .service-item {
+  border-color: color-mix(in srgb, var(--gw-green), transparent 72%);
+  box-shadow: var(--gw-shadow);
+}
+
+/* A pill inside the card bounds. The previous corner ribbon was rotated out
+   past the card edge and the card's own overflow:hidden clipped its ends. */
+#package .col-lg-6:nth-child(2) .service-item::after {
+  content: "Most complete";
+  position: absolute;
+  top: clamp(14px, 2vh, 20px);
+  right: clamp(14px, 1.4vw, 20px);
+  background: var(--gw-grad-copper);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px -4px rgba(154, 82, 40, 0.55);
+}
+
+/* The "Package 1 / Package 2" eyebrows */
+#package .service-item > p.text-uppercase {
+  color: var(--gw-green-deep);
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/*--------------------------------------------------------------
+# Services grid
+--------------------------------------------------------------*/
+.services {
+  background: linear-gradient(180deg, var(--gw-cream) 0%, var(--gw-tint) 100%);
+}
+
+/* The base template styles `.services .service-item .service-icon` at higher
+   specificity than the component rule above, which left a dark green icon on a
+   dark green tile — invisible until hover turned the glyph white. Match that
+   specificity so the tile treatment is the same in every section. */
+.services .service-item .service-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  background: var(--gw-grad-soft);
+  border: 1px solid color-mix(in srgb, var(--gw-green), transparent 86%);
+  margin-bottom: 24px;
+}
+
+.services .service-item .service-icon .ic {
+  width: 26px;
+  height: 26px;
+  stroke: var(--gw-green);
+}
+
+.services .service-item:hover .service-icon {
+  background: var(--gw-grad);
+  border-color: transparent;
+}
+
+.services .service-item:hover .service-icon .ic {
+  stroke: #fff;
+}
+
+/*--------------------------------------------------------------
+# Header blended into the hero
+# The header is taken out of flow and laid over the top of the hero so the
+# hero's gradient and grid run behind it — no seam where two different
+# backgrounds meet. It is absolute, not fixed, so it still scrolls away.
+--------------------------------------------------------------*/
+.index-page .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: transparent;
+}
+
+.index-page .hero {
+  padding-top: clamp(7.5rem, 8rem + 4vh, 11rem);
+}
+
+@media (max-width: 991px) {
+  .index-page .hero {
+    padding-top: 7rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Process (How it works)
+--------------------------------------------------------------*/
+.why-us .features-grid {
+  margin-top: 0;
+  position: relative;
+}
+
+.why-us .feature-item {
+  flex-direction: column;
+  gap: 18px;
+  padding: 32px 26px;
+  background: var(--gw-white);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius);
+  height: 100%;
+  box-shadow: var(--gw-shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.why-us .feature-item:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--gw-green), transparent 78%);
+  box-shadow: var(--gw-shadow-lg);
+}
+
+.why-us .icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--gw-grad-soft);
+  border: 1px solid color-mix(in srgb, var(--gw-green), transparent 86%);
+  color: var(--gw-green);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.why-us .feature-item:hover .icon-wrapper {
+  background: var(--gw-grad);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.why-us .feature-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.why-us .feature-content p {
+  color: var(--gw-ink-soft);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 768px) {
+  .why-us .feature-item {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .why-us .icon-wrapper {
+    margin: 0;
+  }
+}
+
+/* "Not sure which package fits?" panel */
+#package .content.text-center {
+  background: var(--gw-white);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius);
+  padding: 34px 38px;
+  box-shadow: var(--gw-shadow-sm);
+  margin-bottom: 0;
+}
+
+#package .content.text-center h2 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+/*--------------------------------------------------------------
+# CTA panel (portfolio-conclusion) — base styles were scoped to
+# `.portfolio`, which this page never uses.
+--------------------------------------------------------------*/
+.portfolio-conclusion {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--gw-radius-lg);
+  padding: 56px 40px;
+  text-align: center;
+  background: var(--gw-grad-warm);
+  box-shadow: var(--gw-shadow-lg);
+  isolation: isolate;
+}
+
+.portfolio-conclusion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(70% 80% at 50% 0%, #000, transparent 75%);
+  mask-image: radial-gradient(70% 80% at 50% 0%, #000, transparent 75%);
+  z-index: -1;
+}
+
+.portfolio-conclusion .conclusion-content h4 {
+  color: #fff;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.portfolio-conclusion .conclusion-content p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.08rem;
+  max-width: 40rem;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+
+.portfolio-conclusion .conclusion-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Inverted primary — white pill on the gradient panel */
+.portfolio-conclusion .primary-action {
+  background: var(--gw-cream);
+  color: var(--gw-green-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 12px 28px -12px rgba(15, 43, 36, 0.55);
+}
+
+.portfolio-conclusion .primary-action:hover {
+  background: #fff;
+  color: var(--gw-green-deep);
+}
+
+.portfolio-conclusion .primary-action .ic {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-conclusion .primary-action:hover .ic {
+  transform: translateX(5px);
+}
+
+.portfolio-conclusion .secondary-action {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-conclusion .secondary-action:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# FAQ
+--------------------------------------------------------------*/
+#faq .service-item {
+  padding: 30px 30px;
+}
+
+#faq .service-item h3 {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+}
+
+#faq .service-item h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background: var(--gw-grad-copper);
+  -webkit-mask: var(--ic-question) center / 20px 20px no-repeat;
+  mask: var(--ic-question) center / 20px 20px no-repeat;
+}
+
+#faq .service-item p {
+  margin-bottom: 0;
+  padding-left: 30px;
+  font-size: 0.98rem;
+}
+
+/*--------------------------------------------------------------
+# About CTA button
+--------------------------------------------------------------*/
+.about .cta-section .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.about .cta-section .btn-outline::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: var(--ic-arrow) center / 18px 18px no-repeat;
+  mask: var(--ic-arrow) center / 18px 18px no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.about .cta-section .btn-outline:hover::after {
+  transform: translateX(4px);
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info-item {
+  background: var(--gw-white);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius);
+  padding: 28px;
+  box-shadow: var(--gw-shadow-sm);
+  margin-bottom: 20px;
+}
+
+.contact .info-item .info-icon {
+  background: var(--gw-grad);
+  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .info-item .info-icon .ic {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.contact .info-item .info-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact .info-item .info-content p {
+  color: var(--gw-ink-soft);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.contact .contact-details {
+  background: var(--gw-white);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius);
+  padding: 10px 26px;
+  box-shadow: var(--gw-shadow-sm);
+}
+
+.contact .contact-details .detail-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--gw-line);
+}
+
+.contact .contact-details .detail-item:last-child {
+  border-bottom: none;
+}
+
+.contact .contact-details .detail-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--gw-grad-soft);
+  border: 1px solid color-mix(in srgb, var(--gw-green), transparent 86%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gw-green);
+  font-size: 1.15rem;
+}
+
+.contact .contact-details .detail-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .contact-details .detail-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 600;
+  color: var(--gw-ink-faint);
+}
+
+.contact .contact-details .detail-value {
+  color: var(--gw-ink);
+  font-weight: 550;
+}
+
+/* Form */
+.contact .form-wrapper {
+  background: var(--gw-white);
+  border: 1px solid var(--gw-line);
+  border-radius: var(--gw-radius-lg);
+  padding: 36px;
+  box-shadow: var(--gw-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .form-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gw-grad);
+}
+
+.contact .form-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.contact .form-group {
+  margin-bottom: 20px;
+}
+
+.contact .form-wrapper .form-group label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--gw-ink);
+  margin-bottom: 8px;
+}
+
+.contact .form-wrapper .form-group input,
+.contact .form-wrapper .form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--gw-line);
+  border-radius: 11px;
+  background: var(--gw-tint);
+  color: var(--gw-ink);
+  font-family: var(--default-font);
+  font-size: 0.98rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.contact .form-wrapper .form-group input::placeholder,
+.contact .form-wrapper .form-group textarea::placeholder {
+  color: var(--gw-ink-faint);
+}
+
+.contact .form-wrapper .form-group input:focus,
+.contact .form-wrapper .form-group textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--gw-green);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gw-green), transparent 88%);
+}
+
+.contact .submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.contact .submit-btn .ic {
+  transition: transform 0.3s ease;
+}
+
+.contact .submit-btn:hover .ic {
+  transform: translateX(5px);
+}
+
+/*--------------------------------------------------------------
+# Footer — kept light to match the rest of the page
+--------------------------------------------------------------*/
+.footer.dark-background {
+  --background-color: var(--gw-cream);
+  --default-color: var(--gw-ink-soft);
+  --heading-color: var(--gw-ink);
+  --contrast-color: var(--gw-ink);
+  background: var(--gw-cream);
+  color: var(--gw-ink-soft);
+  border-top: 1px solid var(--gw-line);
+  position: relative;
+  padding-top: 64px;
+}
+
+/* Gradient hairline caps the page */
+.footer.dark-background::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gw-grad);
+}
+
+.footer .footer-about .sitename {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--gw-ink);
+}
+
+.footer .footer-about .logo .site-logo {
+  display: block;
+  width: min(255px, 100%);
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+
+.footer .footer-about p {
+  color: var(--gw-ink-soft);
+  line-height: 1.75;
+  max-width: 30rem;
+}
+
+.footer h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--gw-ink-faint);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 18px;
+}
+
+.footer .footer-links ul a {
+  color: var(--gw-ink-soft);
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--gw-green);
+  padding-left: 4px;
+}
+
+.footer .footer-contact p span,
+.footer .footer-contact p strong {
+  color: var(--gw-ink);
+}
+
+.footer .copyright {
+  border-top: 1px solid var(--gw-line);
+  padding-top: 24px;
+  color: var(--gw-ink-faint);
+  font-size: 0.9rem;
+}
+
+.footer .copyright .sitename {
+  color: var(--gw-ink);
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  background-color: var(--gw-cream);
+}
+
+#preloader:before {
+  border-color: var(--gw-green) transparent var(--gw-green) transparent;
+}
+
+/*--------------------------------------------------------------
+# Header in flow
+# The header scrolls away with the page rather than pinning, so the
+# hero no longer needs to reserve space for it and anchor targets no
+# longer need a large scroll offset.
+--------------------------------------------------------------*/
+.header {
+  position: relative;
+  background: transparent;
+}
+
+section,
+.section {
+  scroll-margin-top: 12px;
+}
+
+/*--------------------------------------------------------------
+# Packages — sized to fit the viewport
+# The section is a viewport-height flex column: title, cards, footnote.
+# Card internals are all clamp()-based and scale against viewport height,
+# so both cards fit side by side on desktop and the first card fits whole
+# on a phone, without either overflowing.
+--------------------------------------------------------------*/
+#package {
+  padding-block: clamp(2rem, 4vh, 4rem);
+}
+
+/* The fold: title, both cards, footnote. Sized to the viewport independently
+   of the CTA panel below it, so that panel's height can never push the cards
+   off screen. */
+#package .packages-fold {
+  min-height: calc(100svh - 2 * clamp(2rem, 4vh, 4rem));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* The card row takes the leftover height so the cards grow into the fold
+   rather than the fold padding out around them. */
+#package .packages-fold .packages-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#package .section-title {
+  padding-bottom: clamp(1.25rem, 3.2vh, 2.5rem);
+}
+
+#package .section-title h2 {
+  font-size: clamp(1.65rem, 1rem + 2.1vw, 2.6rem);
+  margin-bottom: clamp(0.4rem, 1vh, 0.9rem);
+}
+
+#package .section-title p {
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.08rem);
+  margin-bottom: 0;
+}
+
+#package .section-title .subtitle {
+  margin-bottom: clamp(0.6rem, 1.4vh, 1.25rem);
+}
+
+#package .service-item {
+  padding: clamp(1.35rem, 2.6vh, 2.25rem) clamp(1.35rem, 2vw, 2.1rem);
+  gap: 0;
+}
+
+#package .service-icon {
+  width: clamp(40px, 5.2vh, 54px);
+  height: clamp(40px, 5.2vh, 54px);
+  margin-bottom: clamp(0.6rem, 1.6vh, 1.1rem);
+  border-radius: 13px;
+}
+
+#package .service-icon .ic {
+  width: clamp(20px, 2.7vh, 26px);
+  height: clamp(20px, 2.7vh, 26px);
+}
+
+#package .pkg-eyebrow {
+  margin: 0 0 4px;
+  font-size: clamp(0.68rem, 0.62rem + 0.16vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gw-copper-deep);
+}
+
+#package .service-item h3 {
+  font-size: clamp(1.15rem, 0.95rem + 0.75vw, 1.5rem);
+  margin-bottom: 3px;
+}
+
+#package .pkg-meta {
+  margin: 0 0 clamp(0.45rem, 1.1vh, 0.8rem);
+  font-size: clamp(0.82rem, 0.78rem + 0.15vw, 0.92rem);
+  font-weight: 600;
+  color: var(--gw-ink-faint);
+}
+
+#package .pkg-lead {
+  margin: 0 0 clamp(0.7rem, 1.6vh, 1.15rem);
+  font-size: clamp(0.92rem, 0.86rem + 0.24vw, 1.05rem);
+  line-height: 1.5;
+  color: var(--gw-ink);
+  font-weight: 500;
+}
+
+#package .service-item ul.list-unstyled {
+  margin: 0 0 clamp(0.9rem, 2vh, 1.5rem);
+  max-width: none;
+  display: grid;
+  gap: clamp(0.3rem, 0.9vh, 0.6rem);
+}
+
+#package .service-item ul.list-unstyled li {
+  margin: 0;
+  font-size: clamp(0.86rem, 0.82rem + 0.2vw, 0.98rem);
+  line-height: 1.45;
+  padding-left: 27px;
+}
+
+#package .service-item ul.list-unstyled li .ic {
+  width: clamp(16px, 2vh, 19px);
+  height: clamp(16px, 2vh, 19px);
+  top: 1px;
+}
+
+#package .service-link.is-buy {
+  margin-top: auto;
+  padding: clamp(11px, 1.7vh, 15px) 24px;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+}
+
+#package .packages-footnote {
+  margin: clamp(0.9rem, 2.2vh, 1.6rem) 0 0;
+  text-align: center;
+  font-size: clamp(0.82rem, 0.78rem + 0.16vw, 0.92rem);
+  color: var(--gw-ink-faint);
+}
+
+#package .packages-footnote a {
+  color: var(--gw-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* The closing CTA panel and the comparison note live below the fold on
+   purpose — the fold itself belongs to the two cards. */
+#package .portfolio-conclusion {
+  margin-top: clamp(2.5rem, 6vh, 5rem);
+}
+
+@media (max-width: 991px) {
+  /* One whole card per screen. Cards keep their natural height — the fold
+     only needs to guarantee the first one clears the bottom of the screen,
+     so the intro is what gets compressed, not the card. */
+  #package .packages-fold {
+    min-height: 0;
+  }
+
+  #package .section-title p {
+    display: none;
+  }
+
+  #package .section-title {
+    padding-bottom: 1rem;
+  }
+
+  #package .section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  #package .section-title .subtitle {
+    margin-bottom: 0.55rem;
+  }
+
+  #package .service-item {
+    padding: 1.25rem 1.25rem;
+  }
+
+  #package .pkg-lead {
+    margin-bottom: 0.7rem;
+  }
+
+  #package .service-item ul.list-unstyled {
+    margin-bottom: 0.9rem;
+    gap: 0.4rem;
+  }
+
+  #package .packages-footnote {
+    margin-top: 1.1rem;
+  }
+}
+
+/* Short viewports (laptops at 1280x600-800, phones in landscape). The
+   clamp() ramps alone are not enough headroom, so the section intro sheds
+   its descriptive paragraph and the card internals tighten further. The
+   cards keep priority over the prose — fitting the fold is the point. */
+@media (min-width: 992px) and (max-height: 820px) {
+  #package {
+    padding-block: 1.25rem;
+  }
+
+  #package .packages-fold {
+    min-height: calc(100svh - 2.5rem);
+  }
+
+  #package .section-title p {
+    display: none;
+  }
+
+  #package .section-title {
+    padding-bottom: 0.85rem;
+  }
+
+  #package .section-title h2 {
+    font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2rem);
+  }
+
+  #package .section-title .subtitle {
+    margin-bottom: 0.5rem;
+    padding: 4px 13px 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  #package .service-item {
+    padding: 1.15rem 1.3rem;
+  }
+
+  #package .service-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.5rem;
+    border-radius: 11px;
+  }
+
+  #package .service-icon .ic {
+    width: 19px;
+    height: 19px;
+  }
+
+  #package .service-item h3 {
+    font-size: 1.15rem;
+  }
+
+  #package .pkg-lead {
+    margin-bottom: 0.6rem;
+    font-size: 0.92rem;
+  }
+
+  #package .service-item ul.list-unstyled {
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
+  }
+
+  #package .service-item ul.list-unstyled li {
+    font-size: 0.86rem;
+    line-height: 1.4;
+  }
+
+  #package .service-link.is-buy {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  #package .packages-footnote {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Very short desktop viewports: drop the footnote too. */
+@media (min-width: 992px) and (max-height: 640px) {
+  #package .packages-footnote {
+    display: none;
+  }
+
+  #package .pkg-lead {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Floating CTA
+# Mirrors the hero button once it scrolls out of view. Visibility is
+# driven by .is-visible from main.js; everything else is CSS so it
+# degrades to simply never appearing if scripting is off.
+--------------------------------------------------------------*/
+.floating-cta {
+  position: fixed;
+  right: clamp(16px, 2.5vw, 32px);
+  bottom: clamp(16px, 2.5vw, 32px);
+  z-index: 996;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  background: var(--gw-grad);
+  color: #fff;
+  box-shadow: 0 14px 34px -12px rgba(15, 43, 36, 0.62);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.97);
+  transition: opacity 0.32s ease, transform 0.32s ease, visibility 0.32s;
+  pointer-events: none;
+}
+
+.floating-cta.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+
+.floating-cta:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -12px rgba(15, 43, 36, 0.7);
+}
+
+.floating-cta-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.floating-cta-text strong {
+  color: #fff;
+  font-weight: 650;
+  font-size: 0.98rem;
+}
+
+.floating-cta-text small {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.floating-cta .ic {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+}
+
+@media (max-width: 575px) {
+  /* Full-width bar on phones */
+  .floating-cta {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+}
+
+/* Hero CTA is now a single button plus a reassurance note */
+.hero-cta-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gw-ink-faint);
+}
+
+.hero-cta-note .ic {
+  width: 18px;
+  height: 18px;
+  stroke: var(--gw-green-bright);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-cta {
+    transition: opacity 0.01ms, visibility 0.01ms;
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Motion preferences
+--------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

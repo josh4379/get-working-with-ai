@@ -15,27 +15,37 @@
   <meta property="og:title" content="Terms of Service | Get Working With AI">
   <meta property="og:description" content="Terms governing use of getworkingwithai.com and our AI consultation and implementation services.">
 
-  <meta name="theme-color" content="#0d1b2a">
-  <link href="assets/img/favicon.png" rel="icon" type="image/png">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta name="theme-color" content="#173F35">
+  <link href="assets/img/favicon-gwwai.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/img/favicon-gwwai-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="assets/img/favicon-gwwai-32.png" rel="shortcut icon" type="image/png">
+  <link href="assets/img/apple-touch-icon-gwwai.png" rel="apple-touch-icon" sizes="180x180">
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Brand theme layer -->
+  <link href="assets/css/theme.css" rel="stylesheet">
 </head>
 
 <body class="terms-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+    </defs>
+  </svg>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI — home">
-        <span class="sitename">Get Working With AI</span>
+        <img src="assets/img/logo.svg" alt="" class="site-logo" width="415" height="64">
       </a>
 
       <nav id="navmenu" class="navmenu" aria-label="Primary">
@@ -59,7 +69,7 @@
       <div class="breadcrumbs">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
             <li class="breadcrumb-item active current">Terms of Service</li>
           </ol>
         </nav>
@@ -195,8 +205,8 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Get Working With AI</span>
+          <a href="index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI — home">
+            <img src="assets/img/logo.svg" alt="" class="site-logo" width="415" height="64" loading="lazy">
           </a>
           <p>Stress-free AI implementation for business. $2k consultation or $10k full setup.</p>
         </div>
@@ -218,8 +228,6 @@
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
 </div>
   </footer>
-
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
