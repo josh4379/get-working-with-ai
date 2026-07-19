@@ -265,12 +265,20 @@ strong {
   padding: 18px 0;
 }
 
-.header .logo .site-logo {
+.header .logo .site-logo-mark {
   display: block;
-  width: clamp(205px, 18vw, 235px);
-  height: auto;
+  width: auto;
+  height: 38px;
   max-height: none;
-  margin: 0;
+  margin: 0 10px 0 0;
+}
+
+.header .logo .sitename {
+  font-family: var(--heading-font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--gw-ink);
 }
 
 .scrolled .header::before {
@@ -660,6 +668,19 @@ section,
   }
 }
 
+/* The template reverses the hero columns below 992px, which puts the photo
+   above the headline and pushes the H1, subhead and primary CTA off the
+   first screen on a phone. Headline and buy button come first. */
+@media (max-width: 991px) {
+  .hero .row {
+    flex-direction: column;
+  }
+
+  .hero .hero-image {
+    margin-top: 2.5rem;
+  }
+}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -1013,7 +1034,23 @@ section,
 
 @media (max-width: 991px) {
   .index-page .hero {
-    padding-top: 7rem;
+    padding-top: 5.5rem;
+  }
+}
+
+/* Tighten the mobile hero so the primary CTA clears the fold on a 667px
+   phone — the button is the whole point of the screen. */
+@media (max-width: 991px) {
+  .hero .hero-content > p:first-child {
+    margin-bottom: 1rem !important;
+  }
+
+  .hero .hero-content h1 {
+    margin-bottom: 1rem;
+  }
+
+  .hero .hero-content p {
+    margin-bottom: 1.6rem;
   }
 }
 
@@ -1449,12 +1486,12 @@ section,
   color: var(--gw-ink);
 }
 
-.footer .footer-about .logo .site-logo {
+.footer .footer-about .logo .site-logo-mark {
   display: block;
-  width: min(255px, 100%);
-  height: auto;
+  width: auto;
+  height: 46px;
   max-height: none;
-  margin: 0;
+  margin: 0 12px 0 0;
 }
 
 .footer .footer-about p {
