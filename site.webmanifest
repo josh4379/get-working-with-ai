@@ -4,8 +4,8 @@
   "description": "Stress-free AI implementation for business. Clarity Package or Implementation Package.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f0fdfa",
-  "theme_color": "#0d9488",
+  "background_color": "#070a12",
+  "theme_color": "#8b5cf6",
   "lang": "en-AU",
   "icons": [
     {

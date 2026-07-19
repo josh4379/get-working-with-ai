@@ -16,43 +16,43 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  /* Get Working With AI — navy + teal (trust + tech, calm confidence) */
-  --background-color: #ffffff;
-  --default-color: #4a5568;
-  --heading-color: #0f2744;
-  --accent-color: #0d9488;
-  --surface-color: #ffffff;
+  /* Get Working With AI — deep space + violet / electric cyan */
+  --background-color: #070a12;
+  --default-color: #a8b3c7;
+  --heading-color: #f4f6ff;
+  --accent-color: #8b5cf6;
+  --surface-color: #121626;
   --contrast-color: #ffffff;
-  --accent-soft: #ccfbf1;
-  --accent-deep: #0f766e;
-  --navy: #0f2744;
-  --navy-deep: #0b1f33;
+  --accent-soft: rgba(139, 92, 246, 0.16);
+  --accent-deep: #a78bfa;
+  --navy: #0b1020;
+  --navy-deep: #05070e;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #64748b;
-  --nav-hover-color: #0d9488;
-  --nav-mobile-background-color: #ffffff;
-  --nav-dropdown-background-color: #ffffff;
-  --nav-dropdown-color: #4a5568;
-  --nav-dropdown-hover-color: #0d9488;
+  --nav-color: #94a3b8;
+  --nav-hover-color: #e2e8ff;
+  --nav-mobile-background-color: #0b1020;
+  --nav-dropdown-background-color: #12162a;
+  --nav-dropdown-color: #cbd5e1;
+  --nav-dropdown-hover-color: #22d3ee;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f0fdfa; /* soft teal wash */
-  --surface-color: #ffffff;
+  --background-color: #0b1020;
+  --surface-color: #121626;
 }
 
 .dark-background {
-  --background-color: #0b1f33; /* deep navy footer */
-  --default-color: #c5d0dc;
+  --background-color: #04060c;
+  --default-color: #9aa8c0;
   --heading-color: #ffffff;
-  --accent-color: #2dd4bf; /* brighter teal on dark */
-  --surface-color: #14304a;
-  --contrast-color: #0b1f33;
+  --accent-color: #a78bfa;
+  --surface-color: #10162a;
+  --contrast-color: #070a12;
 }
 
 /* Smooth scroll */
