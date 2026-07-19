@@ -1,9 +1,5 @@
 /**
-* Template Name: Axis
-* Template URL: https://bootstrapmade.com/axis-bootstrap-corporate-template/
-* Updated: Sep 13 2025 with Bootstrap v5.3.8
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Get Working With AI — main scripts
 */
 
 (function() {

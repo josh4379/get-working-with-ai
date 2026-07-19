@@ -24,7 +24,7 @@ Live in 30 days or less:
 
 ## Stack
 
-Static site based on the [Axis](https://bootstrapmade.com/axis-bootstrap-corporate-template/) Bootstrap template.
+Static HTML/CSS/JS marketing site.
 
 ## Local preview
 
