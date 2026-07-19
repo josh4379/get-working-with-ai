@@ -1,6 +1,6 @@
-# Getting Started With AI
+# Get Working With AI
 
-Marketing site for **[gettingstartedwithai.com](https://gettingstartedwithai.com)** — stress-free AI implementation for business.
+Marketing site for **[getworkingwithai.com](https://getworkingwithai.com)** — stress-free AI implementation for business.
 
 ## Offers
 
