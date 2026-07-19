@@ -219,50 +219,17 @@ strong {
 }
 
 /*--------------------------------------------------------------
-# Mobile nav toggle — drawn in CSS so the icon webfont is not needed
-# for a single glyph. Driven by body.mobile-nav-active, which main.js
-# already toggles.
---------------------------------------------------------------*/
-.mobile-nav-toggle.bi {
-  display: block;
-  position: relative;
-  width: 26px;
-  height: 26px;
-  font-size: 0 !important;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.mobile-nav-toggle.bi::before,
-.mobile-nav-toggle.bi::after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  right: 3px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--gw-ink);
-  transition: transform 0.3s ease, top 0.3s ease;
-}
-
-.mobile-nav-toggle.bi::before { top: 9px; }
-.mobile-nav-toggle.bi::after { top: 16px; }
-
-.mobile-nav-active .mobile-nav-toggle.bi::before {
-  top: 12px;
-  transform: rotate(45deg);
-}
-
-.mobile-nav-active .mobile-nav-toggle.bi::after {
-  top: 12px;
-  transform: rotate(-45deg);
-}
-
-/*--------------------------------------------------------------
 # Header / nav
+# Desktop (≥1200px): full primary menu + Get started CTA.
+# Mobile / tablet (<1200px): logo only — no menu, no hamburger.
+# Section anchors and the floating package CTA cover mobile navigation.
 --------------------------------------------------------------*/
 .header {
   padding: 18px 0;
+}
+
+.header .logo {
+  min-width: 0; /* allow sitename to shrink/ellipsis inside flex header */
 }
 
 .header .logo .site-logo-mark {
@@ -271,6 +238,7 @@ strong {
   height: 38px;
   max-height: none;
   margin: 0 10px 0 0;
+  flex-shrink: 0;
 }
 
 .header .logo .sitename {
@@ -279,6 +247,9 @@ strong {
   font-weight: 700;
   letter-spacing: -0.04em;
   color: var(--gw-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .scrolled .header::before {
@@ -290,6 +261,19 @@ strong {
 .scrolled .header {
   border-bottom: 1px solid var(--gw-line);
   box-shadow: 0 4px 24px -18px rgba(18, 40, 32, 0.45);
+}
+
+/* Hide primary nav + hamburger on mobile and tablet */
+@media (max-width: 1199px) {
+  .navmenu,
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  .header > .container-fluid,
+  .header > .container-xl {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -325,8 +309,7 @@ strong {
     font-weight: 600;
   }
 
-  /* Last nav item becomes the standing CTA. Scoped to the home page: on the
-     policy pages the last item is "Terms", which should not read as a CTA. */
+  /* Standing CTA on the home page only (class="nav-cta") */
   .navmenu > ul > li > a.nav-cta {
     margin-left: 10px;
     padding: 9px 20px;
@@ -347,10 +330,6 @@ strong {
     transform: translateY(-1px);
     box-shadow: 0 10px 24px -8px color-mix(in srgb, var(--gw-green), transparent 20%);
   }
-}
-
-.mobile-nav-toggle {
-  color: var(--gw-ink);
 }
 
 /*--------------------------------------------------------------
@@ -2266,6 +2245,166 @@ section,
   .blog-post-nav-link.next {
     margin-left: 0;
     text-align: left;
+  }
+}
+
+/*--------------------------------------------------------------
+# Mobile frontend polish
+# No hamburger, logo-only header, fold-friendly hero, safe floating CTA,
+# no horizontal scroll from wide tables/images.
+--------------------------------------------------------------*/
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Room for the fixed package pill so it never covers the last line of copy */
+body:has(.floating-cta) {
+  padding-bottom: 0;
+}
+
+@media (max-width: 1199px) {
+  .header {
+    padding: 14px 0;
+  }
+
+  .header .logo .site-logo-mark {
+    height: 34px;
+  }
+
+  .header .logo .sitename {
+    font-size: 1.15rem;
+  }
+
+  /* Slightly less top offset once the hamburger is gone */
+  .index-page .hero {
+    padding-top: 4.75rem;
+  }
+
+  .page-title {
+    padding-top: 1.25rem;
+  }
+
+  .page-title .title-wrapper h1 {
+    font-size: clamp(1.65rem, 1.2rem + 2.4vw, 2.2rem);
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .blog-card {
+    padding: 1.35rem 1.25rem 1.2rem;
+  }
+
+  .blog-card-title {
+    font-size: 1.2rem;
+  }
+
+  .post-takeaways,
+  .post-callout,
+  .post-cta {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .post-cta {
+    padding-top: 1.35rem;
+    padding-bottom: 1.35rem;
+  }
+
+  /* Full-width primary actions are easier thumbs */
+  .hero .hero-cta .btn-primary,
+  #package .service-link.is-buy,
+  #package .primary-action,
+  #package .secondary-action,
+  .submit-btn,
+  .contact .submit-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero .hero-cta {
+    width: 100%;
+  }
+
+  .hero .hero-cta-note {
+    justify-content: flex-start;
+  }
+
+  .portfolio-conclusion .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .header .logo .sitename {
+    font-size: 1.02rem;
+    max-width: min(58vw, 12.5rem);
+  }
+
+  .header .logo .site-logo-mark {
+    height: 30px;
+    margin-right: 8px;
+  }
+
+  .index-page .hero {
+    padding-top: 4.25rem;
+  }
+
+  .hero .hero-content h1 {
+    font-size: clamp(1.85rem, 1.4rem + 3.5vw, 2.35rem);
+    line-height: 1.15;
+  }
+
+  .hero .hero-content p {
+    font-size: 1.02rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .hero .hero-cta .btn-primary {
+    padding: 14px 18px;
+    font-size: 0.98rem;
+  }
+
+  /* Floating package CTA: full-width bar + iOS home indicator inset */
+  .floating-cta {
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  }
+
+  body:has(.floating-cta) {
+    padding-bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .footer {
+    padding-bottom: 1.5rem;
+  }
+
+  .footer .footer-about p {
+    max-width: none;
+  }
+
+  .blog-post-body .lede {
+    font-size: 1.05rem;
+  }
+
+  .post-table {
+    font-size: 0.9rem;
   }
 }
 
