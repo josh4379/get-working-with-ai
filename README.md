@@ -1,22 +1,22 @@
 # Get Working With AI
 
-Marketing site for **[getworkingwithai.com](https://getworkingwithai.com)** — stress-free AI implementation for business.
+Marketing site for **[getworkingwithai.com](https://getworkingwithai.com)**: stress-free AI implementation for business.
 
 ## Offers
 
-### $2,000 — Initial consultation
-Expert clarity before a full rollout: 1:1 deep-dive, readiness assessment, provider/model direction, cost-control guidance, recommended next steps, and a written summary for stakeholders.
+### $500: Clarity Package
+The business case and the blueprint: a 1:1 deep-dive, a written business case for AI you can take to the board, and a detailed implementation document covering the exact provider, models, admin/security settings and spending caps we'd put in place, plus what the finished setup looks like.
 
-### $10,000 — Full implementation
-Live in 30 days or less:
+### $5,000: Implementation Package
+Hands-off. Live in 30 days or less:
 
 - 1:1 discovery (Teams / Zoom)
-- AI provider setup and org implementation plan
-- Provider & model selection advice
-- **Cost control** (headline) — spending limits
-- Employee how-to guide (efficient use + cost control)
-- Admin portal setup and optimised settings
-- Optional SSO for employees
+- Provider chosen, bought and configured
+- Right model matched to each job
+- **Cost control** (headline): hard spending limits at the provider
+- Admin portal: roles, permissions, retention, optional SSO
+- Worked through with your IT team, where you have one
+- Employee how-to guide + live all-hands training call
 
 ## Tagline
 
@@ -45,6 +45,6 @@ python3 -m http.server 8080
 
 This site only has three HTML pages:
 
-- `index.html` — marketing homepage
-- `privacy.html` — privacy policy
-- `terms.html` — terms of service
+- `index.html`: marketing homepage
+- `privacy.html`: privacy policy
+- `terms.html`: terms of service

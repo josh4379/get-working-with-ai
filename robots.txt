@@ -1,4 +1,4 @@
-# Get Working With AI — https://getworkingwithai.com
+# Get Working With AI: https://getworkingwithai.com
 # Allow all search engines and crawlers full access.
 
 User-agent: *

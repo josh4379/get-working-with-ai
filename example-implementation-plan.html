@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Example AI Implementation Plan | Get Working With AI</title>
+  <meta name="description" content="A real example of the implementation plan delivered with the $500 Clarity Package: provider, model routing, spending caps, permissions, SSO and a week-by-week rollout.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://getworkingwithai.com/example-implementation-plan.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:url" content="https://getworkingwithai.com/example-implementation-plan.html">
+  <meta property="og:title" content="Example AI Implementation Plan | Get Working With AI">
+  <meta property="og:description" content="See exactly what we would build: provider choice, model routing, hard spending caps, roles and permissions, data settings, SSO, and the 30-day rollout schedule.">
+
+  <meta name="theme-color" content="#173F35">
+  <link href="assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Brand theme layer -->
+  <link href="assets/css/theme.css" rel="stylesheet">
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#package">Packages</a></li>
+          <li><a href="example-implementation-plan.html" class="active">Example</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html#package">Clarity Package</a></li>
+            <li class="breadcrumb-item active current">Example implementation plan</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Example: AI Implementation Plan</h1>
+        <p class="blog-post-meta">Document 2 of 2 delivered with the Clarity Package</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-callout">
+                  <p><strong>This is a worked example, not a real client.</strong> “Meridian Brokers” is a fictional company. Providers are shown as A, B and C here for the same reason we don't publish anyone else's setup. In your document they are named outright, with the current pricing and terms as at your delivery date.</p>
+                </div>
+
+                <p class="lede">The exact setup we would build for <strong>Meridian Brokers</strong>: 92 staff, 78 licensed seats, live within 30 days of kickoff. This document is what the <a href="example-business-case.html">business case</a> is asking the board to approve.</p>
+
+                <div class="post-takeaways">
+                  <h2>The setup in one paragraph</h2>
+                  <ul>
+                    <li>One provider on a business-tier agreement, with no consumer accounts and no departmental credit cards</li>
+                    <li>Three model tiers routed by task, so routine work never runs on premium pricing</li>
+                    <li>A hard $600/month usage ceiling on top of licences, set at the provider</li>
+                    <li>Four permission levels, SSO through your existing Microsoft Entra ID</li>
+                    <li>Training opt-out on, 180-day retention, no consumer-grade data handling</li>
+                    <li>Live in 4 weeks, with an all-hands session and a written guide for all 78 users</li>
+                  </ul>
+                </div>
+
+                <h2>1. Provider recommendation</h2>
+
+                <p>We assessed three business-tier providers against Meridian's actual constraints: document-heavy work, an existing Microsoft identity estate, an Australian client base with data-handling obligations, and a finance team that needs a hard ceiling rather than a dashboard.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Provider A <em>(recommended)</em></th>
+                        <th>Provider B</th>
+                        <th>Provider C</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Long-document handling</td>
+                        <td>Strongest, which matters most for claim files</td>
+                        <td>Good</td>
+                        <td>Adequate</td>
+                      </tr>
+                      <tr>
+                        <td>Admin spend controls</td>
+                        <td>Hard caps, per-department budgets</td>
+                        <td>Alerts only</td>
+                        <td>Hard caps</td>
+                      </tr>
+                      <tr>
+                        <td>SSO with Entra ID</td>
+                        <td>Included at this tier</td>
+                        <td>Enterprise tier only</td>
+                        <td>Included</td>
+                      </tr>
+                      <tr>
+                        <td>Training opt-out</td>
+                        <td>Default on for business tier</td>
+                        <td>Default on</td>
+                        <td>Manual, per-workspace</td>
+                      </tr>
+                      <tr>
+                        <td>Blended seat cost</td>
+                        <td>≈ $30/user/month</td>
+                        <td>≈ $36/user/month</td>
+                        <td>≈ $25/user/month</td>
+                      </tr>
+                      <tr>
+                        <td>Verdict</td>
+                        <td><strong>Recommended</strong></td>
+                        <td>Costs more for capability you won't use</td>
+                        <td>Cheaper, but weaker on the document work that carries your case</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p><strong>Why A.</strong> Two thirds of your identified value sits in summarising and drafting from long source documents, which is where A is meaningfully ahead. It also has genuine hard spending caps rather than notification thresholds, which is the control your CFO asked for by name. C is $5 per seat cheaper, or $4,680 a year, but weaker at the exact task that generates the return, which is a bad trade.</p>
+
+                <p>We take no commission, referral fee or rebate from any provider. If C had won, this document would say C.</p>
+
+                <h2>2. Model routing: how the bill stays small</h2>
+
+                <p>Most AI overspending is not heavy usage. It is a premium model doing trivial work because nobody told it not to. We configure defaults per task so the expensive model is reserved for work that needs it.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr>
+                        <th>Tier</th>
+                        <th>Used for</th>
+                        <th>Meridian examples</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Light</td>
+                        <td>Fast, cheap, high volume</td>
+                        <td>Email triage, reformatting, tidying notes, certificate requests</td>
+                      </tr>
+                      <tr>
+                        <td>Standard</td>
+                        <td>The everyday default</td>
+                        <td>Claim summaries, client replies, procedure documents, meeting notes</td>
+                      </tr>
+                      <tr>
+                        <td>Heavy</td>
+                        <td>Reasoning and long context</td>
+                        <td>Full submission packs, multi-insurer comparisons, complex claim files</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Client Services runs almost entirely on the light tier. Broking is the only team defaulted to heavy, and only for submission work. Getting this wrong in either direction is expensive: over-provision and you pay premium rates to reformat a spreadsheet; under-provision and people conclude AI is useless and stop using it.</p>
+
+                <h2>3. Cost controls</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr>
+                        <th>Control</th>
+                        <th>Setting for Meridian</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Organisation hard ceiling</td>
+                        <td>$600/month above included licence allowance, and cannot be exceeded without an admin raising it</td>
+                      </tr>
+                      <tr>
+                        <td>Department budgets</td>
+                        <td>Broking $220, Claims $180, Client Services $80, Marketing $60, Ops $40, Finance $20</td>
+                      </tr>
+                      <tr>
+                        <td>Alert thresholds</td>
+                        <td>Notification to Finance and the department lead at 70% and 90% of budget</td>
+                      </tr>
+                      <tr>
+                        <td>Per-user anomaly alert</td>
+                        <td>Flag any user exceeding 3× the team median in a week, which is usually a misconfiguration rather than misuse</td>
+                      </tr>
+                      <tr>
+                        <td>Seat review</td>
+                        <td>At 90 days: reclaim seats with under 4 sessions/month before buying any new ones</td>
+                      </tr>
+                      <tr>
+                        <td>Reporting</td>
+                        <td>Weekly spend summary emailed to the CFO; monthly usage-by-department report</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Worst case under this configuration is $2,940 in any single month: $2,340 in licences plus the $600 ceiling. Your CFO can write that number in a budget line and be certain of it.</p>
+
+                <h2>4. Access, roles and permissions</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr>
+                        <th>Role</th>
+                        <th>Who</th>
+                        <th>Can do</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Owner</td>
+                        <td>COO, IT Manager (2)</td>
+                        <td>Billing, spend limits, security settings, add or remove admins</td>
+                      </tr>
+                      <tr>
+                        <td>Admin</td>
+                        <td>IT Manager, Ops Manager, Compliance Lead (3)</td>
+                        <td>Manage users and groups, view usage, manage shared prompts, but no billing changes</td>
+                      </tr>
+                      <tr>
+                        <td>Department lead</td>
+                        <td>One per department (6)</td>
+                        <td>See their department's usage and budget, manage their team's shared prompts</td>
+                      </tr>
+                      <tr>
+                        <td>Member</td>
+                        <td>All licensed staff (78)</td>
+                        <td>Use the tool, use shared prompts, share within their department</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>External sharing is disabled at the organisation level. Nobody can publish a conversation containing client information to a public link, which is the single most common accidental data exposure with these tools.</p>
+
+                <h2>5. Security, data and retention</h2>
+
+                <ul>
+                  <li><strong>Training opt-out enforced org-wide.</strong> Your data does not train the provider's models, and that is confirmed contractually at the business tier rather than in a settings toggle alone.</li>
+                  <li><strong>Retention set to 180 days</strong>, aligned to the record-keeping window Compliance already applies to client correspondence, rather than the provider's default.</li>
+                  <li><strong>No system connectors in phase one.</strong> The claims database and broking platform stay disconnected until adoption is proven. Connecting everything on day one is how a governed rollout becomes an incident.</li>
+                  <li><strong>Consumer accounts closed.</strong> We identify existing free and personal-card accounts and migrate those users, so the shadow usage stops rather than continuing alongside.</li>
+                  <li><strong>Audit logging on</strong>, with admin access to logs restricted to the two Owners and the Compliance Lead.</li>
+                  <li><strong>A one-page acceptable use standard</strong> written to slot into your existing IT policy, not a separate policy nobody reads.</li>
+                </ul>
+
+                <h2>6. Identity and SSO</h2>
+
+                <p>Meridian already runs Microsoft Entra ID with conditional access. We configure SSO against it so that AI access is provisioned and deprovisioned by the joiners-and-leavers process you already operate. Two consequences worth stating plainly: nobody manages another password, and when someone leaves on a Friday their AI access ends on the Friday, automatically, not when someone remembers.</p>
+
+                <p>We do this work alongside your IT Manager rather than around them. They approve the app registration, they see every setting, and they hold the keys at the end.</p>
+
+                <h2>7. The 30-day rollout</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr>
+                        <th>Week</th>
+                        <th>We do</th>
+                        <th>You do</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Week 1</td>
+                        <td>Kickoff, provider procurement, tenant setup, admin portal built, roles and groups created</td>
+                        <td>Approve the plan, nominate the executive owner, introduce us to IT (≈ 2 hrs total)</td>
+                      </tr>
+                      <tr>
+                        <td>Week 2</td>
+                        <td>Security and retention settings, SSO configured with IT, spending caps and department budgets set, pilot group of 12 onboarded</td>
+                        <td>IT approves the app registration; pilot group uses it normally (≈ 3 hrs total)</td>
+                      </tr>
+                      <tr>
+                        <td>Week 3</td>
+                        <td>Model routing tuned on pilot feedback, department prompt libraries built, how-to guide written, IT handover session</td>
+                        <td>Pilot feedback session, 45 minutes (≈ 2 hrs total)</td>
+                      </tr>
+                      <tr>
+                        <td>Week 4</td>
+                        <td>All 78 users provisioned, <strong>live all-hands training call</strong>, department drop-in sessions, handover pack delivered</td>
+                        <td>Attend the all-hands (≈ 1 hr per person)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Total demand on your team across the whole project is roughly 40 hours, most of it in the all-hands session. That is the point of the fixed fee: it is our project to deliver, not another item on your COO's list.</p>
+
+                <h2>8. Enablement</h2>
+
+                <p>A licence nobody opens twice is the most expensive possible outcome, so enablement is not an afterthought here.</p>
+
+                <ul>
+                  <li><strong>A written how-to guide</strong> built around Meridian's actual work, not generic prompt tips. Worked examples for summarising a claim file, drafting an insurer follow-up, assembling a submission pack, and handling a renewal comparison.</li>
+                  <li><strong>Department prompt libraries</strong> saved in the tool itself, so the good prompt is one click away rather than something people are expected to remember.</li>
+                  <li><strong>A live all-hands call</strong> where we run your whole team through the guide, on your real tasks, and answer questions in the room.</li>
+                  <li><strong>Department drop-ins</strong> for Broking and Claims, where the workflows are deepest.</li>
+                  <li><strong>A verification habit taught explicitly:</strong> what to check before anything goes to a client, and which tasks require a second read.</li>
+                </ul>
+
+                <h2>9. What your setup looks like once it's live</h2>
+
+                <p>Day 31 at Meridian:</p>
+
+                <ul>
+                  <li>Every one of the 78 licensed staff signs in with their normal work login. No new password, no personal account, no credit card.</li>
+                  <li>A claims handler opens a 40-page adjuster report and has an accurate summary and a drafted insurer response in minutes, then reads, corrects and signs it, as they always would.</li>
+                  <li>The tool defaults to the right model for the task, so nobody has to know what a model is.</li>
+                  <li>Your CFO gets a weekly spend email and knows the absolute ceiling is $2,940 a month.</li>
+                  <li>Your IT Manager administers it from the same console they use for everything else, and can deprovision anyone in seconds.</li>
+                  <li>Compliance can produce an audit log on request.</li>
+                  <li>Nobody at Meridian is pasting client data into a free consumer chatbot.</li>
+                </ul>
+
+                <h2>10. After handover</h2>
+
+                <p>At handover you receive the configuration record covering every setting, every limit, every role, and why each one is set that way, plus the guide, the prompt libraries, and the admin walkthrough for your IT Manager. Your accounts are in your name and your billing relationship is directly with the provider.</p>
+
+                <p>We check in at 30 days after go-live to review adoption and spend against this plan. Beyond that, there is no retainer and no dependency on us: you can run, change or leave the setup without a phone call.</p>
+
+                <div class="post-cta">
+                  <h2>Both documents, written for your business: $500</h2>
+                  <p>The Clarity Package delivers the business case and this implementation plan. Keep it and build it in-house, or hand it back to us and we'll build it for $5,000, live in 30 days.</p>
+                  <p class="mb-0">
+                    <a href="example-business-case.html">← Read the example Business Case</a><br>
+                    <a href="index.html#package">Book the Clarity Package →</a>
+                  </p>
+                </div>
+
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Example documents">
+              <a href="example-business-case.html" class="blog-post-nav-link prev">← Example Business Case</a>
+              <a href="index.html#package" class="blog-post-nav-link next">Back to packages →</a>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of service</a></li>
+            <li><a href="https://climate.stripe.com/Nv9wWN" target="_blank" rel="noopener noreferrer">Stripe Climate</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

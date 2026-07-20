@@ -1650,6 +1650,16 @@ section,
   color: var(--gw-ink-faint);
 }
 
+/* One-line promise sitting directly under the price — the thing we most want
+   read after the number itself. */
+#package .pkg-note {
+  margin: -0.2rem 0 clamp(0.5rem, 1.2vh, 0.85rem);
+  font-size: clamp(0.8rem, 0.76rem + 0.16vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--gw-copper-deep);
+}
+
 /* The flagship price carries the copper accent */
 #package .col-lg-6:nth-child(2) .pkg-amount {
   background: var(--gw-grad-copper);
@@ -1684,6 +1694,26 @@ section,
   width: clamp(16px, 2vh, 19px);
   height: clamp(16px, 2vh, 19px);
   top: 1px;
+}
+
+/* Sits between the feature list and the buy button, pushed to the bottom of
+   the list so the two cards' buttons still align. */
+#package .pkg-examples {
+  margin: 0 0 clamp(0.7rem, 1.6vh, 1.1rem);
+  font-size: clamp(0.8rem, 0.76rem + 0.16vw, 0.9rem);
+  color: var(--gw-ink-faint);
+  font-weight: 500;
+}
+
+#package .pkg-examples a {
+  color: var(--gw-green);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#package .pkg-examples a:hover {
+  color: var(--gw-copper);
 }
 
 #package .service-link.is-buy {

@@ -14,3 +14,9 @@ index.html.template-backup
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Local ops (not for deploy)
+link-building-log.md
+
+# Local agent tooling
+.claude/
