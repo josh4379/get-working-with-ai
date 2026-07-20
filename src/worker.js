@@ -29,19 +29,28 @@ async function handleContact(request, env) {
   }
 
   if (request.method !== 'POST') {
-    return textResponse('Method not allowed', 405, request);
+    return textResponse('Please use the form on the website to send a question.', 405, request);
   }
 
   if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) {
     console.error('Telegram secrets not configured');
-    return textResponse('Form service is not configured.', 503, request);
+    return textResponse(
+      'We cannot take form messages right now. Please email hello@getworkingwithai.com.',
+      503,
+      request
+    );
   }
 
   let fields;
   try {
     fields = await parseForm(request);
   } catch (err) {
-    return textResponse(err.message || 'Invalid form data', 400, request);
+    console.error('Form parse failed:', err);
+    return textResponse(
+      'We could not read your form. Please refresh the page and try again, or email hello@getworkingwithai.com.',
+      400,
+      request
+    );
   }
 
   // Honeypot (bots fill hidden fields)
@@ -54,12 +63,24 @@ async function handleContact(request, env) {
   const company = clean(fields.subject, MAX_FIELD); // form uses name="subject" for company
   const message = clean(fields.message, MAX_MESSAGE);
 
-  if (!name || !email || !message) {
-    return textResponse('Name, email, and message are required.', 400, request);
+  if (!name) {
+    return textResponse('Please enter your full name.', 400, request);
   }
-
+  if (!email) {
+    return textResponse('Please enter your email address.', 400, request);
+  }
   if (!isValidEmail(email)) {
-    return textResponse('Please enter a valid email address.', 400, request);
+    return textResponse(
+      'That email address does not look valid. Please check it and try again.',
+      400,
+      request
+    );
+  }
+  if (!company) {
+    return textResponse('Please enter your company or organisation.', 400, request);
+  }
+  if (!message) {
+    return textResponse('Please write your question before sending.', 400, request);
   }
 
   const text = [
@@ -67,21 +88,23 @@ async function handleContact(request, env) {
     '',
     `Name: ${name}`,
     `Email: ${email}`,
-    company ? `Company: ${company}` : null,
+    `Company: ${company}`,
     '',
     message,
-  ]
-    .filter(Boolean)
-    .join('\n');
+  ].join('\n');
 
   try {
     await sendTelegram(env, text);
   } catch (err) {
     console.error('Telegram delivery failed:', err);
-    return textResponse('Could not send your message. Please email hello@getworkingwithai.com.', 502, request);
+    return textResponse(
+      'We could not deliver your message right now. Please email hello@getworkingwithai.com and we will get back to you.',
+      502,
+      request
+    );
   }
 
-  // php-email-form validate.js expects plain text "OK"
+  // Client expects plain text "OK"
   return textResponse('OK', 200, request);
 }
 
@@ -90,11 +113,19 @@ async function parseForm(request) {
 
   if (contentType.includes('application/json')) {
     const body = await request.json();
-    if (!body || typeof body !== 'object') throw new Error('Invalid JSON body');
+    if (!body || typeof body !== 'object') {
+      throw new Error('Invalid JSON body');
+    }
     return body;
   }
 
-  // multipart/form-data or application/x-www-form-urlencoded
+  if (
+    !contentType.includes('multipart/form-data') &&
+    !contentType.includes('application/x-www-form-urlencoded')
+  ) {
+    throw new Error('Missing or unsupported Content-Type');
+  }
+
   const formData = await request.formData();
   const fields = {};
   for (const [key, value] of formData.entries()) {
