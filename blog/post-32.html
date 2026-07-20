@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>Connecting AI to Microsoft 365 or Google Workspace</title>
+  <meta name="description" content="What happens when you connect an AI tool to your document store, why permissions are the whole problem, and the order to connect things in so nothing surfaces that should not.">
+  <meta name="keywords" content="AI Microsoft 365 integration, AI Google Workspace connector, Copilot permissions oversharing, connect AI to SharePoint, enterprise AI connectors">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-32.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-16">
+  <meta property="article:modified_time" content="2026-08-16">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-32.html">
+  <meta property="og:title" content="Connecting AI to Microsoft 365 or Google Workspace">
+  <meta property="og:description" content="Connecting AI to your files inherits every permission mistake you have ever made. Fix that order.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Connecting AI to Microsoft 365 or Google Workspace">
+  <meta name="twitter:description" content="AI does not leak your documents. It finds the ones you already shared with everybody.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-32.html#article",
+      "headline": "Connecting AI to Microsoft 365 or Google Workspace",
+      "description": "How to connect AI tools to Microsoft 365 or Google Workspace safely, why document permissions are the main risk, and the sequence for enabling connectors.",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-32.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Microsoft 365",
+        "Google Workspace",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Connecting AI to your workspace",
+          "item": "https://getworkingwithai.com/blog/post-32.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it safe to connect AI to our company files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is as safe as your permissions are correct. Connected AI respects existing access rights, so it cannot show someone a file they could not already open. The problem is that in most organisations people can already open far more than anyone intended, and search was too poor for them to notice. Fix permissions before connecting, not after."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should we use the AI built into our productivity suite or a separate tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Built-in tools have the integration advantage and require no connector work. Standalone assistants often have stronger general capability and a lower cost of entry. Many mid-size organisations end up with both and that is a legitimate outcome, provided you decide it deliberately rather than accumulating it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should we connect first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calendar and the individual's own mailbox, which are scoped to one person and carry almost no cross-user risk. Shared document stores come last, after a permissions review. Connecting the document store first is the sequence that produces incidents."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">Connecting AI to your workspace</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Connecting AI to Microsoft 365 or Google Workspace</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-16">16 August 2026</time> &middot; 10 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Connected AI does not break your permissions. It reveals that they were already broken.</li>
+                    <li>Run a sharing and permissions review before you connect anything to a shared document store.</li>
+                    <li>Connect in order of blast radius: calendar, then personal mailbox, then team sites, then the whole store.</li>
+                    <li>The built-in versus standalone question is a real decision, not a formality, and most firms end up with both.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">There is a specific incident that happens in organisations shortly after connecting an AI assistant to their document store, and it is worth describing because it is entirely predictable and entirely preventable. An employee asks a reasonable question. The assistant answers it accurately, using a document that employee should never have been able to open. Nobody did anything wrong. The file had been shared broadly three years earlier by someone who has since left, and until now nothing was good enough at searching to find it.</p>
+
+                <p>That is the whole problem in one paragraph, and it is a permissions problem wearing an AI costume.</p>
+
+                <h2>What connecting actually does</h2>
+
+                <p>When you connect an assistant to Microsoft 365 or Google Workspace, you are granting it the ability to retrieve content on behalf of a user, within that user's existing access rights. It does not get privileged access. It does not read things the person could not read. It cannot see a file that is properly restricted.</p>
+
+                <p>What it does is remove the friction that was doing your security work for you. In most organisations, over-shared content has been safe in practice because finding it required knowing it existed, knowing roughly where it was, and being motivated enough to look. A good retrieval system removes all three requirements. Someone asks a plain question and gets the answer, drawn from wherever the answer happens to live.</p>
+
+                <p>So the honest framing for a leadership conversation is not that AI creates a new risk. It is that AI ends a period during which poor search was concealing an old one.</p>
+
+                <div class="post-callout">
+                  <p><strong>The sentences that surface the problem in a meeting:</strong> ask what would happen if every employee could instantly search every file they technically have access to. If the room gets uncomfortable, you have found the work that needs doing before connection, and you have found it for free.</p>
+                </div>
+
+                <h2>The permissions review, scoped so it actually happens</h2>
+
+                <p>A full permissions remediation across a mature tenant is a project nobody has budget for, and proposing one is the fastest way to stall the whole initiative. The version that works is narrow and targeted at the categories that actually matter.</p>
+
+                <p>Four things to look for, in order:</p>
+
+                <ol>
+                  <li><strong>Anything shared with everyone in the organisation.</strong> Most tenants have accumulated these. Review the list, not the whole store. This is where the compensation spreadsheet and the board pack usually turn up.</li>
+                  <li><strong>Anonymous or link-based sharing that has no expiry.</strong> These are external exposure as well as internal, and they long predate any AI decision.</li>
+                  <li><strong>The four categories that cause actual incidents.</strong> Payroll and compensation, human resources case files, merger and transaction material, and legal advice. Confirm these are properly restricted before anything is connected, even if you do nothing else.</li>
+                  <li><strong>Orphaned sites and drives from departed staff.</strong> Frequently over-permissive and entirely forgotten.</li>
+                </ol>
+
+                <p>Both major platforms have administrative reporting that will produce these lists. This is days of work rather than months, and it is worth doing regardless of whether you ever connect an AI tool, which is a useful thing to say to whoever has to approve the time.</p>
+
+                <h2>Connect in order of blast radius</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Connector</th><th>Value</th><th>Risk</th><th>Prerequisite</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Calendar</td><td>Meeting prep, scheduling context</td><td>Very low, scoped to the user</td><td>None</td></tr>
+                      <tr><td>The user's own mailbox</td><td>High, thread summarisation and drafting</td><td>Low, they already have it</td><td>Retention position agreed</td></tr>
+                      <tr><td>The user's own drive</td><td>Moderate</td><td>Low</td><td>None</td></tr>
+                      <tr><td>A single team site or shared drive</td><td>High for that team</td><td>Moderate</td><td>Permissions checked for that site</td></tr>
+                      <tr><td>Whole document store</td><td>Highest</td><td>High</td><td>Full sharing review completed</td></tr>
+                      <tr><td>Chat and messaging history</td><td>Moderate</td><td>Moderate, informal candour</td><td>Employee communication first</td></tr>
+                      <tr><td>Line of business systems</td><td>Varies</td><td>Depends entirely on the system</td><td>Own review each time</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The sequence matters more than the destination. Starting with calendar and personal mailbox gives people a genuinely useful experience within a day, generates the adoption you need, and carries almost no cross-user exposure. It also buys time to do the permissions work properly rather than under pressure.</p>
+
+                <p>Organisations that begin by connecting everything get one impressive demonstration and then a difficult month.</p>
+
+                <div class="post-callout">
+                  <p><strong>The messaging connector deserves a separate conversation.</strong> People write things in internal chat that they would never put in a document, on the reasonable assumption that it is ephemeral and unsearched. Making that corpus retrievable changes the social contract of the tool, and it is worth telling employees before rather than after.</p>
+                </div>
+
+                <h2>Built-in or standalone</h2>
+
+                <p>The other decision in this area is whether to use the assistant built into your productivity suite or a separate tool connected to it. Both are defensible and the trade-off is stable enough to state plainly.</p>
+
+                <p><strong>The built-in option</strong> requires no connector work, respects your existing permissions and security model by construction, keeps data within a tenant you already have agreements for, and appears inside the applications people already use, which matters enormously for adoption. It is typically priced per seat on top of your existing licences and its general capability may lag the frontier.</p>
+
+                <p><strong>The standalone option</strong> often has stronger general reasoning and writing, a lower cost of entry, and no dependency on your suite vendor's roadmap. It requires deliberate connector configuration, adds a vendor relationship, and lives outside the applications where work happens, which costs some adoption.</p>
+
+                <p>A large number of mid-size organisations end up running both, with the suite assistant embedded in day-to-day document and email work and a standalone tool used for heavier drafting and analysis. That is a reasonable outcome. It is only a problem when it happens by accumulation rather than by decision, because then nobody owns the total cost, the overlapping capability or the two separate retention configurations.</p>
+
+                <h2>What to do about sensitivity labelling</h2>
+
+                <p>If your organisation already applies sensitivity or classification labels, connected AI generally respects them and this is one of the stronger arguments for the built-in option. If you do not label, do not start a labelling programme as a prerequisite. It is a large undertaking with a poor completion rate, and the targeted permissions review described above delivers most of the protection for a fraction of the effort.</p>
+
+                <p>Labelling is worth doing eventually. It is not worth blocking on.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Can AI see files our staff should not have access to?</h3>
+                  <p>No. It works within each user's existing rights. The issue is that in most organisations people already have access to far more than intended, and poor search was hiding it. Connected AI does not create that exposure, it makes it findable, which is why the permissions review comes first.</p>
+
+                  <h3>What should we connect first?</h3>
+                  <p>Calendar, then the user's own mailbox and drive. These are scoped to one person, carry almost no cross-user risk, and deliver enough day-one value to drive adoption. Shared team sites come next, and the full document store comes last, after a sharing review.</p>
+
+                  <h3>Do we need to fix all our permissions first?</h3>
+                  <p>Not all of them. Target four things: content shared with the entire organisation, link sharing with no expiry, the four high-consequence categories of payroll, human resources, transactions and legal advice, and orphaned sites from departed staff. That is days of work, not months, and it is worth doing regardless.</p>
+
+                  <h3>Should we use our suite's assistant or a separate one?</h3>
+                  <p>Built-in wins on integration, permissions inheritance and adoption. Standalone often wins on capability and cost of entry. Many organisations run both deliberately, which is fine. The failure mode is ending up with both by accident, so that nobody owns the combined cost or the two retention configurations.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get it connected in the right order</h2>
+                  <p>We run the sharing review, decide what should be connected and in what sequence, configure retention and access, cap the spend, and train your people on what the connected version is actually good for. Your own team runs it afterwards. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-31.html" class="blog-post-nav-link prev">&larr; Choosing an AI plan tier</a>
+              <a href="post-33.html" class="blog-post-nav-link next">Telling clients about AI use &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

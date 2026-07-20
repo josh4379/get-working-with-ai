@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>AI for Medical and Dental Practices: The Non-Clinical Wins</title>
+  <meta name="description" content="How medical and dental practices use AI safely on administrative work. Why the business associate agreement is the whole question, what counts as PHI, and where the time actually comes back.">
+  <meta name="keywords" content="AI for medical practices, AI for dental practices, HIPAA AI compliance, ChatGPT medical office, healthcare administration AI">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-27.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-04">
+  <meta property="article:modified_time" content="2026-08-04">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-27.html">
+  <meta property="og:title" content="AI for Medical and Dental Practices: The Non-Clinical Wins">
+  <meta property="og:description" content="Where AI helps a medical or dental practice administratively, and why the business associate agreement decides everything.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI for Medical and Dental Practices: The Non-Clinical Wins">
+  <meta name="twitter:description" content="In a medical practice the AI question has one gate: will the vendor sign a business associate agreement?">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-27.html#article",
+      "headline": "AI for Medical and Dental Practices: The Non-Clinical Wins",
+      "description": "Administrative uses of AI in medical and dental practices, HIPAA business associate agreement requirements, what counts as protected health information, and where staff time is recovered.",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-27.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Healthcare administration",
+        "Medical practice management",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI for medical practices",
+          "item": "https://getworkingwithai.com/blog/post-27.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is ChatGPT HIPAA compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No tool is compliant by itself. Compliance depends on whether the vendor will sign a business associate agreement covering your use, and whether you configure and use it within that agreement. Consumer tiers generally will not sign one, which means protected health information must not go into them. Some enterprise offerings will, which changes the answer entirely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can a practice use AI for without touching PHI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A great deal: policy and procedure documents, staff training material, job descriptions and hiring, patient education content, website and newsletter copy, insurance and billing process documentation, phone scripts, and internal knowledge questions. None of this involves an identifiable patient, so it sits outside HIPAA entirely and can start immediately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is removing the patient name enough to de-identify a record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. HIPAA de-identification requires removing eighteen categories of identifier including dates, geographic detail below state level, contact details and record numbers, and even then unusual clinical detail can re-identify someone in a small community. Treat informal redaction as insufficient and rely on a signed business associate agreement instead."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">AI for medical practices</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>AI for Medical and Dental Practices: The Non-Clinical Wins</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-04">4 August 2026</time> &middot; 11 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>The entire question is whether the vendor will sign a business associate agreement. Everything else follows.</li>
+                    <li>There is a large body of genuinely useful work in a practice that never touches patient information, and it can start today.</li>
+                    <li>Deleting the patient's name is not de-identification and should not be relied on.</li>
+                    <li>Your front desk is almost certainly already using a consumer tool. That is the exposure to address first.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Medical and dental practices approach this differently from other businesses, and correctly so. A law firm that mishandles client information has a professional problem. A practice that mishandles patient information has a regulatory one with defined penalties and a breach notification obligation attached. That changes the sequence: in healthcare you settle the compliance question first and then decide what is useful, rather than the other way round.</p>
+
+                <p>The good news is that the compliance question has a clear answer, and that a large amount of the available benefit sits outside it entirely.</p>
+
+                <h2>The business associate agreement is the gate</h2>
+
+                <p>Under HIPAA, any vendor that creates, receives, maintains or transmits protected health information on your behalf is a business associate, and you need a business associate agreement with them before that happens. This is not a formality and it is not satisfied by a vendor's privacy policy, a security page, or an assurance that data is encrypted.</p>
+
+                <p>Applied to AI tools, the position is straightforward:</p>
+
+                <ul>
+                  <li><strong>Consumer tiers generally will not sign a business associate agreement.</strong> Their terms usually say so explicitly. Protected health information must not go into them, regardless of how carefully an individual staff member thinks they are being.</li>
+                  <li><strong>Some enterprise offerings will,</strong> either directly or through a cloud platform arrangement. Where a signed agreement is in place and the configuration matches it, the analysis becomes the same one you already applied to your practice management system and your cloud backup.</li>
+                  <li><strong>Purpose-built clinical documentation tools</strong> are a separate category, sold into healthcare, designed around this requirement, and generally willing to sign. They are also a different product from a general-purpose assistant and should be evaluated separately.</li>
+                </ul>
+
+                <p>So the first action for any practice is not a policy or a training session. It is finding out, in writing, what your intended vendor will sign. That single answer determines the scope of everything that follows.</p>
+
+                <div class="post-callout">
+                  <p><strong>The exposure most practices have right now:</strong> a front desk coordinator or billing specialist using a personal consumer account to reword a patient message, draft an appeal letter, or summarise a call. That is a disclosure to a vendor with no agreement in place, made by a workforce member, and the practice is responsible for it. It is worth finding out before you do anything else.</p>
+                </div>
+
+                <h2>Start with the work that has no patient in it</h2>
+
+                <p>Practices often assume that HIPAA makes AI mostly unavailable to them. It does not. It makes one category unavailable without an agreement, and leaves a substantial category untouched. The second category is where every practice should begin, because it requires no legal work at all.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Task</th><th>Involves PHI</th><th>Can start</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Policy, procedure and compliance documentation</td><td>No</td><td>Immediately</td></tr>
+                      <tr><td>Staff training material and onboarding guides</td><td>No</td><td>Immediately</td></tr>
+                      <tr><td>Job descriptions, interview questions, hiring correspondence</td><td>No</td><td>Immediately</td></tr>
+                      <tr><td>Patient education handouts on conditions and procedures</td><td>No</td><td>Immediately, with clinical review</td></tr>
+                      <tr><td>Website copy, newsletters and recall campaign content</td><td>No</td><td>Immediately</td></tr>
+                      <tr><td>Front desk phone scripts and objection handling</td><td>No</td><td>Immediately</td></tr>
+                      <tr><td>Explaining a payer policy or billing code rule internally</td><td>No</td><td>Immediately, verify against the source</td></tr>
+                      <tr><td>Drafting an appeal letter for a specific patient</td><td>Yes</td><td>Only with a signed agreement</td></tr>
+                      <tr><td>Summarising a patient message or call</td><td>Yes</td><td>Only with a signed agreement</td></tr>
+                      <tr><td>Anything involving a chart, a claim or an identifiable person</td><td>Yes</td><td>Only with a signed agreement</td></tr>
+                      <tr><td>Clinical documentation and notes</td><td>Yes</td><td>Purpose-built tooling, evaluated separately</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The top seven rows are not trivial work. A practice manager who is currently writing policy documents, rewriting the new hire guide, producing patient education material and drafting recall campaigns in the gaps between everything else will recover real hours, and none of it requires a lawyer's involvement to begin.</p>
+
+                <h2>Why informal de-identification does not work</h2>
+
+                <p>The idea that occurs to everyone is to strip the patient's name and proceed. It is worth understanding why this fails, because otherwise someone in your practice will do it.</p>
+
+                <p>HIPAA's safe harbour method requires removing eighteen categories of identifier, and they are broader than people expect. Not just names and record numbers, but all elements of dates other than year, geographic subdivisions smaller than a state, contact details, device identifiers, and any other unique characteristic or code. The alternative expert determination method requires a qualified person to assess and document the re-identification risk formally.</p>
+
+                <p>Beyond the technical requirements there is the practical one. In a small community, a description containing an unusual condition, an approximate age and a treatment date can identify someone to anyone who knows them, no name required. That is exactly the material that gets typed into a chat window when someone is trying to word a difficult letter.</p>
+
+                <p>The workable position for a practice is not to attempt de-identification informally at all. Either you have an agreement in place and can handle protected information within its terms, or you keep patient material out of the tool entirely. Half measures create the appearance of care without the substance of it.</p>
+
+                <div class="post-callout">
+                  <p><strong>Make this concrete in training:</strong> the rule staff can remember is that if you could work out who it is, it counts. That is not the legal standard but it produces the right behaviour, and a rule people apply beats a rule people can recite.</p>
+                </div>
+
+                <h2>What the rollout looks like in a practice</h2>
+
+                <p>Practices are small, busy, and have no IT function, so the sequence needs to be short.</p>
+
+                <ol>
+                  <li><strong>Find out who is already using something.</strong> Ask without consequences attached. You will get honest answers and a clear picture of where the risk is.</li>
+                  <li><strong>Get the vendor position in writing.</strong> Will they sign a business associate agreement, on which tier, and at what cost. This determines your scope.</li>
+                  <li><strong>Open one practice account</strong> on a business tier, with everyone on it and administrator-managed access, so the personal accounts have no reason to continue.</li>
+                  <li><strong>Configure it.</strong> Training on inputs disabled, retention set, spending ceiling in place, access tied to employment.</li>
+                  <li><strong>Write the one-page rule.</strong> What can go in, what cannot, and who to ask when unsure. One page, on the wall, not a binder.</li>
+                  <li><strong>Train by role.</strong> Front desk, billing, practice manager and clinical staff have four different task lists, and generic training produces generic non-use.</li>
+                </ol>
+
+                <p>That is a fortnight of part-time effort for most practices and it converts an ambient compliance risk into a documented arrangement.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Is any AI tool HIPAA compliant?</h3>
+                  <p>No tool is compliant on its own. It depends on whether the vendor signs a business associate agreement covering your use and whether you configure and use it accordingly. Consumer tiers generally will not sign one. Some enterprise offerings will. Ask for the answer in writing before anything else.</p>
+
+                  <h3>What can we do without a business associate agreement?</h3>
+                  <p>Anything with no identifiable patient in it: policies and procedures, staff training and onboarding, hiring material, patient education content, website and recall copy, phone scripts, and internal questions about payer rules. That is a substantial amount of a practice manager's week and it can start today.</p>
+
+                  <h3>Can we just remove the patient's name?</h3>
+                  <p>No. De-identification requires removing eighteen identifier categories including dates and geographic detail, and unusual clinical detail can still identify someone in a small community. Informal redaction gives the appearance of care without the substance. Either work under a signed agreement or keep patient material out entirely.</p>
+
+                  <h3>What about AI scribes for clinical notes?</h3>
+                  <p>Those are a separate product category built for healthcare and generally willing to sign a business associate agreement. Evaluate them on their own terms, separately from the general-purpose assistant your administrative team uses. The two decisions are unrelated and mixing them slows both down.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get your practice using AI on the safe side of the line</h2>
+                  <p>We establish what your provider will sign, configure the account and retention properly, cap the spend, tie access to employment, and write the one-page rule plus task guidance for front desk, billing and practice management. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-26.html" class="blog-post-nav-link prev">&larr; AI for consulting firms</a>
+              <a href="post-28.html" class="blog-post-nav-link next">AI for recruitment firms &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+
+</html>

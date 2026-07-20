@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>Departmental AI Budgets, Alerts and Chargeback</title>
+  <meta name="description" content="Who should pay for AI licences and usage, why chargeback usually suppresses adoption, and how to set departmental alerts that catch a problem without strangling the tool.">
+  <meta name="keywords" content="AI cost allocation by department, AI chargeback, departmental AI budgets, AI spend alerts, AI cost management business">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-37.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-27">
+  <meta property="article:modified_time" content="2026-08-27">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-37.html">
+  <meta property="og:title" content="Departmental AI Budgets, Alerts and Chargeback">
+  <meta property="og:description" content="Who pays for AI in your business, and why chargeback usually suppresses the adoption you wanted.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Departmental AI Budgets, Alerts and Chargeback">
+  <meta name="twitter:description" content="Chargeback is a behaviour tool, not an accounting one. The behaviour it usually produces is under-use.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-37.html#article",
+      "headline": "Departmental AI Budgets, Alerts and Chargeback",
+      "description": "How to allocate AI costs across departments, the difference between showback and chargeback, and how to set alert thresholds and consumption controls sensibly.",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-37.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Financial controls",
+        "IT chargeback",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Departmental AI budgets",
+          "item": "https://getworkingwithai.com/blog/post-37.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should AI costs be charged back to departments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not in the first year. Chargeback changes behaviour, and the behaviour it typically produces is that departments with tight budgets under-adopt, which is often exactly where the productivity gain would have been largest. Showback, where usage is reported but not billed, gives you the visibility without the suppression."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should we split AI costs between departments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By licence count for seat-based tools, which is simple and defensible, and by tagged consumption for API or usage-based spending. Avoid elaborate allocation formulas. The administrative effort of a precise split usually exceeds the sum being allocated and creates arguments that produce no better decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What alert thresholds should we set?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An alert at around half of the monthly budget, a second at eighty percent, and a hard cap at the ceiling you would not want to exceed without a conversation. Alerts without a cap are how organisations discover a runaway cost after it has run away, and caps without alerts produce an outage nobody predicted."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">Departmental AI budgets</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Departmental AI Budgets, Alerts and Chargeback</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-27">27 August 2026</time> &middot; 10 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Chargeback suppresses adoption in exactly the departments that would benefit most. Start with showback.</li>
+                    <li>Seat costs are predictable. Consumption costs are not, and they need a different control.</li>
+                    <li>Alerts and caps are different tools and you need both. One warns, the other stops.</li>
+                    <li>Do not build an allocation formula more expensive to run than the money it allocates.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Once an organisation is past the first year of AI licences, finance asks a reasonable question: which departments are consuming this, and should it sit in their budgets rather than in a central line? The instinct is sound. Costs that have no owner tend to grow, and departments that consume without seeing a number consume more.</p>
+
+                <p>The instinct is also, in this particular case, likely to damage the thing you spent the money on. It is worth understanding why before deciding.</p>
+
+                <h2>Chargeback is a behaviour tool</h2>
+
+                <p>Charging costs to departments is usually described as an accounting decision, as though it merely moves a number between cost centres. It is not. It is a behaviour intervention, and the behaviour it produces is predictable: departments consume less of the thing being charged.</p>
+
+                <p>That is often the intended effect. For cloud infrastructure, printing or travel, suppressing consumption is exactly the point. For a productivity tool in its first year of adoption, it is the opposite of what you want, and the suppression lands unevenly.</p>
+
+                <p>The departments that cut first are the ones with the tightest budgets and the least discretionary spend, which in most organisations means operations, finance, administration and customer service. Those are frequently the functions where the productivity gain is largest, because their work is the most repetitive. Meanwhile the departments with comfortable budgets carry on regardless.</p>
+
+                <p>So chargeback in year one tends to concentrate usage where the money is rather than where the value is. It is a rational response by each department head and a poor outcome for the organisation.</p>
+
+                <div class="post-callout">
+                  <p><strong>The alternative that gets most of the benefit:</strong> showback. Report each department's usage and cost monthly, visibly, with no charge attached. Department heads see their number and compare it with their peers, which produces almost all of the accountability effect without any of the suppression. Move to chargeback later if the numbers get large enough to warrant it.</p>
+                </div>
+
+                <h2>Two different cost types, two different controls</h2>
+
+                <p>Organisations get into difficulty by treating all AI spending as one line. It is two, and they behave nothing alike.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th></th><th>Seat licences</th><th>Consumption or API</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Predictability</td><td>High, it is headcount times price</td><td>Low, it depends on what people build</td></tr>
+                      <tr><td>How it grows</td><td>Stepwise, when you add people</td><td>Continuously, sometimes overnight</td></tr>
+                      <tr><td>Main waste</td><td>Licences nobody uses</td><td>Inefficient calls and runaway loops</td></tr>
+                      <tr><td>Right control</td><td>Quarterly review of inactive seats</td><td>Hard cap plus alerts, per project</td></tr>
+                      <tr><td>Allocation basis</td><td>Licence count, simple and defensible</td><td>Tagged usage per project or team</td></tr>
+                      <tr><td>Who should own it</td><td>Whoever owns headcount</td><td>Whoever owns the project</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Nearly all of the horror stories in this category come from the right-hand column. A seat licence cannot surprise you. A consumption-based integration with a retry loop and no ceiling absolutely can, and typically does so over a weekend.</p>
+
+                <p>If your organisation is purely on seat licences, the budgeting question is genuinely simple and does not warrant much machinery. The moment anyone starts building on an API, the control requirements change and should be handled separately rather than folded into the same policy.</p>
+
+                <h2>Alerts and caps do different jobs</h2>
+
+                <p>These are frequently confused, and having only one of them is a common failure.</p>
+
+                <p><strong>An alert</strong> tells a person that spending is tracking above expectation. It does not stop anything. Its value is that it converts a surprise into a decision, and it needs to reach someone who can act, not a shared mailbox nobody reads.</p>
+
+                <p><strong>A cap</strong> stops spending at a threshold. It prevents the worst outcome and it creates an outage, so it needs to be set somewhere you genuinely would not want to pass without a conversation, not at your expected monthly spend.</p>
+
+                <p>A workable configuration for most organisations:</p>
+
+                <ul>
+                  <li>An alert at fifty percent of monthly budget, to the owner, as information.</li>
+                  <li>An alert at eighty percent, to the owner and finance, as a prompt to check.</li>
+                  <li>A hard cap at the ceiling, roughly double the expected spend, which should never be reached in normal operation.</li>
+                  <li>For any consumption-based project, its own credential with its own cap, so one runaway process trips its own limit rather than the organisation's.</li>
+                </ul>
+
+                <p>That last point is the one that saves organisations real money. Shared credentials mean a single misbehaving integration can consume the entire budget and take everyone else's access down with it.</p>
+
+                <div class="post-callout">
+                  <p><strong>Test the cap before you rely on it.</strong> Set a low temporary limit on a test project, exceed it deliberately, and confirm what actually happens: does it stop, does it degrade, who gets notified, and how long does restoring service take. An untested cap is a belief rather than a control, and finding out during an incident is expensive.</p>
+                </div>
+
+                <h2>Keep the allocation simple</h2>
+
+                <p>There is a strong temptation to build something precise: usage-weighted allocation, tiered internal rates, quarterly true-ups. Resist it in proportion to the size of the sum involved.</p>
+
+                <p>For most mid-size organisations, total AI spending is smaller than the cost of the meetings required to allocate it precisely. A finance analyst spending two days a month on apportionment for a figure in the low tens of thousands annually has destroyed more value than any allocation accuracy could recover.</p>
+
+                <p>Simple rules that hold up: seat costs go to the department whose people hold the seats. Consumption costs go to the project that generated them, tagged at the credential level so no analysis is required. Shared infrastructure stays central. Anything ambiguous stays central until it is large enough to be worth arguing about.</p>
+
+                <h2>Reviewing seats without discouraging use</h2>
+
+                <p>Inactive licences are the main waste in a seat-based model and they need to be reclaimed, but the way it is done matters. A quarterly review framed as cost policing makes people log in performatively to protect their access, which costs you money and tells you nothing.</p>
+
+                <p>The version that works is neutral housekeeping. Anyone with no sign-in for sixty days has their licence reclaimed, with a note saying it can be reinstated the same day on request. No explanation required, no manager involved. Reinstatements are cheap and the request itself tells you something useful about whether the person had a real need.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Should we charge AI costs back to departments?</h3>
+                  <p>Not in the first year. Chargeback suppresses consumption, and it suppresses it hardest in the operations, finance and administrative functions where repetitive work makes the gain largest. Showback gives you the visibility and peer comparison without the suppression. Revisit once the numbers are large enough to matter.</p>
+
+                  <h3>How do we split the cost fairly?</h3>
+                  <p>Seat costs to the department holding the seats, consumption costs to the project that generated them via tagged credentials, shared infrastructure central. Avoid elaborate formulas. For most organisations the analyst time required to allocate precisely exceeds the money being allocated.</p>
+
+                  <h3>What alerts should we set?</h3>
+                  <p>Fifty percent to the owner as information, eighty percent to the owner and finance as a prompt, and a hard cap at roughly double expected spend that should never be reached in normal use. Give every consumption-based project its own credential and its own cap so one runaway process cannot take everyone down.</p>
+
+                  <h3>How do we handle unused licences?</h3>
+                  <p>Reclaim after sixty days without a sign-in, framed as neutral housekeeping with same-day reinstatement on request and no explanation required. Cost-policing framing makes people log in performatively, which costs money and tells you nothing about real need.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get the controls set before the bill surprises you</h2>
+                  <p>We configure hard ceilings, alert thresholds and per-project credentials, set up the showback reporting your finance team needs, and hand over an administrator view your own people run. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-36.html" class="blog-post-nav-link prev">&larr; Using AI for proposals and RFPs</a>
+              <a href="post-38.html" class="blog-post-nav-link next">Building a prompt library &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

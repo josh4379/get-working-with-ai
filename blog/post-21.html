@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>AI for Law Firms: Where It Helps and Where It Cannot Go</title>
+  <meta name="description" content="A practical guide to AI for law firms. Which tasks it genuinely speeds up, which it must never touch, how to handle client confidentiality, and what to configure before anyone starts.">
+  <meta name="keywords" content="AI for law firms, ChatGPT for lawyers, AI implementation law firm, legal AI tools, AI law firm confidentiality">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-21.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-07-21">
+  <meta property="article:modified_time" content="2026-07-21">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-21.html">
+  <meta property="og:title" content="AI for Law Firms: Where It Helps and Where It Cannot Go">
+  <meta property="og:description" content="Which legal tasks AI genuinely speeds up, which it must never touch, and how to handle client confidentiality properly.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI for Law Firms: Where It Helps and Where It Cannot Go">
+  <meta name="twitter:description" content="The tasks worth automating in a law firm are rarely the ones that look most impressive in a demonstration.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-21.html#article",
+      "headline": "AI for Law Firms: Where It Helps and Where It Cannot Go",
+      "description": "Where generative AI helps a mid-size law firm, where it cannot go, how to handle client confidentiality and privilege, and the configuration to complete before rollout.",
+      "datePublished": "2026-07-21",
+      "dateModified": "2026-07-21",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-21.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Legal technology",
+        "Law firm operations",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI for law firms",
+          "item": "https://getworkingwithai.com/blog/post-21.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it safe for a law firm to use ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on personal consumer accounts with client matter content. On a business or enterprise tier with training on your inputs disabled, retention configured and administrative control in place, it is a normal vendor decision much like any cloud practice management system. The account tier is what changes the risk profile, not the model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What legal tasks should AI never do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anything where a fabricated citation, a missed authority or an unreviewed statement reaches a court, a client or the other side. Case law research without verification, final filings, advice delivered to a client unread, and conflicts checking are all outside the safe boundary. Drafting first passes that a lawyer then verifies is inside it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need to tell clients we use AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your engagement terms, your state bar guidance and whether the use touches confidential material in a way the client would reasonably want to know about. Many firms handle it with a short clause in the engagement letter rather than a per-matter disclosure. Check your own jurisdiction rather than relying on a general rule."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">AI for law firms</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>AI for Law Firms: Where It Helps and Where It Cannot Go</h1>
+        <p class="blog-post-meta"><time datetime="2026-07-21">21 July 2026</time> &middot; 11 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>The tasks worth automating in a law firm are the ones nobody bills proudly for, not the ones that demonstrate well.</li>
+                    <li>The account tier is the confidentiality decision. A personal consumer account with matter content in it is the actual risk, not the model.</li>
+                    <li>Verification is not optional. Every legal proposition an AI tool produces needs a lawyer standing behind it before it leaves the building.</li>
+                    <li>The billable hour tension is real and should be resolved deliberately, before adoption, not discovered afterwards.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Law firms have a harder version of the AI question than most businesses, and it is not the one usually discussed. The confidentiality issue is real but tractable. The verification issue is real and permanent. The genuinely awkward one is that a firm billing by the hour has just been handed a tool whose entire value proposition is taking less time.</p>
+
+                <p>All three are solvable. None of them are solved by buying a licence and hoping.</p>
+
+                <h2>Start with the work, not the technology</h2>
+
+                <p>The mistake most firms make is beginning with a question about legal research, because legal research is the most visible thing lawyers do that looks like something AI might handle. It is close to the worst place to start. Research carries the highest verification burden, the highest cost of being wrong, and the smallest margin over the specialist tools your firm may already pay for.</p>
+
+                <p>The better place to start is the unglamorous middle of the working day. Look at what associates and paralegals do that is time consuming, low judgement, and already reviewed by someone before it goes anywhere. That is where the hours are, and it is where the risk of an AI error is contained by a process that already exists.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Task</th><th>Fit</th><th>Why</th><th>Who verifies</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Summarising a long document set you already have</td><td>Strong</td><td>Source material is in front of you, so errors are checkable in minutes</td><td>Reviewing associate</td></tr>
+                      <tr><td>First drafts of routine correspondence</td><td>Strong</td><td>Already reviewed before sending, format is repetitive</td><td>Supervising lawyer</td></tr>
+                      <tr><td>Deposition and transcript summaries with citations to page and line</td><td>Strong</td><td>Every claim points at a source you can open</td><td>Whoever uses the summary</td></tr>
+                      <tr><td>Comparing a contract against your firm's standard positions</td><td>Good</td><td>Flags differences for a human to judge, does not decide</td><td>Matter lawyer</td></tr>
+                      <tr><td>Turning a partner's dictated notes into a structured memo</td><td>Good</td><td>All substance comes from the partner</td><td>The partner</td></tr>
+                      <tr><td>Plain-English explanation of a clause for a client</td><td>Good</td><td>Lawyer checks accuracy before it is sent</td><td>Matter lawyer</td></tr>
+                      <tr><td>Case law research</td><td>Poor</td><td>Fabricated or superseded authority is the classic failure and the verification cost eats the saving</td><td>Not suitable without specialist tooling</td></tr>
+                      <tr><td>Conflicts checking</td><td>Unsuitable</td><td>Needs completeness and an audit trail, not plausible output</td><td>Existing system</td></tr>
+                      <tr><td>Final filings and signed advice</td><td>Unsuitable</td><td>No margin for an unverified sentence</td><td>Not suitable</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The pattern across the strong rows is that the source material is already in the room. When a lawyer can check the output against a document sitting on the desk, the verification cost is small and the time saving survives. When the tool has to supply the underlying facts from its own knowledge, the verification cost is large and the saving disappears.</p>
+
+                <div class="post-callout">
+                  <p><strong>The rule that covers most of it:</strong> use AI to reorganise information you already have, not to supply information you do not have. Nearly every reliable use in a law firm sits on the first side of that line, and nearly every embarrassment sits on the second.</p>
+                </div>
+
+                <h2>The verification problem does not go away</h2>
+
+                <p>By now most lawyers have heard about the sanctioned filings containing citations to cases that did not exist. Those incidents are instructive not because the technology was uniquely bad, but because of how the failure presented itself. The fabricated citations were correctly formatted, plausibly named, attributed to real courts, and confidently described. Nothing about them looked wrong. That is the failure mode, and no amount of model improvement removes the need for the check.</p>
+
+                <p>Firms that handle this well tend to do two things. They write down, in one page, which categories of output require what level of checking, and they make that document part of how new lawyers are trained rather than a policy nobody opens. And they insist on a simple habit: if an AI tool asserts a legal proposition, the lawyer opens the primary source before relying on it. Not a search for the case name to confirm it exists. The actual authority, read.</p>
+
+                <p>The second habit is what separates a firm using AI responsibly from a firm that has not had its incident yet.</p>
+
+                <h2>Confidentiality is an account tier decision</h2>
+
+                <p>The concern lawyers raise first is whether client information put into an AI tool becomes training data or otherwise escapes. It is a legitimate concern and it has a specific answer that depends almost entirely on which account the material was typed into.</p>
+
+                <p>A personal consumer account is a personal arrangement between an individual and a vendor. Your firm has no visibility into it, no administrative control over it, no ability to configure retention, and no contractual position of its own. If an associate is pasting matter documents into their own account, the firm has an undisclosed subprocessor and does not know it.</p>
+
+                <p>A business or enterprise tier changes that. Inputs are excluded from model training by contract, retention is configurable, administrators can see who has access, and there is a commercial agreement your firm is party to. At that point the analysis resembles any other cloud vendor decision your firm has already made about practice management, document storage or email. Firms comfortable with those are usually comfortable here once they see the terms side by side.</p>
+
+                <p>Which means the practical confidentiality task is not a philosophical one. It is: find out who is using personal accounts, get them onto the firm account, turn off the settings that need turning off, and write down what you did so you can answer a client question about it later.</p>
+
+                <h3>Professional responsibility and disclosure</h3>
+
+                <p>The American Bar Association addressed generative AI in Formal Opinion 512 in 2024, and a number of state bars have issued their own guidance since. The themes are consistent: competence includes understanding the tool well enough to supervise it, confidentiality obligations follow the client's information wherever it goes, and fees should reflect the time actually spent rather than the time a task historically took.</p>
+
+                <p>Disclosure practice varies. Many firms handle it with a short provision in the engagement letter describing the use of technology tools including AI, with client information kept confidential and all work supervised by lawyers. Others make no general disclosure and address it per matter where a client asks or where a client's own policy requires it. Some institutional clients now specify their position in outside counsel guidelines, in which case the question is answered for you. Check your own jurisdiction and your own client obligations rather than adopting a general practice you read somewhere.</p>
+
+                <div class="post-callout">
+                  <p><strong>Worth doing early:</strong> read your three largest clients' outside counsel guidelines for anything about AI or technology subprocessors. It takes an afternoon and it occasionally changes the answer entirely. Finding out during a billing dispute is the expensive way to learn it.</p>
+                </div>
+
+                <h2>The billable hour question, addressed honestly</h2>
+
+                <p>If a task took an associate three hours and now takes forty minutes, the firm has a decision to make, and pretending otherwise produces the worst outcome: quiet non-adoption. Lawyers are not slow to work out that efficiency on an hourly matter reduces their own recorded time, and if nobody has told them how the firm views that, they will resolve the ambiguity in the direction that protects them.</p>
+
+                <p>Three positions firms actually take, all defensible:</p>
+
+                <p><strong>Bill the time actually spent and take the capacity gain.</strong> The realisation rate on that matter drops, but the same lawyers handle more matters. This works when the firm has demand it is turning away or work sitting in a queue. It does not work when the constraint is client volume rather than lawyer hours.</p>
+
+                <p><strong>Move the affected work to fixed fees.</strong> The efficiency accrues to the firm rather than being competed away, and clients get price certainty they generally prefer. This is the direction of travel for document-heavy, repeatable matter types, and AI makes it more attractive rather than causing it.</p>
+
+                <p><strong>Reinvest the time in matter quality.</strong> More thorough review, better client communication, work that previously got the version the budget allowed. Harder to measure, but it is what many good lawyers do with the time anyway.</p>
+
+                <p>The position matters less than making one and saying it out loud. A firm that adopts AI without addressing this will find that adoption stalls among exactly the fee earners whose time is most valuable, and the partners will conclude the technology does not work rather than that the incentives do not.</p>
+
+                <h2>What to configure before anyone starts</h2>
+
+                <p>The setup that makes the rest of this workable is not large, but it needs to exist before the first matter document goes anywhere near a chat window.</p>
+
+                <ul>
+                  <li><strong>One firm account on a business tier,</strong> with every lawyer and paralegal on it, so nobody has a reason to keep using a personal one.</li>
+                  <li><strong>Training on inputs disabled and retention set deliberately,</strong> with the settings screenshotted and filed for the day a client asks.</li>
+                  <li><strong>A spending ceiling</strong> at the provider, so the finance partner has a number rather than an exposure.</li>
+                  <li><strong>Single sign-on where your firm already runs it,</strong> so a departing associate loses access the same day they lose their email.</li>
+                  <li><strong>A one-page verification standard</strong> naming which outputs need what checking, kept short enough that people read it.</li>
+                  <li><strong>An answer to the billing question,</strong> communicated by a partner rather than circulated by email.</li>
+                  <li><strong>Task guidance by role,</strong> because the useful tasks for a litigation paralegal and a transactional associate are not the same, and generic training produces generic non-use.</li>
+                </ul>
+
+                <p>Firms that complete that list before rollout tend to see steady use within a few weeks. Firms that hand out licences and schedule a lunchtime demonstration tend to see a spike in curiosity, a fortnight of experimentation, and a quiet return to how things were.</p>
+
+                <h2>A realistic view of the return</h2>
+
+                <p>The honest version is that AI does not change what a law firm sells. It changes how long some of the inputs take. In a mid-size firm the recoverable time tends to concentrate in document review and summarisation, routine correspondence, internal knowledge work, and the administrative layer around matters rather than in the legal reasoning itself.</p>
+
+                <p>That is a meaningful gain and it is worth having. It is not a restructuring of the practice, and firms that expect the latter are usually disappointed by something that was in fact working perfectly well.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Is it safe for a law firm to use ChatGPT or Claude?</h3>
+                  <p>Not on personal consumer accounts with client matter content. On a business or enterprise tier with training on your inputs disabled, retention configured and administrative control in place, it becomes a normal vendor decision comparable to your practice management system. The account tier changes the risk profile far more than the choice of model does.</p>
+
+                  <h3>What should AI never be used for in a law firm?</h3>
+                  <p>Anything where an unverified statement reaches a court, a client or the other side. Case law research without checking primary sources, final filings, advice sent unread, and conflicts checking all sit outside the boundary. Drafting a first pass that a lawyer then verifies sits comfortably inside it.</p>
+
+                  <h3>Do we have to tell clients we use AI?</h3>
+                  <p>It depends on your engagement terms, your state bar guidance and your clients' outside counsel guidelines. Many firms use a short clause in the engagement letter rather than per-matter disclosure. Check your own jurisdiction and your largest clients' requirements before settling on an approach.</p>
+
+                  <h3>Will this reduce our billable hours?</h3>
+                  <p>On hourly matters, yes, for the tasks it touches. Firms respond by taking the capacity gain, moving affected work to fixed fees, or reinvesting the time in quality. The important thing is choosing a position and telling fee earners what it is, because unresolved ambiguity here is the most common reason adoption quietly fails in law firms.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get AI working in your firm without the guesswork</h2>
+                  <p>We pick the provider that fits how your firm actually works, configure the confidentiality settings, cap the spend, set up single sign-on and write task guidance for litigation, transactional and support staff separately. Your practice manager runs it afterwards. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-20.html" class="blog-post-nav-link prev">&larr; AI agents for business</a>
+              <a href="post-22.html" class="blog-post-nav-link next">AI for accounting firms &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+
+</html>

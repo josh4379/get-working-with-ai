@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>AI for Marketing Agencies: Speed Without Losing the Work</title>
+  <meta name="description" content="How marketing and creative agencies can use AI without producing the same work as everyone else. Client IP, contract clauses, where it helps, and where it quietly damages the product.">
+  <meta name="keywords" content="AI for marketing agencies, AI for creative agencies, ChatGPT for marketing, agency AI policy, AI client IP">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-23.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-07-26">
+  <meta property="article:modified_time" content="2026-07-26">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-23.html">
+  <meta property="og:title" content="AI for Marketing Agencies: Speed Without Losing the Work">
+  <meta property="og:description" content="Where AI helps a creative agency, where it flattens the work, and how to handle client IP and contract clauses properly.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI for Marketing Agencies: Speed Without Losing the Work">
+  <meta name="twitter:description" content="The risk for an agency is not that AI produces bad work. It is that it produces average work faster.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-23.html#article",
+      "headline": "AI for Marketing Agencies: Speed Without Losing the Work",
+      "description": "Practical AI adoption for marketing and creative agencies, covering client IP, contract clauses, the tasks that benefit, and the ones where it damages the product.",
+      "datePublished": "2026-07-26",
+      "dateModified": "2026-07-26",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-23.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Marketing agencies",
+        "Creative services",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI for marketing agencies",
+          "item": "https://getworkingwithai.com/blog/post-23.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can agencies use AI on client work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most can, but check the contract first. A growing number of master services agreements now contain clauses that restrict AI use, require disclosure, or make the agency warrant that deliverables are original human work. Those clauses vary by client and are easy to breach without noticing, so the contract review comes before the tool decision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AI-generated content hurt SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Search engines target unhelpful, low-value content rather than the tool used to produce it. The practical risk is that undirected AI output tends to be generic, and generic content underperforms for the same reasons it always has. Content built on original research, client data or a real point of view performs regardless of how the draft was produced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do agencies keep competing clients separate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By putting client material only into a firm-controlled business account with training on inputs disabled, and by not building shared prompt libraries or custom assistants that mix material from competing accounts. The conflict risk in an agency is not the model learning from you, it is a person reusing one client's strategy work on another."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">AI for marketing agencies</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>AI for Marketing Agencies: Speed Without Losing the Work</h1>
+        <p class="blog-post-meta"><time datetime="2026-07-26">26 July 2026</time> &middot; 11 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>The risk is not bad work. It is average work produced faster, which is harder to notice and worse for the agency.</li>
+                    <li>Check your client contracts before your tool settings. AI clauses in master services agreements are now common and vary widely.</li>
+                    <li>AI is strongest on the work around the idea and weakest on the idea. Treat that boundary as a quality control, not a limitation.</li>
+                    <li>If the deliverable could have been produced without knowing the client, the agency has a problem the tool did not cause but will amplify.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Every agency has now had the meeting where someone demonstrates how quickly a campaign concept, a set of headlines and a content calendar can be produced, and the room divides between people who find it exciting and people who find it threatening. Both reactions miss the actual risk, which is quieter. AI does not usually produce work that is obviously bad. It produces work that is competent, unobjectionable, and indistinguishable from what any other agency would have produced with the same brief.</p>
+
+                <p>For a business whose entire margin depends on being distinguishable, that is the thing to manage.</p>
+
+                <h2>Read the contract before you change the workflow</h2>
+
+                <p>This is the step agencies skip and then regret. Master services agreements now routinely contain provisions about AI, and they are not consistent. Some clients require disclosure of any AI use in deliverables. Some prohibit it outright for creative output while permitting it for research. Some require that the agency warrant deliverables as original work, which is a clause that predates the technology and now reads differently. Some enterprise clients extend their own vendor security requirements to any tool touching their material.</p>
+
+                <p>An agency that rolls out a tool across thirty accounts without checking has almost certainly breached something, and will find out during a renewal or a dispute rather than at a convenient moment.</p>
+
+                <p>The task is a day of work. Pull the top clients by revenue, search the agreements for the relevant terms, and build a short table of what each client permits. That table then drives the tool decision rather than the other way round.</p>
+
+                <div class="post-callout">
+                  <p><strong>Worth writing into new agreements proactively:</strong> a clause describing how your agency uses AI, what it is used for, what remains human, and how client material is protected. Clients are asking the question anyway, and having a considered answer already in the contract is a stronger position than answering it defensively when asked.</p>
+                </div>
+
+                <h2>Where it genuinely helps</h2>
+
+                <p>The useful pattern in agency work is that AI performs well when the direction already exists and someone needs to execute against it, and performs badly when it is being asked to supply the direction.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Task</th><th>Fit</th><th>What changes</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Repurposing an approved asset into other formats</td><td>Strong</td><td>The thinking is done, this is transformation</td></tr>
+                      <tr><td>Category and competitor research for a pitch</td><td>Strong</td><td>Faster orientation, but verify every claim before it goes in a deck</td></tr>
+                      <tr><td>Turning a workshop recording into a structured brief</td><td>Strong</td><td>Removes hours of writing up, substance is all client</td></tr>
+                      <tr><td>Variant generation once a line is approved</td><td>Strong</td><td>Twenty versions of an accepted idea, not twenty ideas</td></tr>
+                      <tr><td>First drafts of long-form content from a real outline</td><td>Good</td><td>Works when the outline carries a genuine point of view</td></tr>
+                      <tr><td>Reporting commentary from campaign data</td><td>Good</td><td>You supply numbers, it supplies the narrative, you check the reasoning</td></tr>
+                      <tr><td>Response scaffolding for briefs and RFPs</td><td>Good</td><td>Structure and boilerplate, not the strategic argument</td></tr>
+                      <tr><td>Concept and strategic positioning</td><td>Poor</td><td>Produces the consensus answer, which is what you are paid to avoid</td></tr>
+                      <tr><td>Brand voice writing without heavy grounding</td><td>Poor</td><td>Drifts to a generic register within a paragraph</td></tr>
+                      <tr><td>Final client-facing work without human editing</td><td>Unsuitable</td><td>The flattening is invisible internally and obvious to the market</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Look at the strong rows and notice what they have in common. In every case a human has already made the decision that matters, and the tool is compressing the labour of carrying it out. That is a real saving and it is where most agencies find their hours.</p>
+
+                <h2>The flattening problem, and what to do about it</h2>
+
+                <p>Language models produce the most probable continuation. That is not a flaw, it is the mechanism, and it means that unprompted output converges on the middle of whatever it has seen. For most business writing that is fine. For an agency selling differentiation, it is the entire problem.</p>
+
+                <p>The failure is hard to catch because it is not visible in any single piece. A headline is fine. A post is fine. Six months of output is somehow less distinctive than it used to be, retention softens, and nobody can point to the moment it happened.</p>
+
+                <p>Three practical controls that agencies use successfully:</p>
+
+                <p><strong>Insist on a proprietary input.</strong> Before any AI-assisted content work, require at least one thing the model could not have known: client sales data, a customer interview, a founder's opinion, a result from your own campaign. Content built on a proprietary input cannot converge, because the distinguishing material is not in the training data.</p>
+
+                <p><strong>Ban it from the concept stage.</strong> Not for compliance reasons, for quality reasons. The first idea in the room should come from a person, because the tool's contribution at that stage is a well-articulated version of the obvious, and once the obvious has been articulated well it is difficult to get past it.</p>
+
+                <p><strong>Keep a named human editor on everything.</strong> Not a reviewer who approves, an editor who changes things. If a piece of work goes out with nothing altered from the draft, that is a signal about the piece rather than about the draft.</p>
+
+                <div class="post-callout">
+                  <p><strong>A test worth running on your own output:</strong> take a recent deliverable and remove the client's name. If a senior person could not tell which client it was for, the work has flattened. Run it quarterly. It catches the drift while it is still cheap to correct.</p>
+                </div>
+
+                <h2>Competing clients and shared material</h2>
+
+                <p>Agencies carry a conflict risk most businesses do not, because they hold strategic material for competing brands. The AI-specific version of this is less about the vendor than people assume and more about internal habits.</p>
+
+                <p>The vendor side is straightforward. On a business tier with training on your inputs disabled, material from one account is not used to improve a model that another account benefits from. Confirm the setting, record it, move on.</p>
+
+                <p>The internal side is where the real exposure sits. Shared prompt libraries that accumulate examples from live accounts. A custom assistant built on one client's positioning documents that someone helpfully reuses for a similar brief. A strategist who pastes last year's competitive analysis in as context because it saves time. None of that is a vendor failure and all of it is a conflict.</p>
+
+                <p>The rule that holds: client material stays scoped to the client. If you build shared assistants or prompt collections, build them from agency methodology and craft standards, not from client work.</p>
+
+                <h2>The pricing question agencies have to answer</h2>
+
+                <p>An agency on hourly or retainer billing has the same tension a law firm has, in a sharper form, because agency deliverables are more visibly reproducible. If a content package took twenty hours and now takes eight, the client will eventually ask, and having no answer is worse than having an uncomfortable one.</p>
+
+                <p>The direction most agencies land on is to move affected work toward output-based or value-based pricing, which was already happening and which AI accelerates. That protects the margin, gives the client the price certainty they want, and removes an argument nobody wins.</p>
+
+                <p>The position to avoid is billing the historical hours for work that now takes a fraction of them and hoping the client does not work it out. They will, and the conversation that follows is not about the invoice. It is about trust.</p>
+
+                <h2>What to configure</h2>
+
+                <ul>
+                  <li><strong>One agency account on a business tier,</strong> everyone on it, so client material stops passing through personal logins.</li>
+                  <li><strong>Training on inputs disabled,</strong> recorded, so you can answer a client security questionnaire with evidence.</li>
+                  <li><strong>A per-client permission table</strong> from your contract review, visible to account leads.</li>
+                  <li><strong>A hard spending ceiling,</strong> because creative teams generate volume and image and video work is where costs concentrate.</li>
+                  <li><strong>Task guidance by discipline.</strong> What a strategist, a copywriter, a designer, an account manager and a media planner should use it for are five different lists.</li>
+                  <li><strong>A written editorial standard</strong> naming what never ships without human authorship.</li>
+                </ul>
+
+                <p>That configuration takes days, not months, and it converts an ambient risk into a documented position you can show a client.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Can we use AI on client work?</h3>
+                  <p>Check the contract before the tool. Master services agreements increasingly contain clauses requiring disclosure, restricting AI in creative deliverables, or warranting original human work. These vary by client and are easy to breach unknowingly. Build a per-client permission table first, then configure accordingly.</p>
+
+                  <h3>Will AI content damage our clients' SEO?</h3>
+                  <p>Search engines target unhelpful, thin content rather than the production method. The practical risk is that undirected output is generic, and generic content underperforms for the same reasons it always has. Content grounded in original research, client data or a genuine point of view performs regardless of how the draft was produced.</p>
+
+                  <h3>How do we manage competing clients?</h3>
+                  <p>The vendor side is handled by a business tier with training disabled. The real risk is internal: shared prompt libraries built from live accounts, custom assistants trained on one client's strategy and reused on another, or pasting a competitor's material in as context. Keep client material scoped to the client and build shared assets from agency methodology instead.</p>
+
+                  <h3>Should we tell clients we use AI?</h3>
+                  <p>Yes, and preferably in the agreement rather than in response to a question. A clause describing what it is used for, what remains human authored and how client material is protected puts you in a stronger position than an improvised answer during a security review.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get your agency set up without flattening the work</h2>
+                  <p>We choose the provider, disable training on your inputs, cap the spend, sort out access across accounts, and write task guidance separately for strategy, copy, design, media and account management. Your operations lead runs it afterwards. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-22.html" class="blog-post-nav-link prev">&larr; AI for accounting firms</a>
+              <a href="post-24.html" class="blog-post-nav-link next">AI for insurance brokerages &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+
+</html>

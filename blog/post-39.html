@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>Handling Client Data in AI Tools: Rules That Hold Up</title>
+  <meta name="description" content="How to write client data rules for AI tools that people actually follow, the four categories that matter, the subprocessor question, and what to do if something goes into the wrong place.">
+  <meta name="keywords" content="client data in AI tools, AI data handling policy, AI subprocessor, confidential data AI, professional services AI data rules">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-39.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-09-01">
+  <meta property="article:modified_time" content="2026-09-01">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-39.html">
+  <meta property="og:title" content="Handling Client Data in AI Tools: Rules That Hold Up">
+  <meta property="og:description" content="How to write AI data rules people follow at six on a deadline, and the four categories that matter.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Handling Client Data in AI Tools: Rules That Hold Up">
+  <meta name="twitter:description" content="A data rule that is not memorable at six on a deadline is not a rule. It is a document.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-39.html#article",
+      "headline": "Handling Client Data in AI Tools: Rules That Hold Up",
+      "description": "Practical rules for handling client data in AI tools, covering data categories, subprocessor obligations, cross-border questions and incident response.",
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-39.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Data protection",
+        "Confidentiality",
+        "AI governance"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Handling client data in AI tools",
+          "item": "https://getworkingwithai.com/blog/post-39.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What client data can go into an AI tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On a business tier where your data is contractually excluded from model training, most ordinary client working material is defensible, subject to your own engagement terms and any client-specific restrictions. What should not go in without a specific check: material under a confidentiality agreement that names permitted recipients, regulated categories such as health or payment data, and anything a client has told you to keep in a specific system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is an AI provider a subprocessor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In substance yes, if it processes client material on your behalf. That matters because many client agreements require notice of new subprocessors, a list on request, or approval. Firms that adopted AI without updating their subprocessor position are frequently in technical breach of agreements they signed years earlier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do we do if someone puts the wrong thing into an AI tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Treat it as you would any other misdirected disclosure: establish what went in, when, and into which account, delete what can be deleted, check the contractual position on retention and training, and assess notification obligations. The single most important factor is whether it was a firm account or a personal one, because personal accounts remove almost all of your options."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">Handling client data in AI tools</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Handling Client Data in AI Tools: Rules That Hold Up</h1>
+        <p class="blog-post-meta"><time datetime="2026-09-01">1 September 2026</time> &middot; 10 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>A rule that is not memorable at six on a deadline is not a rule, it is a document.</li>
+                    <li>Four categories is the most a person will retain. Any more and they will guess instead.</li>
+                    <li>Your AI provider is a subprocessor in substance, and most client agreements have something to say about that.</li>
+                    <li>Personal accounts remove your ability to respond to an incident. That is the strongest argument for consolidation.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Most firms write their AI data policy the same way they write every policy: comprehensively, with definitions, categories and a decision tree. It is thorough, it is defensible on paper, and it fails at the only moment that matters, which is a Thursday evening when someone needs to summarise a long document to meet a deadline and has to decide in four seconds whether that is allowed.</p>
+
+                <p>Policies that are not recallable under time pressure do not govern behaviour. They govern the aftermath.</p>
+
+                <h2>Write for the moment of decision</h2>
+
+                <p>The practical test for any rule in this area is whether a mid-level professional, three months after the training session, under deadline pressure, can recall it and apply it without opening anything. That standard rules out almost every policy document written on this subject.</p>
+
+                <p>It admits four categories. Not because four is a natural number of categories for data, but because four is roughly what a person retains.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Category</th><th>Rule</th><th>Why</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Public or already published</td><td>No restriction</td><td>Nothing to protect</td></tr>
+                      <tr><td>Ordinary internal and client working material</td><td>Firm account only</td><td>Covered by your agreement, excluded from training, retrievable</td></tr>
+                      <tr><td>Restricted: personal data of individuals, health, payment, credentials</td><td>Ask before it goes anywhere</td><td>Specific legal regimes attach and the answer varies</td></tr>
+                      <tr><td>Never: material under a named-recipient confidentiality agreement, or anything a client has restricted</td><td>Does not go in at all</td><td>You have already promised otherwise in writing</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The second row carries most of the daily volume and it is the one people get wrong in both directions. Some firms forbid it, which drives usage onto personal accounts and makes the situation worse. Others say nothing, which leaves people guessing. Stating plainly that ordinary client working material belongs in the firm account and nowhere else is the single most useful sentence in the whole policy.</p>
+
+                <div class="post-callout">
+                  <p><strong>The one-line version that people actually remember:</strong> if it is client work, it goes in the firm account and nowhere else; if it is personal data, health, payment or credentials, ask first; if a client or an agreement has told us to restrict it, it does not go in. Three clauses. Put it on the wall, not in a binder.</p>
+                </div>
+
+                <h2>The subprocessor problem most firms have already</h2>
+
+                <p>This is the part that surprises people, and it is worth checking before it surprises you in a client audit.</p>
+
+                <p>If an AI provider processes client material on your behalf, it is functionally a subprocessor, whatever your internal terminology. A large number of client agreements, master services agreements and data processing addenda contain provisions about subprocessors: a requirement to maintain a list, to give notice before adding one, to obtain approval, or to flow down specific terms.</p>
+
+                <p>Firms that adopted AI tools without revisiting those agreements are frequently in breach of commitments they signed years before the technology existed. Nobody has noticed yet because nobody has asked, which is not the same as being compliant.</p>
+
+                <p>The remediation is straightforward and worth an afternoon:</p>
+
+                <ol>
+                  <li>Pull the data protection and subprocessor clauses from your top clients by revenue.</li>
+                  <li>Identify which require notice, a list, or approval.</li>
+                  <li>Add your AI provider to your subprocessor list, which many firms discover they do not maintain at all.</li>
+                  <li>Give notice where required, framed as routine housekeeping rather than as a disclosure. It is a normal update and treating it as one sets the tone.</li>
+                </ol>
+
+                <p>Doing this proactively is a considerably better experience than doing it in response to a question from a client's procurement team.</p>
+
+                <h2>What actually happens to the data</h2>
+
+                <p>Staff and clients both ask this, and a firm should be able to answer it in plain terms rather than by referring to a policy.</p>
+
+                <p>On a business or enterprise tier, the position with the major providers is generally that your inputs are not used to train their models, that content is retained for a defined period to provide the service and to meet abuse monitoring obligations, that provider staff access is restricted and logged, and that you can configure retention within limits. On a consumer tier, several of these change, and the training exclusion may be a user-toggled setting rather than a contractual commitment.</p>
+
+                <p>That distinction is the entire argument for consolidation and it is worth stating in exactly those terms, because it converts an abstract governance point into something a professional can evaluate.</p>
+
+                <div class="post-callout">
+                  <p><strong>Keep the evidence, not just the assurance.</strong> Screenshot the training and retention settings the day you configure them, record the date and who did it, and re-check quarterly. When a client asks, a dated screenshot is a materially better answer than a paragraph describing what you believe to be true.</p>
+                </div>
+
+                <h2>The questions people actually ask</h2>
+
+                <p><strong>Does removing names make it safe?</strong> Usually not. Removing an obvious identifier does not remove identifiability, particularly in a small market where a description of the transaction identifies the parties to anyone in the industry. Treat de-identification as a specialist exercise rather than an editing habit.</p>
+
+                <p><strong>What about material that is confidential but not personal data?</strong> Commercially sensitive material is governed by your confidentiality obligations rather than by privacy law, which means the constraint comes from the agreement rather than from a statute. Read what you promised. Some agreements are more restrictive than any privacy regime.</p>
+
+                <p><strong>Where is the data processed?</strong> Ask, and get the answer in writing, because some clients and some regimes care and the answer varies by provider and tier. For most US mid-market firms serving US clients this is not a live issue, and for any firm with European or government-adjacent clients it very much is.</p>
+
+                <p><strong>Can we use client material to improve our own internal tools?</strong> Careful. Building an internal knowledge base out of client work is a different act from using a tool to process it, and most engagement terms did not contemplate it. This one needs a specific decision and usually a specific permission.</p>
+
+                <h2>When something goes into the wrong place</h2>
+
+                <p>It will happen. Having a defined response in advance is what separates a contained incident from a bad month.</p>
+
+                <p>The sequence: establish what was disclosed, when, and into which account. Delete what can be deleted, including the conversation. Check the contractual position on retention and training for that account tier. Assess whether it meets any notification threshold under your client agreements, your professional obligations or applicable law. Record what happened and what you did, because the record is what demonstrates you took it seriously.</p>
+
+                <p>The decisive variable is the account. On a firm account with a business agreement you have a contractual position, a retention setting, deletion capability and a vendor you can contact. On someone's personal account you have almost none of that, and the disclosure was made to a party you have no agreement with.</p>
+
+                <p>That difference, more than any policy language, is the argument for getting everyone onto one governed account.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>What client data can safely go into an AI tool?</h3>
+                  <p>On a business tier with training exclusion in the contract, ordinary client working material is generally defensible, subject to your engagement terms and any client-specific restrictions. Personal data, health, payment and credential material needs a specific check first, and anything under a named-recipient confidentiality agreement should not go in at all.</p>
+
+                  <h3>Is our AI provider a subprocessor?</h3>
+                  <p>In substance yes, if it processes client material on your behalf. Many client agreements require subprocessor notice, a maintained list or approval. Firms that adopted AI without revisiting those clauses are often in technical breach of agreements signed years earlier, and proactively giving notice is far better than being asked.</p>
+
+                  <h3>Is deleting names enough?</h3>
+                  <p>Usually not. Removing an obvious identifier does not remove identifiability, especially in a small market where the facts of a matter identify the parties to anyone in the industry. Treat de-identification as a specialist exercise rather than an editing habit.</p>
+
+                  <h3>What do we do if something goes in that should not have?</h3>
+                  <p>Establish what, when and into which account. Delete what can be deleted, check the retention and training position for that tier, assess notification obligations, and record it. The account matters most: a firm account gives you contractual recourse and deletion capability, a personal one gives you almost nothing.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get the data questions settled once</h2>
+                  <p>We configure the account so the answers are true, evidence the settings, set retention and access, cap the spend, and write the short rules your people will actually follow along with the subprocessor position your clients ask about. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-38.html" class="blog-post-nav-link prev">&larr; Building a prompt library</a>
+              <a href="post-40.html" class="blog-post-nav-link next">AI for operations teams &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

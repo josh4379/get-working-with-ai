@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>AI for Financial Advisers: The Compliance-Safe Uses</title>
+  <meta name="description" content="How advisory and wealth firms use AI without creating recordkeeping, supervision or marketing rule problems. What counts as a business record, and where the time actually comes back.">
+  <meta name="keywords" content="AI for financial advisors, AI for RIA firms, wealth management AI, adviser compliance AI, AI recordkeeping SEC">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-29.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-09">
+  <meta property="article:modified_time" content="2026-08-09">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-29.html">
+  <meta property="og:title" content="AI for Financial Advisers: The Compliance-Safe Uses">
+  <meta property="og:description" content="How advisory firms use AI without creating recordkeeping, supervision or marketing rule problems.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI for Financial Advisers: The Compliance-Safe Uses">
+  <meta name="twitter:description" content="The sleeper issue for advisers is not advice. It is whether that chat window is a business record.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-29.html#article",
+      "headline": "AI for Financial Advisers: The Compliance-Safe Uses",
+      "description": "Compliance-aware AI adoption for registered investment advisers and wealth management firms, covering recordkeeping, supervision, the marketing rule and practical administrative uses.",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-29.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Wealth management",
+        "Investment advice",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI for financial advisers",
+          "item": "https://getworkingwithai.com/blog/post-29.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can financial advisers use ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For internal drafting and administrative work on a firm-controlled account, generally yes. The complications are recordkeeping, since communications with clients are business records regardless of where they were drafted, supervision, since your compliance programme has to cover the tool, and the marketing rule, which applies to anything promotional the tool helps produce."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is an AI chat a business record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The output can be, once it becomes a communication with a client or prospect. The safer working assumption is that anything the tool helps produce which reaches a client is subject to the same retention and review as if it had been typed directly, and that the tool itself is not your system of record. Draft in the tool, retain in your compliant systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about claiming we use AI in our marketing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Be careful and be accurate. The SEC has brought enforcement actions against advisers who overstated their use of artificial intelligence in client-facing materials. If you say it, be able to evidence it, and run the language through the same marketing rule review as any other performance or capability claim."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">AI for financial advisers</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>AI for Financial Advisers: The Compliance-Safe Uses</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-09">9 August 2026</time> &middot; 11 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Recordkeeping is the sleeper issue, not advice. Anything reaching a client is a record regardless of where it was drafted.</li>
+                    <li>Never let the chat tool be your system of record. Draft there, retain in the systems compliance already reviews.</li>
+                    <li>Saying you use AI in marketing material is a claim, and regulators have brought cases about overstated ones.</li>
+                    <li>The recoverable time is in meeting preparation, review packets and client correspondence, not in portfolio decisions.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Advisory firms tend to open this conversation by asking whether AI can give investment advice. It is the wrong question, because the answer is obviously no and it distracts from the one that actually creates risk. The issue that catches advisory firms out is not what the tool says. It is where the resulting communication lives, whether it was retained, and whether anyone supervised it.</p>
+
+                <p>The industry has recent experience of exactly this failure mode in another form, and it was expensive.</p>
+
+                <h2>The recordkeeping lesson already learned</h2>
+
+                <p>Over the last few years the enforcement wave around off-channel communications produced very large penalties across the industry, and the substance of it was not that anyone gave bad advice. It was that business communications happened on personal messaging applications, outside the firm's retention and supervision, and could not be produced when asked for.</p>
+
+                <p>An AI chat window used to draft client communications is structurally similar. A person composes something material to a client relationship in a system the firm does not archive, does not surveil, and cannot produce from. If the resulting message is then sent through a compliant channel, the record exists and the situation is fine. If the conversation itself contains the substance, or if drafting slides into corresponding, the firm has a gap.</p>
+
+                <p>The rule that resolves it is short and worth adopting explicitly:</p>
+
+                <div class="post-callout">
+                  <p><strong>Draft in the tool, communicate in your systems.</strong> Nothing goes to a client from the chat window. Output is pasted into email, the CRM or the portal, where retention and review already apply. The AI tool is a word processor, not a channel, and treating it as anything else creates a category of record nobody is capturing.</p>
+                </div>
+
+                <p>That single sentence, written into your compliance manual and trained on once, removes most of the exposure in this area.</p>
+
+                <h2>Where the time actually comes back</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Task</th><th>Fit</th><th>Watch for</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Preparing for a client review from your own file</td><td>Strong</td><td>Nothing, the material is yours</td></tr>
+                      <tr><td>Turning meeting notes into a CRM entry and follow-up list</td><td>Strong</td><td>Paste into the CRM, do not leave it in the chat</td></tr>
+                      <tr><td>Explaining a concept in plain English for a client letter</td><td>Strong</td><td>Adviser verifies accuracy before sending</td></tr>
+                      <tr><td>Drafting the annual review letter or planning summary</td><td>Strong</td><td>Numbers come from your systems, not the model</td></tr>
+                      <tr><td>Internal procedure and operations documentation</td><td>Strong</td><td>Nothing</td></tr>
+                      <tr><td>Summarising a fund document or product disclosure you hold</td><td>Good</td><td>Verify anything you then rely on</td></tr>
+                      <tr><td>Newsletter and educational content</td><td>Good</td><td>Marketing rule review applies as normal</td></tr>
+                      <tr><td>Prospect correspondence and pitch material</td><td>Moderate</td><td>This is advertising, treat it accordingly</td></tr>
+                      <tr><td>Market commentary and outlooks</td><td>Poor</td><td>Confident claims with no verifiable source</td></tr>
+                      <tr><td>Specific recommendations or allocations</td><td>Unsuitable</td><td>Fiduciary judgement, and it has no view of the client</td></tr>
+                      <tr><td>Anything performance related</td><td>Unsuitable</td><td>Marketing rule has precise requirements the model does not know</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The pattern is consistent with every other regulated profession. Where your firm supplies the facts and the tool supplies the wording, it works. Where the tool supplies the facts, it produces something confident, plausible and unsourceable, which is the worst possible property in a regulated communication.</p>
+
+                <h2>Meeting preparation is the underrated one</h2>
+
+                <p>The task most advisers underestimate is preparation. An adviser with two hundred households cannot hold each situation in mind, and preparation for a review meeting typically means twenty minutes reconstructing the picture from the CRM, the last review letter and the file notes.</p>
+
+                <p>Compressing that to five minutes, by having the material summarised into a briefing with the open items and the last conversation's commitments surfaced, is worth several hours a week to a busy adviser and it improves the meetings. Clients notice when you remember what they told you last time, and most of the value of a review is relational rather than analytical.</p>
+
+                <p>It also sits entirely inside the safe zone. The material is the firm's own, the output goes to the adviser rather than to the client, and nothing is being asserted that is not already in the file.</p>
+
+                <h2>The marketing rule, and claiming AI</h2>
+
+                <p>Two separate points here and firms conflate them.</p>
+
+                <p>The first is that content produced with AI assistance is subject to exactly the same marketing rule requirements as content produced any other way. There is no separate standard. If a piece is an advertisement it needs the same review, the same substantiation and the same treatment of any performance or testimonial content. The production method changes nothing.</p>
+
+                <p>The second is more specific to this moment. Regulators have brought enforcement actions against advisers who described their use of artificial intelligence in ways they could not support. Saying that your investment process is driven by AI, or that you use machine learning to select investments, is a claim about your business, and if it is not accurate it is a misstatement in an advertisement.</p>
+
+                <p>The safe position is to describe what you actually do. If AI helps your team prepare and communicate more efficiently, say that, because it is true and it is a reasonable thing for a client to hear. Do not let a marketing writer upgrade it into something about the investment process.</p>
+
+                <div class="post-callout">
+                  <p><strong>A useful internal test:</strong> could you evidence the claim to an examiner with a document or a demonstration? If describing your AI use requires a diagram you have not built and a process you do not run, the claim is ahead of the reality and should be brought back.</p>
+                </div>
+
+                <h2>What compliance needs to see</h2>
+
+                <p>A chief compliance officer approving this will want a short, specific set of things, and providing them upfront is much faster than answering them one at a time:</p>
+
+                <ul>
+                  <li><strong>Which tool, which tier,</strong> and the contractual position on whether firm inputs train the model.</li>
+                  <li><strong>Retention settings,</strong> and confirmation that the tool is not being used as a communication channel.</li>
+                  <li><strong>Who has access,</strong> managed by an administrator and tied to employment.</li>
+                  <li><strong>The written rule</strong> covering permitted and prohibited uses, in the compliance manual rather than in an email.</li>
+                  <li><strong>The training record,</strong> showing staff were told the rules.</li>
+                  <li><strong>A spending ceiling,</strong> which is a control question as much as a budget one.</li>
+                  <li><strong>Client data treatment,</strong> consistent with your privacy notice and your safeguards obligations.</li>
+                </ul>
+
+                <p>Firms that assemble this before asking tend to get approval in a meeting. Firms that ask first and assemble afterwards tend to spend a quarter on it.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Can advisers use AI tools at all?</h3>
+                  <p>Yes, for internal drafting and administrative work on a firm-controlled account with the usual configuration. The three things to get right are recordkeeping, supervision and the marketing rule. None of them prohibit use, and all of them are satisfied by treating the tool as a drafting surface rather than a communication channel.</p>
+
+                  <h3>Is the chat history a business record?</h3>
+                  <p>Assume anything that reaches a client is, regardless of where it was drafted. The workable rule is that nothing goes to a client from the chat window. Output is moved into email, the CRM or the portal, where your retention and review already operate, and the tool never becomes a channel.</p>
+
+                  <h3>Can we say we use AI in our marketing?</h3>
+                  <p>Only as accurately as any other claim. Regulators have brought cases against advisers who overstated AI use in client-facing material. Describe what you actually do, keep it away from the investment process unless that is genuinely true, and run the language through your normal marketing rule review.</p>
+
+                  <h3>Where does an advisory firm get the most benefit?</h3>
+                  <p>Meeting preparation, review letter and planning summary drafting, CRM note writing, and plain-English explanations for client correspondence. All of it uses material the firm already holds, all of it stays internal until an adviser sends it, and together it recovers several hours a week for a busy adviser.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get it past compliance the first time</h2>
+                  <p>We choose the provider, configure retention and access, cap the spend, and produce the written position your chief compliance officer needs, along with task guidance for advisers, paraplanners and client service staff. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-28.html" class="blog-post-nav-link prev">&larr; AI for recruitment firms</a>
+              <a href="post-30.html" class="blog-post-nav-link next">Moving off personal accounts &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+
+</html>

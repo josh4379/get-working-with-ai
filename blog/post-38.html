@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>Building a Prompt Library Your Staff Will Actually Open</title>
+  <meta name="description" content="Why most internal prompt libraries are dead within a month, what to build instead, and how to write a task card that someone uses on a Tuesday without being reminded.">
+  <meta name="keywords" content="AI prompt library for teams, company prompt library, AI task cards, internal AI guidance, AI enablement staff">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-38.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-30">
+  <meta property="article:modified_time" content="2026-08-30">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-38.html">
+  <meta property="og:title" content="Building a Prompt Library Your Staff Will Actually Open">
+  <meta property="og:description" content="Most prompt libraries are dead within a month. Here is what to build instead.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building a Prompt Library Your Staff Will Actually Open">
+  <meta name="twitter:description" content="Nobody wants a prompt library. They want to know what to do with this tool on a Tuesday.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-38.html#article",
+      "headline": "Building a Prompt Library Your Staff Will Actually Open",
+      "description": "How to build internal AI guidance that staff actually use, why prompt libraries fail, and the structure of a task card that changes behaviour.",
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-08-30",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-38.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Enablement",
+        "Knowledge management",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Building a prompt library",
+          "item": "https://getworkingwithai.com/blog/post-38.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do internal prompt libraries fail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because they are organised around prompts rather than around tasks, they live somewhere nobody visits, they are written by the person most interested in the tool rather than the person doing the job, and nobody owns keeping them current. Within a month the examples are stale and the document is closed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many prompts should a library contain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Far fewer than most people build. Three to five per role, covering the tasks that genuinely recur, beats a hundred organised by category. A short list gets read and used. A long one gets bookmarked and forgotten, and its length actively signals that using the tool is complicated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is prompt engineering still worth teaching?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Less than it was. Models have become considerably better at interpreting ordinary instructions, so elaborate prompt technique has diminishing returns. What still matters, and always will, is giving the tool enough context: the audience, the format, the constraints, and an example of what good looks like."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">Building a prompt library</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Building a Prompt Library Your Staff Will Actually Open</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-30">30 August 2026</time> &middot; 10 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>People do not want prompts. They want to know what to do with the tool on a Tuesday.</li>
+                    <li>Three to five task cards per role beats a hundred organised prompts, and the short version gets used.</li>
+                    <li>The person who does the job writes the card. The enthusiast formats it.</li>
+                    <li>Include an example of the output. It communicates the standard faster than any instruction.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Almost every organisation that rolls out AI builds a prompt library, usually in the first month, usually by the person most interested in the technology. It is thorough, well organised, and dead within six weeks. The pattern is so consistent that it is worth understanding what is going wrong, because the underlying need is real.</p>
+
+                <p>The need is not for prompts. It is for someone to have already worked out what this thing is for in a specific job.</p>
+
+                <h2>Why libraries die</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>What goes wrong</th><th>Why</th><th>What to do instead</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Organised by prompt category</td><td>People search by their job, not by technique</td><td>Organise by role and by task</td></tr>
+                      <tr><td>Lives in a wiki nobody visits</td><td>It is not where the work happens</td><td>Put it in the tool, or two clicks from it</td></tr>
+                      <tr><td>Written by the enthusiast</td><td>Reflects their work, not the reader's</td><td>The person who does the job dictates it</td></tr>
+                      <tr><td>Too long</td><td>Length signals difficulty and deters use</td><td>Three to five per role, ruthlessly</td></tr>
+                      <tr><td>No example output</td><td>Nobody knows what good looks like</td><td>Show the output, not just the instruction</td></tr>
+                      <tr><td>Nobody owns it</td><td>Goes stale, then becomes actively misleading</td><td>One named owner, one review date</td></tr>
+                      <tr><td>Clever prompt engineering</td><td>Fragile and increasingly unnecessary</td><td>Plain instructions with good context</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The first row is the most important. A library organised into sections like summarisation, extraction and rewriting is organised by what the tool does. Nobody thinks that way about their own job. An account manager thinks "I have to write the renewal summary again". If the guidance is not indexed by that thought, it will not be found at the moment it would have helped.</p>
+
+                <div class="post-callout">
+                  <p><strong>The reframe that fixes most of this:</strong> stop calling it a prompt library. Call it the task list for your role. That change alone tends to reorganise the whole thing correctly, because it forces the question of whose tasks and which ones, rather than which prompt techniques.</p>
+                </div>
+
+                <h2>What a task card actually contains</h2>
+
+                <p>Six elements, on one screen, no longer:</p>
+
+                <ol>
+                  <li><strong>The task, in the words the person would use.</strong> Not "structured document summarisation" but "summarising a client's document bundle before a review".</li>
+                  <li><strong>When to use it,</strong> so people know it applies to their Tuesday.</li>
+                  <li><strong>What to give it,</strong> which is usually the missing piece. Which documents, what context about the audience, what constraints.</li>
+                  <li><strong>The instruction to paste,</strong> in plain language, four or five sentences at most.</li>
+                  <li><strong>An example of good output,</strong> abbreviated. This does more work than everything above it.</li>
+                  <li><strong>What to check before using it.</strong> The specific failure mode for this task, not a general warning about accuracy.</li>
+                </ol>
+
+                <p>The fifth element is the one people leave out and the one that changes behaviour. An instruction tells someone what to type. An example tells them what standard they are aiming at, whether their own result is good enough, and what to do when it is not. It is also the fastest way to communicate house style without writing a style guide.</p>
+
+                <h2>Write it by watching, not by asking</h2>
+
+                <p>Asking people what they would use AI for produces poor answers, because they do not yet know what it is capable of and will describe either something impossible or something trivial.</p>
+
+                <p>What works better is to sit with someone for an hour while they work and note every point where they are producing text, reformatting information, or looking something up that exists somewhere in the organisation. Those moments are your task list, and they are usually not the ones anyone would have nominated.</p>
+
+                <p>Then have that person, not the technology enthusiast, describe how they would want the output. They know the house conventions, the things a client hates, and the detail that must never be omitted. The enthusiast's job is to turn that into an instruction and format the card.</p>
+
+                <div class="post-callout">
+                  <p><strong>Where the good cards actually come from:</strong> the person in each team who has already worked something out on their own. Every organisation has three or four of these. Find them, write down what they are doing, and give it to everyone else. It is faster than designing from first principles and it has already been proven on real work.</p>
+                </div>
+
+                <h2>Prompt engineering matters less than it did</h2>
+
+                <p>Two years ago, phrasing made a substantial difference to output quality, and elaborate technique was worth teaching. That gap has narrowed considerably. Current models interpret ordinary instructions well, and the effort of maintaining clever prompt formulations is increasingly wasted, because they are fragile across model updates and intimidating to the people you want to reach.</p>
+
+                <p>What has not changed, and will not, is context. The tool cannot know your audience, your format conventions, your constraints or your definition of good unless you tell it. A plain instruction with four sentences of context outperforms an elaborately engineered prompt with none, and it survives the next model update.</p>
+
+                <p>So the effort that used to go into technique should go into assembling context: the example document, the house template, the description of the reader, the list of things to avoid. That material is durable and it is proprietary to your organisation.</p>
+
+                <h2>When to promote a card into a shared assistant</h2>
+
+                <p>Most tools now let you save a configured assistant with its own instructions and reference material. This is genuinely useful and it is also where organisations accumulate clutter, so apply a test.</p>
+
+                <p>Promote a task card into a saved assistant when three things are true: several people do the task, the context needed is more than someone will paste each time, and the output has a house standard worth enforcing. Renewal summaries, proposal boilerplate and client-facing explanation of a recurring process usually qualify.</p>
+
+                <p>Do not promote a card that one person uses occasionally. Each saved assistant needs an owner and a review date, and an organisation with forty of them and no owners is in a worse position than one with six well-maintained ones, because the stale ones give wrong answers with an official appearance.</p>
+
+                <h2>Keeping it alive</h2>
+
+                <p>Three habits, none of them heavy:</p>
+
+                <ul>
+                  <li><strong>One named owner per role's card set,</strong> ideally the person who does the job rather than an IT function.</li>
+                  <li><strong>A review date on every card,</strong> visible, so a reader can judge whether to trust it.</li>
+                  <li><strong>A standing two minutes in an existing team meeting</strong> for anyone to show something that worked. This is where new cards come from, and it costs nothing because the meeting already exists.</li>
+                </ul>
+
+                <p>Organisations that do this find their card set stays around a dozen per role and gets steadily better. Organisations that do not find they have a comprehensive document from the launch month that nobody has opened since.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Why do prompt libraries fail?</h3>
+                  <p>They are organised by technique rather than by job, they live somewhere nobody visits, they are written by the person most interested in the tool rather than the person doing the work, and nobody owns keeping them current. Reframing it as the task list for a role fixes most of these at once.</p>
+
+                  <h3>How many should we have?</h3>
+                  <p>Three to five per role. A short list gets read and used. A long one gets bookmarked and forgotten, and its length signals that the tool is complicated, which deters exactly the people you most want to reach.</p>
+
+                  <h3>Should we teach prompt engineering?</h3>
+                  <p>Much less than before. Models interpret ordinary instructions well now, and elaborate technique is fragile across model updates. Put the effort into context instead: the audience, the format, the constraints and an example of good output. That material is durable and proprietary to you.</p>
+
+                  <h3>When should a prompt become a saved assistant?</h3>
+                  <p>When several people do the task, the context is too long to paste each time, and there is a house standard worth enforcing. Do not promote something one person uses occasionally. Every saved assistant needs an owner and a review date, and stale ones are worse than none because they look official.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get the task cards written for your roles</h2>
+                  <p>We watch how your people actually work, write three to five task cards per role in their own language with example outputs, build the shared assistants worth building, and hand them to an owner in your team. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-37.html" class="blog-post-nav-link prev">&larr; Departmental AI budgets</a>
+              <a href="post-39.html" class="blog-post-nav-link next">Handling client data in AI tools &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

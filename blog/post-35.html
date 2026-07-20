@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>The First 90 Days After AI Go-Live: Stopping the Relapse</title>
+  <meta name="description" content="Adoption spikes then collapses around week five. What causes the relapse, the three numbers that predict it, and the interventions that actually pull usage back up.">
+  <meta name="keywords" content="sustaining AI adoption, AI adoption after rollout, AI usage metrics, post implementation AI, AI adoption relapse">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-35.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-23">
+  <meta property="article:modified_time" content="2026-08-23">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-35.html">
+  <meta property="og:title" content="The First 90 Days After AI Go-Live: Stopping the Relapse">
+  <meta property="og:description" content="AI adoption spikes then collapses around week five. Here is what causes it and what fixes it.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The First 90 Days After AI Go-Live: Stopping the Relapse">
+  <meta name="twitter:description" content="Nearly every AI rollout dips at week five. Planning for it is the difference between adoption and a dead licence.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-35.html#article",
+      "headline": "The First 90 Days After AI Go-Live: Stopping the Relapse",
+      "description": "How to sustain AI adoption after go-live, covering the week five relapse, the metrics that predict it, and the interventions that restore usage in the first 90 days.",
+      "datePublished": "2026-08-23",
+      "dateModified": "2026-08-23",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-35.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "Change management",
+        "Adoption",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The first 90 days after go-live",
+          "item": "https://getworkingwithai.com/blog/post-35.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does AI usage drop off after a few weeks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the initial spike is curiosity rather than habit. Once novelty fades, only the tasks that genuinely fitted someone's workflow survive. Usage falls to the level of real utility, which is normal, and the mistake is either panicking about it or ignoring it rather than working out which specific tasks failed to stick and why."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should we measure after go-live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three numbers: weekly active users as a proportion of licences, average sessions per active user, and how concentrated usage is among your top few people. The first tells you reach, the second tells you depth, and the third warns you that apparent success may be four enthusiasts carrying the average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should refresher training happen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Around day 45, not day 5. In the first fortnight people have no questions because they have not tried anything difficult. By week six they have hit real friction, abandoned specific tasks and formed opinions. That is when a short session changes behaviour, and it should be built around their problems rather than the tool's features."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">The first 90 days after go-live</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>The First 90 Days After AI Go-Live: Stopping the Relapse</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-23">23 August 2026</time> &middot; 10 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Usage spikes in week one and troughs around week five. This is normal and it is the point at which most rollouts are abandoned.</li>
+                    <li>Watch three numbers: reach, depth, and concentration. Concentration is the one that hides failure.</li>
+                    <li>Run refresher training at day 45, when people have real problems, not at day 5 when they have none.</li>
+                    <li>The most effective intervention is a colleague demonstrating something useful in a meeting that already exists.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Almost every rollout follows the same curve. A burst of activity in the first fortnight as people try things, a visible drop by week five, and a settling point somewhere in weeks eight to twelve that represents the actual level of useful adoption. Organisations that have not been warned about this interpret the drop as failure, conclude the technology was overrated, and stop investing attention at exactly the moment attention matters most.</p>
+
+                <p>The curve is not a problem. Not knowing it is coming is.</p>
+
+                <h2>What the trough actually is</h2>
+
+                <p>The first two weeks are curiosity. People try the tool on whatever they happen to be doing, including things it is bad at, and they generate a lot of activity that has nothing to do with their working habits.</p>
+
+                <p>By week five that has burned off, and what remains is the set of tasks where the tool genuinely fitted into someone's day. That number is always lower than the peak and it is the honest baseline. The work of the first ninety days is not preventing the drop. It is finding out which tasks failed to stick and whether they failed for a fixable reason.</p>
+
+                <p>There are usually four reasons, and they need different responses:</p>
+
+                <ul>
+                  <li><strong>The task was never in their workflow.</strong> Someone was shown a capability that does not correspond to anything they actually do. Nothing to fix, remove it from the training.</li>
+                  <li><strong>The output needed too much editing.</strong> Fixable, and usually a matter of context. The person was giving it three lines of instruction and expecting firm-standard output.</li>
+                  <li><strong>They hit a limit or a wall.</strong> A usage cap, a file type it would not accept, a model that was not available on their tier. Fixable, and invisible unless you ask.</li>
+                  <li><strong>They forgot.</strong> The single most common reason, and the only one that responds to prompting rather than problem solving.</li>
+                </ul>
+
+                <div class="post-callout">
+                  <p><strong>You cannot tell these apart from usage data.</strong> The dashboard shows you that someone stopped. It never shows you why, and the four reasons need four different responses. Fifteen minutes of conversation with six people tells you more than any report, and it is the step organisations skip.</p>
+                </div>
+
+                <h2>The three numbers to watch</h2>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Measure</th><th>What it tells you</th><th>Warning sign</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Weekly active users as a share of licences</td><td>Reach</td><td>Below half by week eight</td></tr>
+                      <tr><td>Average sessions per active user per week</td><td>Depth, whether it is habitual</td><td>Fewer than three, meaning it is occasional</td></tr>
+                      <tr><td>Share of total usage from the top five users</td><td>Concentration</td><td>Above half, meaning enthusiasts are carrying the average</td></tr>
+                      <tr><td>Licences with no sign-in for 30 days</td><td>Waste</td><td>Any, after week eight</td></tr>
+                      <tr><td>Spend against ceiling</td><td>Cost control</td><td>Tracking above plan with flat usage</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The third row is the one that matters most and the one nobody looks at. A firm with eighty licences and healthy total activity can be a firm where six people use it constantly and seventy-four have not opened it since the training. The average looks fine. The rollout has failed.</p>
+
+                <p>Check concentration monthly. If your top five users account for more than half of everything, you do not have adoption, you have enthusiasts.</p>
+
+                <h2>The ninety day calendar</h2>
+
+                <p><strong>Week two: the friction sweep.</strong> Ask six people from different teams what has been annoying. You are looking for the limits and blockers, which are cheap to fix and invisible from a dashboard. Fix whatever surfaces within the week, and tell people you did, because visible responsiveness now buys you attention later.</p>
+
+                <p><strong>Week four: harvest the wins.</strong> Find three specific things someone did that saved real time, and get those people to describe them in team meetings that already exist. Not a new session, not an email. A colleague saying "here is what I did with the renewal summaries last Tuesday" in a meeting people already attend.</p>
+
+                <p><strong>Week six: expect the trough and interpret it.</strong> Usage is down. Pull the concentration number. Talk to people who have stopped, without any suggestion of monitoring or judgement. Sort what you hear into the four categories above.</p>
+
+                <p><strong>Week seven: the refresher that matters.</strong> One short session per function, built entirely around the problems raised in week six. This is the highest leverage hour in the whole ninety days, precisely because people now have specific questions rather than general curiosity.</p>
+
+                <p><strong>Week ten: reclaim and reallocate.</strong> Pull licences that have not been used in a month. Do it neutrally as housekeeping, offer them to people on a waiting list, and note that the offer alone often revives usage among those about to lose access.</p>
+
+                <p><strong>Week twelve: report honestly.</strong> What worked, what did not, what it cost, what changed. An honest report with a mediocre number earns more credibility than an optimistic one, and it is what secures the next decision.</p>
+
+                <div class="post-callout">
+                  <p><strong>The intervention with the best return, by a distance:</strong> a peer demonstrating something specific and small in a meeting that already exists. Not the champion, not the enthusiast, not leadership. Someone whose job is like yours, showing a real thing from last week. It outperforms formal training consistently and costs four minutes.</p>
+                </div>
+
+                <h2>Do not add process to recover adoption</h2>
+
+                <p>When usage sags, the instinctive response is administrative: a mandate, a target, a usage report circulated to managers, a requirement to log what you used it for.</p>
+
+                <p>This reliably makes things worse. It converts a tool people were choosing to use into an obligation they are being measured on, which produces compliance behaviour rather than adoption. People will open it, do something trivial, and close it, and your numbers will improve while your outcome does not.</p>
+
+                <p>The things that do work are all forms of reducing friction or increasing visible peer proof. Fix the blocker. Show the example. Rebuild the assistant someone wanted. Answer the question. None of them involve measurement as a lever.</p>
+
+                <h2>What good looks like at ninety days</h2>
+
+                <p>Realistic targets for a mid-size organisation that has done this properly: somewhere around sixty to seventy percent of licence holders using it in a given week, most active users in it several times a week rather than occasionally, no single group carrying the average, unused licences reclaimed, spend inside the ceiling, and two or three tasks per function that people would now complain about losing.</p>
+
+                <p>That last one is the real test. Adoption is not a usage percentage. It is whether people would be annoyed if you took it away.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Is a drop in usage after a month normal?</h3>
+                  <p>Yes, and it is the point where most rollouts get abandoned. The first fortnight is curiosity, not habit. What remains after week five is the set of tasks that genuinely fitted people's work. The job is to find out which tasks failed and whether they failed for a fixable reason.</p>
+
+                  <h3>What should we measure?</h3>
+                  <p>Reach, depth and concentration. Weekly active users against licences, sessions per active user, and the share of total usage coming from your top five people. The third is the one that hides failure, because a handful of enthusiasts can make a dead rollout look healthy on average.</p>
+
+                  <h3>When should we run refresher training?</h3>
+                  <p>Around day 45. In the first fortnight nobody has questions because nobody has hit anything hard. By week six people have real friction and abandoned tasks, so a short session built around their actual problems changes behaviour in a way a feature tour never does.</p>
+
+                  <h3>Should we mandate usage?</h3>
+                  <p>No. Mandates and usage targets produce compliance behaviour: people open the tool, do something trivial and close it. Your numbers improve and nothing else does. Reduce friction and increase peer proof instead, both of which change what people actually do.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get past the point where most rollouts stall</h2>
+                  <p>We set it up properly, train your people by role, and build in the checkpoints that catch the week five drop before it becomes permanent, then hand over the administrator view and the numbers to watch. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-34.html" class="blog-post-nav-link prev">&larr; Getting partner buy-in</a>
+              <a href="post-36.html" class="blog-post-nav-link next">Using AI for proposals and RFPs &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

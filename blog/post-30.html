@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173F35">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Get Working With AI">
+  <meta property="og:locale" content="en_AU">
+
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="../assets/img/favicon-generated-transparent-32.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/img/apple-touch-icon-generated.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+
+  <title>Moving Your Team Off Personal ChatGPT Accounts</title>
+  <meta name="description" content="A practical migration plan for consolidating staff onto one governed AI workspace. What transfers, what does not, how to run the amnesty, and how to stop people keeping the old account on the side.">
+  <meta name="keywords" content="migrate personal ChatGPT to business, consolidate AI accounts, shadow AI migration, business AI workspace setup, company ChatGPT account">
+  <link rel="canonical" href="https://getworkingwithai.com/blog/post-30.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-08-11">
+  <meta property="article:modified_time" content="2026-08-11">
+  <meta property="og:url" content="https://getworkingwithai.com/blog/post-30.html">
+  <meta property="og:title" content="Moving Your Team Off Personal ChatGPT Accounts">
+  <meta property="og:description" content="How to consolidate staff onto one governed AI workspace, including what transfers and what does not.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moving Your Team Off Personal ChatGPT Accounts">
+  <meta name="twitter:description" content="Migration fails when people keep the personal account on the side. Removing the reason is the whole job.">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://getworkingwithai.com/blog/post-30.html#article",
+      "headline": "Moving Your Team Off Personal ChatGPT Accounts",
+      "description": "A step by step migration from personal consumer AI accounts to a governed business workspace, covering inventory, amnesty, what transfers, expense cleanup and enforcement.",
+      "datePublished": "2026-08-11",
+      "dateModified": "2026-08-11",
+      "inLanguage": "en-AU",
+      "mainEntityOfPage": "https://getworkingwithai.com/blog/post-30.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Working With AI",
+        "url": "https://getworkingwithai.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getworkingwithai.com/assets/img/logo.webp"
+        }
+      },
+      "about": [
+        "IT operations",
+        "Shadow IT",
+        "AI implementation"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getworkingwithai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getworkingwithai.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Moving off personal accounts",
+          "item": "https://getworkingwithai.com/blog/post-30.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does chat history transfer from a personal account to a business workspace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generally no. Conversation history, saved instructions and custom assistants belong to the account they were created in and do not move across. Plan for people to export what they want to keep and rebuild the few things that matter, rather than promising a seamless transfer that will not happen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you stop people using their personal account afterwards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By removing the reasons rather than by policing. Most people keep the old account because it has something the new one lacks: a saved assistant, a familiar setup, or a capability the tier you bought does not include. Find out what those are during the amnesty and close the gaps before the deadline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should we run an amnesty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You need an accurate inventory of who is using what and with which data, and you will not get it if the question carries consequences. Ask without penalty, promise no disciplinary action for past use, and be explicit that the rules change on a stated date."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="blog-post-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3.5 10.3 8.5-6.6 8.5 6.6"/><path d="M5.8 9.1v10.4a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.1"/><path d="M9.9 20.5v-5.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1v5.4"/></symbol>
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19.5V5.5"/><path d="m5.8 11.7 6.2-6.2 6.2 6.2"/></symbol>
+      <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5"/><path d="m13 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+        <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852">
+        <span class="sitename">Get Working With AI</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#package">Packages</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Open menu"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
+            <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+            <li class="breadcrumb-item active current">Moving off personal accounts</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Moving Your Team Off Personal ChatGPT Accounts</h1>
+        <p class="blog-post-meta"><time datetime="2026-08-11">11 August 2026</time> &middot; 11 min read</p>
+      </div>
+    </div>
+
+    <section class="section blog-post">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <article class="blog-post-content">
+
+              <div class="blog-post-body">
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Run an amnesty first. You cannot migrate what you have not found, and people will not tell you if the question has consequences.</li>
+                    <li>History and custom assistants do not transfer. Say so early rather than being caught out on the day.</li>
+                    <li>Migration fails when the old account still does something the new one cannot. Close those gaps before the deadline.</li>
+                    <li>A stated cutover date does more than any policy document.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Most organisations arrive at this point the same way. Someone works out that a meaningful number of staff have been using AI on personal accounts for a year, with company material in them, and that the organisation has no visibility, no contract and no ability to remove access when someone leaves. The decision to consolidate is easy. The migration is where it goes wrong.</p>
+
+                <p>It goes wrong in a predictable way, and the failure is not technical. It is that people keep the old account.</p>
+
+                <h2>Step one: the amnesty</h2>
+
+                <p>You need an accurate picture of who is using what, for which tasks, with what data. You will not get it by sending a survey that reads like the opening of a disciplinary process.</p>
+
+                <p>What works is a message from someone senior that says three things plainly. We know people are using these tools and we think that is reasonable. We are buying a proper one so that it is safe and the company pays. Nobody is in trouble for anything they have done up to now, and we need honest answers to set it up properly.</p>
+
+                <p>Then ask four questions, not fourteen:</p>
+
+                <ul>
+                  <li>Which tools are you using, and are you paying for any of them yourself?</li>
+                  <li>What do you use them for in a normal week?</li>
+                  <li>Have you put company or client material into them?</li>
+                  <li>Have you built anything you would not want to lose?</li>
+                </ul>
+
+                <p>The fourth question is the one people skip and it predicts the migration's success better than the others. Someone who has built a custom assistant that reformats reports the way their team likes will not abandon it because a policy told them to.</p>
+
+                <div class="post-callout">
+                  <p><strong>Expect the numbers to be higher than leadership thinks.</strong> Organisations that run this honestly usually find that more than half of knowledge workers are using something, that a portion are paying personally, and that company material is involved far more often than anyone assumed. That result is not a failure of governance. It is the normal state of things and it is why you are doing this.</p>
+                </div>
+
+                <h2>Step two: be honest about what does not transfer</h2>
+
+                <p>This is where goodwill is lost. Staff assume that moving to a company account is like being moved to a new laptop, where their material comes with them. It is not.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Thing</th><th>Transfers</th><th>What to do</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Conversation history</td><td>No</td><td>Export before the cutover if anything is worth keeping</td></tr>
+                      <tr><td>Saved instructions and preferences</td><td>No</td><td>Screenshot them, retype in the new account, five minutes</td></tr>
+                      <tr><td>Custom assistants someone built</td><td>No</td><td>Rebuild the two or three that matter, centrally, and share them</td></tr>
+                      <tr><td>Uploaded files and project material</td><td>No</td><td>Download and re-upload where still needed</td></tr>
+                      <tr><td>The personal subscription itself</td><td>Not applicable</td><td>Cancel it, and check nobody is expensing it</td></tr>
+                      <tr><td>Familiarity with how it works</td><td>Yes</td><td>Which is why migration is easier than first adoption</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Say all of this in the first announcement rather than the week before. People plan around known constraints and resent surprises, and the practical cost of rebuilding is genuinely small once someone has been given a fortnight's notice.</p>
+
+                <h2>Step three: close the capability gaps</h2>
+
+                <p>Here is the part most migrations get wrong. An organisation buys a business tier, announces the move, and discovers three months later that a third of the team is still using their own account for certain tasks.</p>
+
+                <p>The reason is almost never defiance. It is that the new account cannot do something the old one could. Common versions:</p>
+
+                <ul>
+                  <li>The tier purchased has a lower usage allowance, or excludes a model people had grown used to.</li>
+                  <li>A capability people relied on, such as image generation, voice, or deep research, sits on a different tier.</li>
+                  <li>A custom assistant someone built was never rebuilt, so the workflow it supported has no replacement.</li>
+                  <li>Access was granted to a subset of staff and the rest were left with nothing, which guarantees continued personal use.</li>
+                </ul>
+
+                <p>The last one is the most common and the most avoidable. Partial rollouts do not reduce shadow usage, they formalise it. If the reason for the migration is governance, then everyone who was using something needs a licence, and the cost of the extra seats is trivial against the exposure of leaving a group with no sanctioned option.</p>
+
+                <div class="post-callout">
+                  <p><strong>The diagnostic question to ask three weeks after cutover:</strong> is there anything you still open your old account for? Ask it in a way that does not punish the answer. Two or three specific gaps will surface, and closing them takes an afternoon. Left unasked, they become permanent shadow usage.</p>
+                </div>
+
+                <h2>Step four: the cutover</h2>
+
+                <p>A migration with no date does not happen. The sequence that works over about four weeks:</p>
+
+                <ol>
+                  <li><strong>Week one.</strong> Amnesty and inventory. Announce the plan, the date, and what will and will not transfer.</li>
+                  <li><strong>Week two.</strong> Set up the workspace properly. Training on inputs disabled, retention configured, spending ceiling set, single sign-on connected if you have it, administrator roles assigned to two people rather than one.</li>
+                  <li><strong>Week three.</strong> Invite everyone. Run short role-based sessions covering the three to five tasks each function should use it for, and rebuild the custom assistants worth keeping. Ask people to export anything from the old account now.</li>
+                  <li><strong>Week four.</strong> Cutover. Personal account use for company work stops on a stated day. Update the expense policy so personal AI subscriptions are no longer reimbursable. Send the one-page rule.</li>
+                </ol>
+
+                <p>Then check in at week seven, when the initial enthusiasm has faded and the real usage pattern is visible.</p>
+
+                <h2>The expense cleanup nobody remembers</h2>
+
+                <p>Two small items that save awkwardness later. First, some staff will be expensing personal subscriptions, and those need to stop being reimbursed on a stated date rather than being quietly rejected one month. Second, some departments may have bought their own team plans on a departmental card, which means you have multiple contracts, multiple administrators and multiple retention configurations to consolidate.</p>
+
+                <p>Finance can usually produce a list of recurring charges in an afternoon and it is often more revealing than the staff survey. Card statements do not have a reason to be tactful.</p>
+
+                <h2>What good looks like afterwards</h2>
+
+                <p>Three months on, a successful consolidation has a specific signature. One contract. One administrator view showing who has access and who has not signed in for a month. Retention and training settings you can screenshot for a client questionnaire. A known monthly cost with a ceiling on it. Offboarding that removes AI access with everything else. And no meaningful personal account usage, because there is no reason for it.</p>
+
+                <p>None of that is difficult. It is just a sequence, and organisations that follow it in order tend to finish in a month.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Will people lose their chat history?</h3>
+                  <p>Yes. History, saved instructions, custom assistants and uploaded files belong to the account they were created in and do not transfer. Tell people at the start and give them two weeks to export anything worth keeping. Rebuild the two or three custom assistants that genuinely matter, centrally, so everyone benefits.</p>
+
+                  <h3>How do we stop people using their personal account afterwards?</h3>
+                  <p>Remove the reasons rather than policing the behaviour. Continued use almost always means the sanctioned account lacks something: a model, a capability, an assistant, or a licence for that person at all. Ask directly a few weeks after cutover and close the gaps you find.</p>
+
+                  <h3>Should we roll out to everyone or start with a group?</h3>
+                  <p>If the purpose is governance, everyone who was already using something needs a licence. Partial rollouts leave a group with no sanctioned option, which guarantees the shadow usage continues. The marginal seat cost is small compared with the exposure you were trying to remove.</p>
+
+                  <h3>How long does the migration take?</h3>
+                  <p>About four weeks for most organisations: a week for the amnesty and inventory, a week to configure the workspace, a week to onboard and rebuild, then a stated cutover date. Check in again at week seven when the initial enthusiasm has settled and the real usage pattern is visible.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Have the consolidation run for you</h2>
+                  <p>We run the inventory, configure the workspace with retention, access and a hard spending ceiling, connect single sign-on, rebuild what is worth keeping, train your people by role, and hand over an administrator view your own team can run. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html">Get your team working with AI</a></p>
+                </div>
+              </div>
+            </article>
+
+            <nav class="blog-post-nav" aria-label="Adjacent posts">
+              <a href="post-29.html" class="blog-post-nav-link prev">&larr; AI for financial advisers</a>
+              <a href="post-31.html" class="blog-post-nav-link next">Choosing an AI plan tier &rarr;</a>
+            </nav>
+
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Floating CTA: always visible on blog posts; links to home -->
+  <a href="../index.html" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
+    <span class="floating-cta-text">
+      <strong>Get AI working in your business</strong>
+      <small>Fixed price &middot; live in 30 days</small>
+    </span>
+    <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+  </a>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center" aria-label="Get Working With AI, home">
+            <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
+            <span class="sitename">Get Working With AI</span>
+          </a>
+          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+        </div>
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 footer-contact">
+          <h4>Contact</h4>
+          <p><strong>Email:</strong> <a href="mailto:hello@getworkingwithai.com">hello@getworkingwithai.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Get Working With AI</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <div id="preloader"></div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+
+</html>
