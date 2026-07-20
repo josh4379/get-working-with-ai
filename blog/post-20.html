@@ -23,13 +23,71 @@
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/theme.css" rel="stylesheet">
 
-  <title>Blog post 20 | Get Working With AI Blog</title>
-  <meta name="description" content="">
+  <title>AI Agents for Business: What They Actually Do</title>
+  <meta name="description" content="An AI agent takes actions, not just drafts text. What changes when software acts on your behalf, which jobs suit agents, the four controls they need, and when to wait.">
+  <meta name="keywords" content="AI agents for business, what is an AI agent, agentic AI, business process automation AI">
   <link rel="canonical" href="https://getworkingwithai.com/blog/post-20.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://getworkingwithai.com/blog/post-20.html">
-  <meta property="og:title" content="Blog post 20 | Get Working With AI Blog">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="AI Agents for Business: What They Actually Do">
+  <meta property="og:description" content="What changes when software takes actions rather than drafting text, which jobs suit agents, and the four controls they need.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Agents for Business: What They Actually Do">
+  <meta name="twitter:description" content="The difference between an assistant and an agent is the difference between advice and action.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://getworkingwithai.com/blog/post-20.html#article",
+        "headline": "AI Agents for Business: What They Actually Do",
+        "description": "What an AI agent is, how it differs from an assistant, which business jobs suit agents, the controls they require, and when to wait.",
+        "datePublished": "2026-07-19",
+        "dateModified": "2026-07-19",
+        "inLanguage": "en-AU",
+        "mainEntityOfPage": "https://getworkingwithai.com/blog/post-20.html",
+        "author": { "@type": "Organization", "name": "Get Working With AI", "url": "https://getworkingwithai.com/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Get Working With AI",
+          "url": "https://getworkingwithai.com/",
+          "logo": { "@type": "ImageObject", "url": "https://getworkingwithai.com/assets/img/logo.webp" }
+        },
+        "about": ["AI agents", "Automation", "Business operations"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getworkingwithai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://getworkingwithai.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "AI agents for business", "item": "https://getworkingwithai.com/blog/post-20.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an AI agent?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Software that can take a goal, work out the steps, and carry them out using tools and systems, rather than only producing text for a person to act on. The defining feature is that it acts, which is why it needs permissions, limits and an audit trail." }
+          },
+          {
+            "@type": "Question",
+            "name": "Should a business use AI agents yet?",
+            "acceptedAnswer": { "@type": "Answer", "text": "For narrow, bounded, reversible tasks with an audit trail, yes. For anything that spends money, contacts customers unsupervised or changes records that are hard to restore, keep a human approving the action until you have months of reliable evidence." }
+          },
+          {
+            "@type": "Question",
+            "name": "What controls do AI agents need?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Four: least-privilege permissions on their own credential rather than a person's, a hard spending limit, a complete log of every action taken, and a defined stop condition so the agent halts and asks rather than improvising when it encounters something unexpected." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="blog-post-page">
@@ -73,14 +131,14 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
             <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
-            <li class="breadcrumb-item active current">Blog post 20</li>
+            <li class="breadcrumb-item active current">AI agents for business</li>
           </ol>
         </nav>
       </div>
 
       <div class="title-wrapper">
-        <h1>Blog post 20</h1>
-        <p class="blog-post-meta"><time datetime="2026-07-19">19 July 2026</time></p>
+        <h1>AI Agents for Business: What They Actually Do</h1>
+        <p class="blog-post-meta"><time datetime="2026-07-19">19 July 2026</time> &middot; 10 min read</p>
       </div>
     </div>
 
@@ -89,26 +147,150 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <article class="blog-post-content">
-              <!--
-                CONTENT SHELL: leave empty for Claude to fill.
-                Suggested structure:
-                  - Intro paragraph(s)
-                  - H2 sections with body copy
-                  - Lists, callouts, CTAs as needed
-                  - Closing paragraph + link to packages if relevant
-              -->
 
               <div class="blog-post-body">
-                <!-- Body content goes here -->
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>An assistant produces text for a person to act on. An agent takes the action itself.</li>
+                    <li>That single difference is why agents need permissions, spending limits, logs and a stop condition.</li>
+                    <li>Good first candidates are narrow, bounded, reversible and already generate an audit trail.</li>
+                    <li>If you have not configured your assistant properly yet, agents are the wrong next step.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">The word agent is doing a lot of work in AI marketing at the moment, and it is worth being precise about what it means, because the distinction determines what controls you need. An assistant reads and writes. An agent reads, writes, decides on a sequence of steps, and then does them, using real systems, with real consequences.</p>
+
+                <p>That is a meaningful jump. It is the difference between a tool that gives you a draft email and a tool that sends it.</p>
+
+                <h2>Assistant, automation, agent</h2>
+
+                <p>Three categories that get conflated, and the confusion causes bad procurement decisions.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th></th><th>Assistant</th><th>Traditional automation</th><th>Agent</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>What it does</td><td>Produces output for a person</td><td>Executes fixed predefined steps</td><td>Chooses steps toward a goal and executes them</td></tr>
+                      <tr><td>Who decides the sequence</td><td>The person</td><td>Whoever built the rules</td><td>The software, at run time</td></tr>
+                      <tr><td>Handles the unexpected</td><td>The person notices</td><td>It fails, visibly</td><td>It improvises, which is the risk</td></tr>
+                      <tr><td>Main control needed</td><td>Guidance and review habits</td><td>Testing</td><td>Permissions, limits, logs, stop conditions</td></tr>
+                      <tr><td>Failure mode</td><td>A bad draft nobody sends</td><td>A stopped process</td><td>Many confident actions before anyone notices</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>The last row is the one to sit with. Traditional automation fails loudly and stops. An agent that misunderstands its instruction does not stop; it proceeds, plausibly and quickly, and may do the wrong thing forty times before a person looks.</p>
+
+                <div class="post-callout">
+                  <p><strong>The design principle that follows:</strong> with agents you are not primarily managing whether it works. You are managing what happens when it works confidently on a wrong premise. That is a permissions and logging problem, not a model quality problem.</p>
+                </div>
+
+                <h2>Where agents genuinely fit today</h2>
+
+                <p>Four properties make a task a good early candidate. Look for all four rather than any one.</p>
+
+                <ul>
+                  <li><strong>Narrow.</strong> A defined job with a clear boundary, not a general mandate to manage something.</li>
+                  <li><strong>Bounded.</strong> A limited set of systems and actions available, ideally read-heavy and write-light.</li>
+                  <li><strong>Reversible.</strong> If it goes wrong, you can undo it in an afternoon without contacting a customer.</li>
+                  <li><strong>Observable.</strong> Every action lands in a log or a record someone can review after the fact.</li>
+                </ul>
+
+                <p>Tasks that fit this shape in most businesses include triaging and routing incoming requests to the right queue with a suggested category, gathering information from several internal systems into a briefing document before a meeting, monitoring for a condition and preparing a draft response for approval, and reconciling records between two systems and flagging the differences rather than resolving them.</p>
+
+                <p>Notice the pattern. In each case the agent does the gathering, the sorting and the preparation, and a person does the committing. That division is where the current technology sits comfortably, and it captures most of the available benefit.</p>
+
+                <h2>Where to wait</h2>
+
+                <p>Three categories where the sensible position is a human approving each action, regardless of how good the demonstration looked:</p>
+
+                <p><strong>Anything that spends money.</strong> Purchasing, refunds, payments, committing to costs. The failure mode is immediate and hard to reverse.</p>
+
+                <p><strong>Unsupervised customer contact.</strong> An agent corresponding with your customers without review is your brand voice operating without judgement. The upside is modest and the downside is public.</p>
+
+                <p><strong>Changes that are hard to restore.</strong> Bulk edits to core records, deletions, permission changes. If your recovery plan for a mistake is a restore from backup, do not let software make those changes autonomously.</p>
+
+                <h2>The four controls agents require</h2>
+
+                <h3>1. Least privilege, on its own identity</h3>
+                <p>An agent should have its own credential, not a borrowed human account. Two reasons: you can see in logs which actions were the agent's, and you can grant exactly the permissions the task needs rather than inheriting everything a person happens to have. An agent running on an administrator's account has administrator powers it will never need and might use.</p>
+
+                <h3>2. A hard spending limit</h3>
+                <p>Agents work in loops, and a loop that does not terminate as expected is the classic runaway cost scenario in this category. Give each agent its own credential with its own ceiling, so one misbehaving process trips its own limit rather than the organisation's.</p>
+
+                <h3>3. A complete action log</h3>
+                <p>Not just the outputs but every action taken, in order, with timestamps. When something goes wrong the question is always "what did it actually do", and without a log the answer is reconstruction and guesswork. This is also what makes an agent explainable to an auditor or a client.</p>
+
+                <h3>4. A stop condition</h3>
+                <p>Define in advance what makes the agent halt and ask rather than proceed: an unfamiliar case, a value outside an expected range, a number of steps exceeded, a confidence threshold not met. An agent with no stop condition will always choose to continue, because continuing is what it is for.</p>
+
+                <div class="post-callout">
+                  <p><strong>A practical staging pattern:</strong> run the agent in suggest-only mode first, where it prepares the action but a person commits it. Keep it there for several weeks. If the human approves nearly everything without amendment, you have earned the evidence to let it act. If they routinely amend, you have learned something important cheaply.</p>
+                </div>
+
+                <h2>The sequencing question</h2>
+
+                <p>Agents are the most interesting thing in this category, which makes them attractive as a starting point. That is usually a mistake, for a straightforward reason: an agent operating inside an organisation with no admin controls, no spending ceiling, no logging and no documented permissions model is a larger version of a problem you have not solved at a smaller scale.</p>
+
+                <p>The order that works:</p>
+
+                <ol>
+                  <li><strong>Configure the assistant properly.</strong> Admin console, retention, sharing, SSO, spending cap, model routing, task guidance for staff.</li>
+                  <li><strong>Let people use it for a quarter.</strong> You learn which tasks are genuinely repetitive and where the volume actually is, which is rarely where you expected.</li>
+                  <li><strong>Automate one narrow task,</strong> in suggest-only mode, with its own credential, its own limit and full logging.</li>
+                  <li><strong>Earn autonomy gradually,</strong> one action type at a time, on the evidence of weeks of reviewed suggestions.</li>
+                </ol>
+
+                <p>Organisations that skip to step three tend to discover that the hard part was never the agent. It was knowing which task was worth automating, and having the governance in place to let something act on your behalf safely.</p>
+
+                <h2>Questions to ask a vendor selling agents</h2>
+
+                <ul>
+                  <li>What exactly can it do, and what can it not do? Ask for the list of actions, not the list of use cases.</li>
+                  <li>Does it run under its own identity, and how are its permissions scoped?</li>
+                  <li>Can I see a complete log of every action, and how long is it kept?</li>
+                  <li>What makes it stop and ask instead of proceeding?</li>
+                  <li>Can I run it in suggest-only mode, and for how long?</li>
+                  <li>What is the spending control, and is it a cap or an alert?</li>
+                  <li>When it is wrong, how do I find out, and how do I undo it?</li>
+                </ul>
+
+                <p>A vendor with clear answers to all seven is selling a considered product. A vendor who redirects to capability demonstrations is selling a demonstration.</p>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>What is an AI agent?</h3>
+                  <p>Software that takes a goal, works out the steps, and carries them out using real tools and systems, rather than only producing text for a person to act on. Because it acts, it needs permissions, limits and an audit trail.</p>
+
+                  <h3>Should we use agents yet?</h3>
+                  <p>For narrow, bounded, reversible tasks that already produce an audit trail, yes. For anything spending money, contacting customers unsupervised, or making changes that are hard to restore, keep a person approving each action.</p>
+
+                  <h3>What controls do agents need?</h3>
+                  <p>Least-privilege permissions on the agent's own credential, a hard spending limit, a complete action log, and a defined stop condition so it halts and asks rather than improvising.</p>
+
+                  <h3>Are agents worth it for a small business?</h3>
+                  <p>Usually not as a first step. Get the assistant configured and adopted first. Agents make sense once you have a specific repetitive task with enough volume to justify the setup and the oversight they require.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Get the foundation right first</h2>
+                  <p>Agents work when the governance underneath them already exists. We set up the provider, admin controls, spending limits and staff enablement that everything else builds on, then hand it to your team. Fixed price, live in 30 days or less.</p>
+                  <p><a href="../index.html#package">Compare the packages</a></p>
+                </div>
+
               </div>
             </article>
 
             <nav class="blog-post-nav" aria-label="Adjacent posts">
-              <a href="post-19.html" class="blog-post-nav-link prev">← Blog post 19</a>
-              
+              <a href="post-19.html" class="blog-post-nav-link prev">&larr; Nine AI implementation mistakes</a>
             </nav>
 
-            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">← Back to blog</a></p>
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
           </div>
         </div>
       </div>
@@ -121,7 +303,7 @@
   <a href="../index.html#package" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
     <span class="floating-cta-text">
       <strong>Choose your package</strong>
-      <small>Fixed price · live in 30 days</small>
+      <small>Fixed price &middot; live in 30 days</small>
     </span>
     <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
   </a>
@@ -134,7 +316,7 @@
             <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
             <span class="sitename">Get Working With AI</span>
           </a>
-          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+          <p>Fixed-price AI implementation for business. $2,000 Clarity Package or $10,000 Implementation Package, live in 30 days.</p>
         </div>
         <div class="col-lg-3 col-6 footer-links">
           <h4>Site</h4>
@@ -143,7 +325,6 @@
             <li><a href="../blog.html">Blog</a></li>
             <li><a href="../privacy.html">Privacy policy</a></li>
             <li><a href="../terms.html">Terms of service</a></li>
-            <li><a href="https://climate.stripe.com/Nv9wWN" target="_blank" rel="noopener noreferrer">Stripe Climate</a></li>
           </ul>
         </div>
         <div class="col-lg-3 footer-contact">

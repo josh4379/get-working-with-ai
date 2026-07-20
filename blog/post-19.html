@@ -23,13 +23,71 @@
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/theme.css" rel="stylesheet">
 
-  <title>Blog post 19 | Get Working With AI Blog</title>
-  <meta name="description" content="">
+  <title>Nine AI Implementation Mistakes and How to Avoid Them</title>
+  <meta name="description" content="The nine mistakes that account for most failed AI rollouts: buying before deciding, training on capabilities, no spending cap, personal accounts, and five more. With the fix for each.">
+  <meta name="keywords" content="AI implementation mistakes, why AI projects fail, AI rollout errors, common AI adoption problems">
   <link rel="canonical" href="https://getworkingwithai.com/blog/post-19.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://getworkingwithai.com/blog/post-19.html">
-  <meta property="og:title" content="Blog post 19 | Get Working With AI Blog">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Nine AI Implementation Mistakes and How to Avoid Them">
+  <meta property="og:description" content="The nine errors that account for most failed AI rollouts, and the specific fix for each one.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nine AI Implementation Mistakes and How to Avoid Them">
+  <meta name="twitter:description" content="Almost none of these are technology failures. That is what makes them fixable.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://getworkingwithai.com/blog/post-19.html#article",
+        "headline": "Nine AI Implementation Mistakes and How to Avoid Them",
+        "description": "The nine mistakes that account for most failed business AI rollouts, why each happens, and the specific fix.",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "inLanguage": "en-AU",
+        "mainEntityOfPage": "https://getworkingwithai.com/blog/post-19.html",
+        "author": { "@type": "Organization", "name": "Get Working With AI", "url": "https://getworkingwithai.com/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Get Working With AI",
+          "url": "https://getworkingwithai.com/",
+          "logo": { "@type": "ImageObject", "url": "https://getworkingwithai.com/assets/img/logo.webp" }
+        },
+        "about": ["Project risk", "AI adoption", "Implementation"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getworkingwithai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://getworkingwithai.com/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "AI implementation mistakes", "item": "https://getworkingwithai.com/blog/post-19.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why do most AI projects fail?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Rarely because of the technology. The usual causes are no decision maker, no exit criteria, generic training that names no tasks, licences bought without configuration, and treating go-live as the end of the project rather than the middle." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the most expensive AI implementation mistake?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Extending the evaluation indefinitely. While a committee deliberates, staff continue using consumer tools with company information in them, so the organisation accumulates unmanaged risk and pays for the internal time without receiving any of the benefit." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we recover from a failed AI rollout?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Usually yes, and quickly, because the licences and much of the learning already exist. Rescope to one team and one task, get the budget holder involved, configure properly, and set a decision date within four weeks." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="blog-post-page">
@@ -73,14 +131,14 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html"><svg class="ic" aria-hidden="true"><use href="#ic-home"/></svg> Home</a></li>
             <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
-            <li class="breadcrumb-item active current">Blog post 19</li>
+            <li class="breadcrumb-item active current">AI implementation mistakes</li>
           </ol>
         </nav>
       </div>
 
       <div class="title-wrapper">
-        <h1>Blog post 19</h1>
-        <p class="blog-post-meta"><time datetime="2026-07-18">18 July 2026</time></p>
+        <h1>Nine AI Implementation Mistakes and How to Avoid Them</h1>
+        <p class="blog-post-meta"><time datetime="2026-07-18">18 July 2026</time> &middot; 10 min read</p>
       </div>
     </div>
 
@@ -89,26 +147,148 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <article class="blog-post-content">
-              <!--
-                CONTENT SHELL: leave empty for Claude to fill.
-                Suggested structure:
-                  - Intro paragraph(s)
-                  - H2 sections with body copy
-                  - Lists, callouts, CTAs as needed
-                  - Closing paragraph + link to packages if relevant
-              -->
 
               <div class="blog-post-body">
-                <!-- Body content goes here -->
+
+                <div class="post-takeaways">
+                  <h2>Key takeaways</h2>
+                  <ul>
+                    <li>Almost none of these are technology failures, which is precisely why they are fixable.</li>
+                    <li>The most expensive mistake is the one that feels most prudent: extending the evaluation.</li>
+                    <li>Licences without configuration is buying the box and leaving it in the corridor.</li>
+                    <li>Go-live is the middle of the project. Treating it as the end is why adoption fades.</li>
+                  </ul>
+                </div>
+
+                <p class="lede">Failed AI rollouts have a family resemblance. The same nine mistakes turn up repeatedly across very different organisations, and the striking thing about the list is how little of it concerns the technology. These are decision-making, procurement and change management errors, which is good news, because those are problems businesses already know how to solve.</p>
+
+                <h2>1. Buying before deciding</h2>
+
+                <p>Licences purchased because a department asked, before anyone has decided what problem is being solved. The result is spend without direction, and it becomes very hard to evaluate later because there was never a stated intention to evaluate against.</p>
+
+                <p><strong>The fix:</strong> name the problem in one sentence before any purchase. Not "adopt AI" but the specific task, the team, and roughly how long it takes today. If you cannot write that sentence, you are not ready to buy, and one meeting will fix it.</p>
+
+                <h2>2. Extending the evaluation</h2>
+
+                <p>The most expensive mistake and the one that feels most responsible. Another vendor to compare, another pilot to run, a new model release to wait for. Each individual extension is defensible, and the sequence has no natural end because the comparison never converges.</p>
+
+                <p>Meanwhile the cost accrues in three places: internal time in meetings, the continuing use of ungoverned consumer tools with company information, and the opportunity cost of a year of learning nobody did.</p>
+
+                <p><strong>The fix:</strong> set the decision date before starting the evaluation, and evaluate against that date rather than against a standard of completeness that cannot be reached.</p>
+
+                <div class="post-callout">
+                  <p><strong>The thing about waiting for the next model:</strong> the reasoning never expires, so applied consistently it counsels permanent delay. Organisations that get value picked an adequate model early and spent the intervening months learning to use it. That learning transfers to the better model when it arrives. The waiting does not.</p>
+                </div>
+
+                <h2>3. Licences without configuration</h2>
+
+                <p>Accounts are created, everyone is emailed a link, and nothing else happens. No admin console setup, no retention decision, no sharing controls, no spending ceiling, no guidance. This is buying equipment and leaving it in its packaging in the corridor.</p>
+
+                <p><strong>The fix:</strong> treat configuration as a delivery step with its own owner and its own exit criterion. A non-technical person should be able to open the console, see every user, and see a hard cap on the billing page. Until that is true, you have not deployed anything.</p>
+
+                <h2>4. Training that names no tasks</h2>
+
+                <p>A session about what large language models are, some impressive general demonstrations, and a reminder to be careful with confidential data. Attendance is good, feedback is positive, and behaviour does not change, because nothing in it told anyone what to do differently with the work already on their desk.</p>
+
+                <p><strong>The fix:</strong> three named tasks per role, with tested prompts, the starting material identified, and a specific check before output goes anywhere. Fifteen minutes of the session must be people working on their own real material.</p>
+
+                <h2>5. No spending ceiling</h2>
+
+                <p>An alert is configured and treated as a control. It is not. It reports spend that has already happened, to a person who may be on leave, in an inbox competing with everything else.</p>
+
+                <p><strong>The fix:</strong> a hard limit at the provider, set before anything runs, at roughly 1.5 times expected monthly spend. Layer it: organisation, project, and individual credential, so one fault cannot consume everything.</p>
+
+                <h2>6. Everything on the flagship model</h2>
+
+                <p>The interface defaults to the most capable model, nobody changes it, and routine reformatting runs at premium rates several thousand times a month. Separately, a developer builds something using the model they trust during development and nobody revisits that choice for production.</p>
+
+                <p><strong>The fix:</strong> a written routing map by task shape. Small models for classification, extraction, reformatting and short drafts. Flagship for multi-step reasoning, long documents, nuanced judgement and code. Set defaults centrally where the console allows it.</p>
+
+                <h2>7. Personal accounts left in place</h2>
+
+                <p>The organisation buys a governed business tier, and the personal consumer accounts people were already using quietly continue alongside it. Company information keeps flowing into accounts nobody administers, on email addresses the company does not control, and it leaves with the employee.</p>
+
+                <p><strong>The fix:</strong> an amnesty to surface what exists, a sanctioned alternative that is genuinely easier to use than the unofficial one, and only then enforcement. Closing the unofficial route before the official one is good is what pushes usage onto personal devices where you cannot see it at all.</p>
+
+                <h2>8. Treating go-live as the finish</h2>
+
+                <p>The launch happens, the project is marked complete, the team disbands, and usage declines steadily over the following six weeks with nobody watching. By the time anyone checks, three teams have stopped entirely and the reasons are no longer fresh enough to diagnose.</p>
+
+                <p><strong>The fix:</strong> plan days 31 to 90 explicitly. Weekly active users by team at week 5, one new task card per team at week 6, a cost check at week 7, and a champions catch-up at week 8. Book the 90 day review during week 1.</p>
+
+                <div class="post-table-wrap">
+                  <table class="post-table">
+                    <thead>
+                      <tr><th>Mistake</th><th>Early warning sign</th><th>Cheapest moment to fix it</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Buying before deciding</td><td>Nobody can state the problem in one sentence</td><td>Before purchase</td></tr>
+                      <tr><td>Extending the evaluation</td><td>The shortlist has grown rather than shrunk</td><td>Week 1</td></tr>
+                      <tr><td>No configuration</td><td>Nobody has opened the admin console</td><td>Week 2</td></tr>
+                      <tr><td>Generic training</td><td>Sessions are organisation-wide, not per team</td><td>Week 4</td></tr>
+                      <tr><td>No spending ceiling</td><td>You have alerts but no cap</td><td>Week 2</td></tr>
+                      <tr><td>Flagship for everything</td><td>Nobody can say which model handles which task</td><td>Week 2, then quarterly</td></tr>
+                      <tr><td>Personal accounts</td><td>Expense claims still show individual subscriptions</td><td>Week 4</td></tr>
+                      <tr><td>Go-live as the finish</td><td>No meetings booked after launch week</td><td>Week 1, by booking them</td></tr>
+                      <tr><td>Nobody owns it</td><td>Changing a setting means calling your supplier</td><td>Week 4, at handover</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2>9. Nobody internal owns it</h2>
+
+                <p>The setup works, and it works only while an external party is available. Nobody inside the organisation knows where the settings are, how to add a user, or how to change the spending limit. This is not an implementation, it is a rental with the appearance of ownership.</p>
+
+                <p><strong>The fix:</strong> make handover an explicit deliverable in the contract. Documentation, admin access, and at least two named internal administrators briefed on the console. Test it by having your own person make a real change while the supplier watches rather than does.</p>
+
+                <h2>Recovering from a rollout that already went wrong</h2>
+
+                <p>If several of these describe your situation, the recovery is usually faster than the original attempt, because the licences exist and the organisation has learned things even if it did not notice.</p>
+
+                <ol>
+                  <li>Stop adding scope. Whatever is half-built stays where it is for now.</li>
+                  <li>Fix configuration first: admin console, retention, sharing, spending cap, deprovisioning. One afternoon.</li>
+                  <li>Pick one team and one task. Write three task cards and test them properly before showing anyone.</li>
+                  <li>Get the budget holder into one session with the actual users.</li>
+                  <li>Set a decision date four weeks out, with success and failure both defined in writing.</li>
+                  <li>Reclaim dormant seats while you are at it. It funds a surprising amount of the next phase.</li>
+                </ol>
+
+                <div class="post-callout">
+                  <p><strong>A useful reframe for a stalled project:</strong> you are not starting again. You are finishing something that was started without a definition of done. That is a much shorter piece of work, and it is a much easier conversation with whoever approved the original spend.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+
+                <div class="post-faq">
+                  <h3>Why do most AI projects fail?</h3>
+                  <p>Rarely for technical reasons. Usually no decision maker, no exit criteria, generic training that names no tasks, licences bought without configuration, and treating go-live as the end of the project.</p>
+
+                  <h3>What is the most expensive mistake?</h3>
+                  <p>Extending the evaluation. While the committee deliberates, staff keep using consumer tools with company information in them, so you accumulate unmanaged risk and pay for the internal time without getting any benefit.</p>
+
+                  <h3>Can we recover from a failed rollout?</h3>
+                  <p>Usually yes, and quickly. Rescope to one team and one task, involve the budget holder, fix the configuration, and set a decision date within four weeks.</p>
+
+                  <h3>How do we know if we are making these mistakes right now?</h3>
+                  <p>Three quick tests: can one person state the problem in a sentence, can you see a hard cap on the billing page, and does anyone internal know how to add a user without calling your supplier.</p>
+                </div>
+
+                <div class="post-cta">
+                  <h2>Avoid all nine, at a fixed price</h2>
+                  <p>One partner, start to finish: provider selection, admin configuration, hard spending limits, model routing, staff enablement and a documented handover to your own team. Live in 30 days or less, with the price agreed before we start.</p>
+                  <p><a href="../index.html#package">Compare the packages</a></p>
+                </div>
+
               </div>
             </article>
 
             <nav class="blog-post-nav" aria-label="Adjacent posts">
-              <a href="post-18.html" class="blog-post-nav-link prev">← Blog post 18</a>
-              <a href="post-20.html" class="blog-post-nav-link next">Blog post 20 →</a>
+              <a href="post-18.html" class="blog-post-nav-link prev">&larr; A 30, 60, 90 day rollout plan</a>
+              <a href="post-20.html" class="blog-post-nav-link next">AI agents for business &rarr;</a>
             </nav>
 
-            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">← Back to blog</a></p>
+            <p class="mt-4 mb-0"><a href="../blog.html" class="btn-outline">&larr; Back to blog</a></p>
           </div>
         </div>
       </div>
@@ -121,7 +301,7 @@
   <a href="../index.html#package" class="floating-cta" id="floatingCta" aria-hidden="true" tabindex="-1">
     <span class="floating-cta-text">
       <strong>Choose your package</strong>
-      <small>Fixed price · live in 30 days</small>
+      <small>Fixed price &middot; live in 30 days</small>
     </span>
     <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
   </a>
@@ -134,7 +314,7 @@
             <img src="../assets/img/logo-generated-mark.webp" alt="" class="site-logo-mark" width="741" height="852" loading="lazy">
             <span class="sitename">Get Working With AI</span>
           </a>
-          <p>Fixed-price AI implementation for business. $500 Clarity Package for the business case and plan, or $5,000 Implementation Package to go live in 30 days.</p>
+          <p>Fixed-price AI implementation for business. $2,000 Clarity Package or $10,000 Implementation Package, live in 30 days.</p>
         </div>
         <div class="col-lg-3 col-6 footer-links">
           <h4>Site</h4>
@@ -143,7 +323,6 @@
             <li><a href="../blog.html">Blog</a></li>
             <li><a href="../privacy.html">Privacy policy</a></li>
             <li><a href="../terms.html">Terms of service</a></li>
-            <li><a href="https://climate.stripe.com/Nv9wWN" target="_blank" rel="noopener noreferrer">Stripe Climate</a></li>
           </ul>
         </div>
         <div class="col-lg-3 footer-contact">
