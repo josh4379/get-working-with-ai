@@ -870,31 +870,37 @@
                 <h3>Ask us anything</h3>
               </div>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form action="/api/contact" method="post" class="php-email-form" novalidate>
 
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Full Name</label>
-                      <input type="text" name="name" required="">
+                      <input type="text" name="name" required="" autocomplete="name" maxlength="200">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Email Address</label>
-                      <input type="email" name="email" required="">
+                      <input type="email" name="email" required="" autocomplete="email" maxlength="200">
                     </div>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label>Company / Organisation</label>
-                  <input type="text" name="subject" required="" placeholder="Where do you work?">
+                  <input type="text" name="subject" required="" placeholder="Where do you work?" autocomplete="organization" maxlength="200">
+                </div>
+
+                <!-- Honeypot: leave empty (bots fill this) -->
+                <div class="form-group" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                  <label for="website">Website</label>
+                  <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="projectMessage">What would you like to know?</label>
-                  <textarea name="message" id="projectMessage" rows="5" required="" placeholder="Procurement, invoicing, scope, timing, or whatever you need to confirm before checking out."></textarea>
+                  <textarea name="message" id="projectMessage" rows="5" required="" maxlength="4000" placeholder="Procurement, invoicing, scope, timing, or whatever you need to confirm before checking out."></textarea>
                 </div>
 
                 <div class="my-3">

@@ -1,0 +1,16 @@
+src
+forms
+.wrangler
+.dev.vars
+.dev.vars.example
+.env
+.env.example
+.git
+.claude
+node_modules
+package.json
+package-lock.json
+wrangler.jsonc
+README.md
+link-building-log.md
+*.md
