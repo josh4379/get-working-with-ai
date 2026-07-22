@@ -85,6 +85,16 @@
     if (!subject) return "Please enter your company or organisation.";
     if (!message) return "Please write your question before sending.";
     if (message.length > 4000) return "Your question is a bit long (max 4,000 characters). Please shorten it and try again.";
+
+    // Managed Turnstile injects cf-turnstile-response; require it when the widget is present
+    if (form.querySelector(".cf-turnstile")) {
+      var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+      var token = tokenInput && tokenInput.value ? tokenInput.value.trim() : "";
+      if (!token) {
+        return "Please complete the security check and try again.";
+      }
+    }
+
     return null;
   }
 
@@ -109,17 +119,32 @@
         if (result.ok && result.body === "OK") {
           thisForm.querySelector(".sent-message").classList.add("d-block");
           thisForm.reset();
+          resetTurnstile(thisForm);
           return;
         }
 
+        resetTurnstile(thisForm);
         displayError(thisForm, friendlyServerMessage(result));
       })
       .catch(function () {
+        resetTurnstile(thisForm);
         displayError(
           thisForm,
           "We could not reach the server. Check your connection and try again, or email hello@getworkingwithai.com."
         );
       });
+  }
+
+  function resetTurnstile(form) {
+    if (typeof turnstile === "undefined" || !form) return;
+    var widgets = form.querySelectorAll(".cf-turnstile");
+    widgets.forEach(function (el) {
+      try {
+        turnstile.reset(el);
+      } catch (e) {
+        /* ignore if widget not ready */
+      }
+    });
   }
 
   function friendlyServerMessage(result) {
@@ -132,6 +157,11 @@
 
     if (result.status === 400) {
       return "Please check your details and try again. Name, a valid email, and your question are required.";
+    }
+    if (result.status === 403) {
+      return body && !looksLikeTechnicalError(body)
+        ? body
+        : "Security check failed. Please refresh the page and try again, or email hello@getworkingwithai.com.";
     }
     if (result.status === 429) {
       return "Too many messages in a short time. Please wait a minute and try again.";

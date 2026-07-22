@@ -869,6 +869,10 @@
                   <textarea name="message" id="projectMessage" rows="5" required="" maxlength="4000" placeholder="Procurement, invoicing, scope, timing, or whatever you need to confirm before checking out."></textarea>
                 </div>
 
+                <div class="form-group turnstile-wrap">
+                  <div class="cf-turnstile" data-sitekey="0x4AAAAAAD7bDZZ_fe2KLIDq" data-action="turnstile-spin-v2"></div>
+                </div>
+
                 <div class="my-3">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
@@ -957,6 +961,9 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
+
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

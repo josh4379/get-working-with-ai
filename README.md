@@ -24,7 +24,7 @@ Hands-off. Live in 30 days or less:
 
 ## Stack
 
-Static HTML/CSS/JS marketing site.
+Static HTML/CSS/JS marketing site on **Cloudflare Workers** (`src/worker.js` + assets). Contact form posts to `POST /api/contact` → Telegram. Protected with **Cloudflare Turnstile** (siteverify on the Worker).
 
 ## Local preview
 
@@ -32,6 +32,18 @@ Open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 8080
+```
+
+For the full Worker (form + Turnstile), copy `.dev.vars.example` → `.dev.vars`, set `TELEGRAM_*` and `TURNSTILE_SECRET`, then:
+
+```bash
+npx wrangler dev
+```
+
+Production secret (do not commit):
+
+```bash
+npx wrangler secret put TURNSTILE_SECRET
 ```
 
 ## Project path (Mac Mini)

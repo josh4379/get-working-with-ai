@@ -58,6 +58,63 @@ async function handleContact(request, env) {
     return textResponse('OK', 200, request);
   }
 
+  // Cloudflare Turnstile — gate existing handler on success === true
+  const turnstileToken =
+    typeof fields['cf-turnstile-response'] === 'string'
+      ? fields['cf-turnstile-response'].trim()
+      : '';
+  if (!turnstileToken) {
+    return textResponse(
+      'Please complete the security check and try again.',
+      403,
+      request
+    );
+  }
+  if (!env.TURNSTILE_SECRET) {
+    console.error('TURNSTILE_SECRET not configured');
+    return textResponse(
+      'We cannot take form messages right now. Please email hello@getworkingwithai.com.',
+      503,
+      request
+    );
+  }
+
+  const clientIp =
+    request.headers.get('CF-Connecting-IP') ||
+    (request.headers.get('X-Forwarded-For') || '').split(',')[0].trim() ||
+    '';
+
+  try {
+    const verifyRes = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          secret: env.TURNSTILE_SECRET,
+          response: turnstileToken,
+          ...(clientIp ? { remoteip: clientIp } : {}),
+        }),
+      }
+    );
+    const verify = await verifyRes.json().catch(() => ({}));
+    if (verify.success !== true) {
+      console.error('Turnstile siteverify failed:', verify['error-codes'] || verify);
+      return textResponse(
+        'Security check failed. Please refresh the page and try again, or email hello@getworkingwithai.com.',
+        403,
+        request
+      );
+    }
+  } catch (err) {
+    console.error('Turnstile siteverify error:', err);
+    return textResponse(
+      'Security check could not be completed. Please try again, or email hello@getworkingwithai.com.',
+      503,
+      request
+    );
+  }
+
   const name = clean(fields.name, MAX_FIELD);
   const email = clean(fields.email, MAX_FIELD);
   const company = clean(fields.subject, MAX_FIELD); // form uses name="subject" for company
